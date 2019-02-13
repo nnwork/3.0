@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_society"
+        android:orderInCategory="100"
+        android:title="@string/action_society"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_events"
+        android:orderInCategory="100"
+        android:title="@string/action_events"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_maintenance"
+        android:orderInCategory="100"
+        android:title="@string/action_maintenance"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_helper"
+        android:orderInCategory="100"
+        android:title="@string/action_helper"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_watchmen"
+        android:orderInCategory="100"
+        android:title="@string/action_watchman"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_funds"
+        android:orderInCategory="100"
+        android:title="@string/action_fund"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_account"
+        android:orderInCategory="100"
+        android:title="@string/action_accounts"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_utility"
+        android:orderInCategory="100"
+        android:title="@string/action_accounts"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_hall"
+        android:orderInCategory="100"
+        android:title="@string/action_hall"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>

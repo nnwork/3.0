@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_owner_visitor_request"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Vistor Request" />
+
+        <item android:id="@+id/nav_owner_maintenance"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Maintenance" />
+
+        <item
+            android:id="@+id/nav_owner_events"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/nav_owner_complain"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="complain" />
+
+        <item
+            android:id="@+id/nav_owner_fund"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="fund" />
+
+        <item
+            android:id="@+id/nav_owner_accounts"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="accounts" />
+
+        <item
+            android:id="@+id/nav_owner_hall_status"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="hall_status" />
+
+        <item
+            android:id="@+id/nav_owner_yourSuggestion"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="yourSuggestion" />
+    </group>
+
+
+    <item android:title="Account Setting">
+        <menu>
+            <item
+                android:id="@+id/nav_owner_my_profile"
+                android:icon="@drawable/ic_menu_share"
+                android:title="My Profile" />
+            <item
+                android:id="@+id/nav_owner_change_password"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_owner_logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
+</menu>
