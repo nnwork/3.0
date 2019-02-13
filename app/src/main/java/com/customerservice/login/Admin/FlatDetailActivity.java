@@ -72,6 +72,7 @@ public class FlatDetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(FlatDetailActivity.this, "Rsponse"+response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(FlatDetailActivity.this, "Rsponse"+response, Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
