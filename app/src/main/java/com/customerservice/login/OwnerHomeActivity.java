@@ -22,9 +22,12 @@ import com.customerservice.login.FlatOwner.OwnerFundActivity;
 import com.customerservice.login.FlatOwner.OwnerHallActivity;
 import com.customerservice.login.FlatOwner.OwnerMaintenanceActivity;
 import com.customerservice.login.FlatOwner.OwnerSuggestionsActivity;
+import com.customerservice.login.Utility.SessionManager;
 
 public class OwnerHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    SessionManager session;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class OwnerHomeActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        session= new SessionManager(this);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,11 +96,7 @@ public class OwnerHomeActivity extends AppCompatActivity
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerChangePasswordActivity.class);
             startActivity(intent);
         }
-        else if(id==R.id.nav_owner_logout)
-        {
-            Intent intent=new Intent(OwnerHomeActivity.this,MainActivity.class);
-            startActivity(intent);
-        }
+
         else if(id==R.id.nav_owner_events)
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerEventActivity.class);
@@ -126,6 +126,17 @@ public class OwnerHomeActivity extends AppCompatActivity
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerSuggestionsActivity.class);
             startActivity(intent);
+        }
+        else if(id==R.id.nav_owner_logout)
+        {
+            session.setLogin(false);
+            session.setId("");
+            session.setName("");
+            session.setContact("");
+            session.setType("");
+            Intent intent=new Intent(OwnerHomeActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

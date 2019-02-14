@@ -18,7 +18,7 @@ public class SessionManager {
 
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
-    private static final String KEY_CONTACT = "contacct";
+    private static final String KEY_CONTACT = "contact";
     private static final String KEY_TYPE = "type";
 
     public SessionManager(Context context) {

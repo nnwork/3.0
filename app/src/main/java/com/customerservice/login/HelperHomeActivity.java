@@ -20,10 +20,11 @@ import com.customerservice.login.Helper.HelperComplainActivity;
 import com.customerservice.login.Helper.HelperContactActivity;
 import com.customerservice.login.Helper.HelperDashboardActivity;
 import com.customerservice.login.Helper.HelperMyProfileActivity;
+import com.customerservice.login.Utility.SessionManager;
 
 public class HelperHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    SessionManager session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class HelperHomeActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        session=new SessionManager(this);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,10 +95,6 @@ public class HelperHomeActivity extends AppCompatActivity
             Intent intent_contact=new Intent(HelperHomeActivity.this, HelperContactActivity.class);
             startActivity(intent_contact);
 
-        } else if (id == R.id.nav_helper_logout) {
-            Intent intent_logout=new Intent(HelperHomeActivity.this,MainActivity.class);
-            startActivity(intent_logout);
-
         } else if (id == R.id.nav_helper_change_password) {
             Intent intent_change_password=new Intent(HelperHomeActivity.this,MainActivity.class);
             startActivity(intent_change_password);
@@ -108,6 +106,19 @@ public class HelperHomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_helper_my_profile) {
             Intent intent_my_profile=new Intent(HelperHomeActivity.this, HelperMyProfileActivity.class);
             startActivity(intent_my_profile);
+        }
+        else if (id == R.id.nav_helper_logout) {
+
+
+            session.setLogin(false);
+            session.setId("");
+            session.setName("");
+            session.setContact("");
+            session.setType("");
+            Intent intent_logout=new Intent(HelperHomeActivity.this,MainActivity.class);
+            startActivity(intent_logout);
+            finish();
+
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

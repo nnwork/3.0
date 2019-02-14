@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.customerservice.login.Utility.SessionManager;
 import com.customerservice.login.Watchman.WatchmanContactActivity;
 import com.customerservice.login.Watchman.WatchmanEmergencyActivity;
 import com.customerservice.login.Watchman.WatchmanSuggestionActivity;
@@ -23,6 +24,7 @@ import com.customerservice.login.Watchman.WatchmanVisitorReportActivity;
 
 public class WatchMenHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class WatchMenHomeActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        session=new SessionManager(this);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,11 +96,7 @@ public class WatchMenHomeActivity extends AppCompatActivity
             Intent intent_visitor_report = new Intent(WatchMenHomeActivity.this, WatchmanVisitorReportActivity.class);
             startActivity(intent_visitor_report);
 
-        } else if (id == R.id.nav_watchman_new_visitor_logout) {
-            Intent intent_logout = new Intent(WatchMenHomeActivity.this, MainActivity.class);
-            startActivity(intent_logout);
-
-        } else if (id == R.id.nav_watchman_new_visitor_your_suggestion) {
+        }else if (id == R.id.nav_watchman_new_visitor_your_suggestion) {
             Intent intent_suggestion = new Intent(WatchMenHomeActivity.this, WatchmanSuggestionActivity.class);
             startActivity(intent_suggestion);
 
@@ -110,7 +109,19 @@ public class WatchMenHomeActivity extends AppCompatActivity
             startActivity(intent_contact);
 
         }
-            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        else if (id == R.id.nav_watchman_new_visitor_logout) {
+            session.setLogin(false);
+            session.setId("");
+            session.setName("");
+            session.setContact("");
+            session.setType("");
+            Intent intent_logout = new Intent(WatchMenHomeActivity.this, MainActivity.class);
+            startActivity(intent_logout);
+            finish();
+
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;
         }
