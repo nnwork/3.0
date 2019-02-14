@@ -71,9 +71,7 @@ public class FlatDetailActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_FlatUserDetail, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(FlatDetailActivity.this, "Rsponse"+response, Toast.LENGTH_SHORT).show();
-                Toast.makeText(FlatDetailActivity.this, "Rsponse"+response, Toast.LENGTH_SHORT).show();
-                Toast.makeText(FlatDetailActivity.this, "Rsponse"+response, Toast.LENGTH_SHORT).show();
+
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
