@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Admin.AdminDashboardActivity;
 import com.customerservice.login.Utility.Config;
+import com.customerservice.login.Utility.SessionManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin;
     TextView forgot_pwd,change_pwd;
 
+
+    SessionManager session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,37 @@ public class MainActivity extends AppCompatActivity {
         btnLogin=(Button)findViewById(R.id.btnLogin);
         forgot_pwd=(TextView)findViewById(R.id.forgot_pwd);
         change_pwd=(TextView)findViewById(R.id.ChangePassword);
+
+        session=new SessionManager(this);
+
+        if(session.isLoggedIn())
+        {
+
+            if(session.getType().equals("owner"))
+            {
+                Intent intent=new Intent(MainActivity.this,OwnerHomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else if(session.getType().equals("admin"))
+            {
+                Intent intent=new Intent(MainActivity.this, AdminHomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else if(session.getType().equals("helper"))
+            {
+                Intent intent=new Intent(MainActivity.this,HelperHomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else if(session.getType().equals("watchmen"))
+            {
+                Intent intent=new Intent(MainActivity.this,WatchMenHomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,9 +100,11 @@ public class MainActivity extends AppCompatActivity {
                                 if(status.equals("notfound"))
                                 {
                                     Toast.makeText(MainActivity.this, "Mobile number and Password not found", Toast.LENGTH_SHORT).show();
+                                    session.setLogin(false);
                                 }
                                 else if(status.equals("block"))
                                 {
+                                    session.setLogin(false);
                                     Toast.makeText(MainActivity.this, "You Are Block! Please Contact To Admin", Toast.LENGTH_SHORT).show();
                                 }
                                 else
@@ -76,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
                                     String user_name=obj.getString("user_name");
                                     String user_contact=obj.getString("user_contact");
                                     String user_type=obj.getString("user_type");
+
+                                    session.setLogin(true);
+                                    session.setId(usre_id);
+                                    session.setName(user_name);
+                                    session.setContact(user_contact);
+                                    session.setType(user_type);
+
 
 
                                     //session
@@ -86,21 +130,25 @@ public class MainActivity extends AppCompatActivity {
                                     {
                                         Intent intent=new Intent(MainActivity.this,OwnerHomeActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     }
                                     else if(user_type.equals("admin"))
                                     {
                                         Intent intent=new Intent(MainActivity.this, AdminHomeActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     }
                                     else if(user_type.equals("helper"))
                                     {
                                         Intent intent=new Intent(MainActivity.this,HelperHomeActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     }
                                     else if(user_type.equals("watchmen"))
                                     {
                                         Intent intent=new Intent(MainActivity.this,WatchMenHomeActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     }
                                 }
                             } catch (JSONException e) {

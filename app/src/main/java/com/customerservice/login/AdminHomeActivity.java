@@ -31,10 +31,12 @@ import com.customerservice.login.Admin.SuggestionViewActivity;
 import com.customerservice.login.Admin.VisitorActivity;
 import com.customerservice.login.Admin.FlatViewActivity;
 import com.customerservice.login.Admin.WatchmanActivity;
+import com.customerservice.login.Utility.SessionManager;
 
 public class AdminHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    SessionManager session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class AdminHomeActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        session=new SessionManager(this);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -187,7 +190,17 @@ public class AdminHomeActivity extends AppCompatActivity
             Intent intent = new Intent(AdminHomeActivity.this, HallViewActivity.class);
             startActivity(intent);
         }
-
+        else if(id==R.id.nav_admin_logout)
+        {
+            session.setLogin(false);
+            session.setId("");
+            session.setName("");
+            session.setContact("");
+            session.setType("");
+            Intent intent = new Intent(AdminHomeActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
