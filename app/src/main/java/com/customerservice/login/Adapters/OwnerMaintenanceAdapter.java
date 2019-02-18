@@ -7,19 +7,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.customerservice.login.ClassFiles.OwnerMaintenance;
+import com.customerservice.login.ClassFiles.Maintenance;
 import com.customerservice.login.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 
 public class OwnerMaintenanceAdapter extends BaseAdapter {
     Activity activity;
-    List<OwnerMaintenance>ownerMaintenanceList;
+    List<Maintenance>ownerMaintenanceList;
 
-    public OwnerMaintenanceAdapter(Activity activity,List<OwnerMaintenance>ownerMaintenanceList)
+    public OwnerMaintenanceAdapter(Activity activity,List<Maintenance>ownerMaintenanceList)
     {
         this.activity=activity;
         this.ownerMaintenanceList=ownerMaintenanceList;
@@ -47,7 +46,7 @@ public class OwnerMaintenanceAdapter extends BaseAdapter {
 
         TextView owner_maintenance_status=(TextView)view.findViewById(R.id.owner_maintenance_status);
 
-        OwnerMaintenance item=ownerMaintenanceList.get(position);
+        Maintenance item=ownerMaintenanceList.get(position);
         owner_maintenance_status.setText(item.getStatus());
 
         return view;

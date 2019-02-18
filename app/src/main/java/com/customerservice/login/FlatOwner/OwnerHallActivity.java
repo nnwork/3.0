@@ -15,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.OwnerHallAdapter;
-import com.customerservice.login.ClassFiles.OwnerHall;
+import com.customerservice.login.ClassFiles.Hall;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -33,7 +33,7 @@ public class OwnerHallActivity extends AppCompatActivity {
 
     ListView list_view_hall;
     OwnerHallAdapter adapter;
-    List<OwnerHall> ownerHallList =new ArrayList<>();
+    List<Hall> ownerHallList =new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class OwnerHallActivity extends AppCompatActivity {
                             for (int i=0;i<array.length();i++)
                             {
                                 JSONObject object=array.getJSONObject(i);
-                                OwnerHall ownerHall =new OwnerHall();
+                                Hall ownerHall =new Hall();
 
                                 ownerHall.setHall_id(object.getString("hall_id"));
                                 ownerHall.setHall_title(object.getString("hall_title"));

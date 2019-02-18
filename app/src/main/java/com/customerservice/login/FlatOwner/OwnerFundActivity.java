@@ -1,13 +1,14 @@
 package com.customerservice.login.FlatOwner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,7 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.OwnerFundAdapter;
-import com.customerservice.login.ClassFiles.OwnerFund;
+import com.customerservice.login.ClassFiles.Funds;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -33,7 +34,7 @@ import java.util.List;
 public class OwnerFundActivity extends AppCompatActivity {
     ListView owner_fund_listview;
     OwnerFundAdapter adapter;
-    List<OwnerFund>list=new ArrayList<>();
+    List<Funds>fundsList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +53,24 @@ public class OwnerFundActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         owner_fund_listview=(ListView)findViewById(R.id.owner_fund_listview);
-        adapter=new OwnerFundAdapter(OwnerFundActivity.this,list);
+        adapter=new OwnerFundAdapter(OwnerFundActivity.this,fundsList);
         owner_fund_listview.setAdapter(adapter);
+
+        owner_fund_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Funds funds = fundsList.get(position);
+                Intent intent = new Intent(OwnerFundActivity.this,OwnerFundDetail.class);
+                intent.putExtra("fundObject",funds);
+                startActivity(intent);
+
+
+            }
+        });
+
 
         StringRequest request=new StringRequest(Request.Method.POST, Config.list_tbl_fund, new Response.Listener<String>() {
             @Override
@@ -65,11 +81,13 @@ public class OwnerFundActivity extends AppCompatActivity {
                     {
                         JSONObject object=array.getJSONObject(i);
 
-                        OwnerFund classfile=new OwnerFund();
+                        Funds funds=new Funds();
 
-                        classfile.setFund_title(object.getString("fund_title"));
-
-                        list.add(classfile);
+                        funds.setFund_id(object.getString("fund_id"));
+                        funds.setFund_title(object.getString("fund_title"));
+                        funds.setFund_amt(object.getString("fund_amt"));
+                        funds.setFund_date_time(object.getString("fund_date_time"));
+                        fundsList.add(funds);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

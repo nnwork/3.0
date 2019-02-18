@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.customerservice.login.ClassFiles.OwnerFund;
+import com.customerservice.login.ClassFiles.Funds;
 import com.customerservice.login.R;
 
 import java.util.List;
@@ -17,9 +17,9 @@ import java.util.List;
 public class OwnerFundAdapter extends BaseAdapter {
 
     Activity activity;
-    List<OwnerFund>list;
+    List<Funds>list;
 
-    public OwnerFundAdapter(Activity activity,List<OwnerFund>list)
+    public OwnerFundAdapter(Activity activity,List<Funds>list)
     {
         this.activity=activity;
         this.list=list;
@@ -47,8 +47,7 @@ public class OwnerFundAdapter extends BaseAdapter {
 
         TextView owner_fund_title=(TextView)view.findViewById(R.id.owner_fund_title);
 
-        OwnerFund item=list.get(position);
-
+        Funds item=list.get(position);
         owner_fund_title.setText(item.getFund_title());
 
         return view;

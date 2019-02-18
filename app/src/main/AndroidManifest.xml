@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FlatOwner.NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerFundDetail"
+            android:label="@string/title_activity_owner_fund_detail"
+            android:parentActivityName=".FlatOwner.OwnerFundActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerFundActivity" />
+        </activity>
+        <activity
             android:name=".Admin.FlatDetailActivity"
             android:label="@string/title_activity_flat_detail"
             android:parentActivityName=".Admin.FlatViewActivity"

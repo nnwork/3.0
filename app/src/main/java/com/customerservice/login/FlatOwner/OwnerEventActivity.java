@@ -15,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.OwnerEventAdapter;
-import com.customerservice.login.ClassFiles.OwnerEvent;
+import com.customerservice.login.ClassFiles.Events;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -32,7 +32,7 @@ public class OwnerEventActivity extends AppCompatActivity {
 
     ListView list_view_event;
     OwnerEventAdapter ownerEventAdapter;
-    List<OwnerEvent>ownerEventList=new ArrayList<>();
+    List<Events>ownerEventList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class OwnerEventActivity extends AppCompatActivity {
                     {
                         JSONObject object=array.getJSONObject(i);
 
-                        OwnerEvent ownerEvent=new OwnerEvent();
+                        Events ownerEvent=new Events();
                         ownerEvent.setEvent_title(object.getString("event_title"));
                         ownerEvent.setEvent_desc(object.getString("event_desc"));
                         ownerEvent.setEvent_venue(object.getString("event_venue"));

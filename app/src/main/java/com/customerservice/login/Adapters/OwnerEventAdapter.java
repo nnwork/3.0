@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.customerservice.login.ClassFiles.OwnerEvent;
+import com.customerservice.login.ClassFiles.Events;
 import com.customerservice.login.R;
 
 import java.util.List;
@@ -15,9 +15,9 @@ import java.util.List;
 public class OwnerEventAdapter extends BaseAdapter {
 
     Activity activity;
-    List<OwnerEvent>ownerEventList;
+    List<Events>ownerEventList;
 
-    public OwnerEventAdapter(Activity activity, List<OwnerEvent> ownerEventList) {
+    public OwnerEventAdapter(Activity activity, List<Events> ownerEventList) {
 
         this.activity=activity;
         this.ownerEventList=ownerEventList;
@@ -53,7 +53,7 @@ public class OwnerEventAdapter extends BaseAdapter {
 
 
 
-        OwnerEvent ltem=ownerEventList.get(position);
+        Events ltem=ownerEventList.get(position);
 
         owner_event_title.setText(ltem.getEvent_title());
         owner_event_desc.setText(ltem.getEvent_desc());

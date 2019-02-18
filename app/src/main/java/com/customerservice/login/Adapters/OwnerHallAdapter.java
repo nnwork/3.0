@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.customerservice.login.ClassFiles.OwnerHall;
+import com.customerservice.login.ClassFiles.Hall;
 import com.customerservice.login.R;
 
 import java.util.List;
@@ -17,9 +17,9 @@ import java.util.List;
 public class OwnerHallAdapter extends BaseAdapter {
 
     Activity activity;
-    List<OwnerHall>ownerHallList;
+    List<Hall>ownerHallList;
 
-    public OwnerHallAdapter(Activity activity, List<OwnerHall> ownerHallList) {
+    public OwnerHallAdapter(Activity activity, List<Hall> ownerHallList) {
 
         this.activity=activity;
         this.ownerHallList= ownerHallList;
@@ -49,7 +49,7 @@ public class OwnerHallAdapter extends BaseAdapter {
         TextView owner_hall_title=(TextView)view.findViewById((R.id.owner_hall_title));
         TextView owner_hall_capacity=(TextView)view.findViewById(R.id.owner_hall_capacity);
 
-        OwnerHall item=ownerHallList.get(position);
+        Hall item=ownerHallList.get(position);
 
         owner_hall_id.setText(item.getHall_id());
         owner_hall_title.setText(item.getHall_title());

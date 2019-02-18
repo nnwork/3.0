@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class Funds {
+import java.io.Serializable;
+
+public class Funds implements Serializable {
     String 	fund_id,fund_title,fund_amt,fund_date_time;
 
     public String getFund_id() {

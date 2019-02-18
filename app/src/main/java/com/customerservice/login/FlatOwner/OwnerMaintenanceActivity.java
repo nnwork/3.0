@@ -15,7 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.OwnerMaintenanceAdapter;
-import com.customerservice.login.ClassFiles.OwnerMaintenance;
+import com.customerservice.login.ClassFiles.Maintenance;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -32,7 +32,7 @@ import java.util.List;
 public class OwnerMaintenanceActivity extends AppCompatActivity {
     ListView owner_maintenance_listview;
     OwnerMaintenanceAdapter adapter;
-    List<OwnerMaintenance>ownerMaintenanceList=new ArrayList<>();
+    List<Maintenance>ownerMaintenanceList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class OwnerMaintenanceActivity extends AppCompatActivity {
                     for(int i=0;i<array.length();i++)
                     {
                         JSONObject object=array.getJSONObject(i);
-                        OwnerMaintenance classfile=new OwnerMaintenance();
+                        Maintenance classfile=new Maintenance();
 
                         classfile.setStatus(object.getString("status"));
                         ownerMaintenanceList.add(classfile);
