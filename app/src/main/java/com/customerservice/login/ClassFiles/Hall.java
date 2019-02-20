@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class Hall {
+import java.io.Serializable;
+
+public class Hall implements Serializable {
     String hall_id,hall_title,hall_capacity,hall_img_1,	hall_img_2;
 
     public String getHall_id() {

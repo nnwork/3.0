@@ -12,6 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FlatOwner.HallBookingActivity"
+            android:label="@string/title_activity_hall_booking"
+            android:parentActivityName=".FlatOwner.OwnerHallDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerHallDetailActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerHallDetailActivity"
+            android:label="@string/title_activity_owner_hall_detail"
+            android:parentActivityName=".FlatOwner.OwnerHallActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerHallActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.AccountsActivity"
+            android:label="@string/title_activity_accounts"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
             android:name=".FlatOwner.NotificationActivity"
             android:label="@string/title_activity_notification"
             android:parentActivityName=".OwnerHomeActivity"

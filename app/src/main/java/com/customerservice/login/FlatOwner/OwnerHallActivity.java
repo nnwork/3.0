@@ -1,11 +1,13 @@
 package com.customerservice.login.FlatOwner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -55,6 +57,16 @@ public class OwnerHallActivity extends AppCompatActivity {
         list_view_hall=(ListView)findViewById(R.id.list_view_hall);
         adapter=new OwnerHallAdapter(OwnerHallActivity.this, ownerHallList);
         list_view_hall.setAdapter(adapter);
+
+        list_view_hall.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Hall hall = ownerHallList.get(position);
+                Intent intent = new Intent(OwnerHallActivity.this,OwnerHallDetailActivity.class);
+                intent.putExtra("hallObject",hall);
+                startActivity(intent);
+            }
+        });
 
         StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_hall, new Response.Listener<String>() {
             @Override

@@ -137,6 +137,9 @@
     <string name="title_activity_flat_detail">Flat Details</string>
     <string name="title_activity_owner_fund_detail">Funds Detail</string>
     <string name="title_activity_notification">Notification</string>
+    <string name="title_activity_accounts">Accounts</string>
+    <string name="title_activity_owner_hall_detail">OwnerHallDetailActivity</string>
+    <string name="title_activity_hall_booking">Hall Booking</string>
 
 
 </resources>

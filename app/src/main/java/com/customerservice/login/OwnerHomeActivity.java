@@ -15,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.customerservice.login.FlatOwner.AccountsActivity;
+import com.customerservice.login.FlatOwner.NotificationActivity;
 import com.customerservice.login.FlatOwner.OwnerChangePasswordActivity;
 import com.customerservice.login.FlatOwner.OwnerComplainActivity;
 import com.customerservice.login.FlatOwner.OwnerEventActivity;
@@ -102,7 +104,7 @@ public class OwnerHomeActivity extends AppCompatActivity
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerEventActivity.class);
             startActivity(intent);
         }
-        else if(id==R.id.nav_owner_hall_status)
+        else if(id==R.id.nav_owner_hall)
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerHallActivity.class);
             startActivity(intent);
@@ -120,6 +122,16 @@ public class OwnerHomeActivity extends AppCompatActivity
         else if(id==R.id.nav_owner_fund)
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerFundActivity.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.nav_owner_accounts)
+        {
+            Intent intent=new Intent(OwnerHomeActivity.this, AccountsActivity.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.nav_owner_notification)
+        {
+            Intent intent=new Intent(OwnerHomeActivity.this, NotificationActivity.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_owner_yourSuggestion)

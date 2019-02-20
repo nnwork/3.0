@@ -21,27 +21,32 @@
         <item
             android:id="@+id/nav_owner_complain"
             android:icon="@drawable/ic_menu_camera"
-            android:title="complain" />
+            android:title="Complain" />
 
         <item
             android:id="@+id/nav_owner_fund"
             android:icon="@drawable/ic_menu_camera"
-            android:title="fund" />
+            android:title="Fund" />
 
         <item
             android:id="@+id/nav_owner_accounts"
             android:icon="@drawable/ic_menu_camera"
-            android:title="accounts" />
+            android:title="Accounts" />
 
         <item
-            android:id="@+id/nav_owner_hall_status"
+            android:id="@+id/nav_owner_hall"
             android:icon="@drawable/ic_menu_camera"
-            android:title="hall_status" />
+            android:title="Hall" />
+
+        <item
+            android:id="@+id/nav_owner_notification"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Notification" />
 
         <item
             android:id="@+id/nav_owner_yourSuggestion"
             android:icon="@drawable/ic_menu_camera"
-            android:title="yourSuggestion" />
+            android:title="Suggestion" />
     </group>
 
 
