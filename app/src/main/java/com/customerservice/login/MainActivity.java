@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, "Please Enter Mobile Number", Toast.LENGTH_SHORT).show();
                 }
-                else if(MobileNumber.length()!=10)
+                else if(MobileNumber.length()!=3)
                 {
                     Toast.makeText(MainActivity.this, "Please Enter Valid Mobile Number", Toast.LENGTH_SHORT).show();
                 }
