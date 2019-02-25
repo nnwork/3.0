@@ -111,15 +111,6 @@
                 android:value="com.customerservice.login.HelperHomeActivity" />
         </activity>
         <activity
-            android:name=".FlatOwner.OwnerSuggestionsActivity"
-            android:label="@string/title_activity_owner_suggestions"
-            android:parentActivityName=".OwnerHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.OwnerHomeActivity" />
-        </activity>
-        <activity
             android:name=".FlatOwner.OwnerFundActivity"
             android:label="@string/title_activity_owner_fund"
             android:parentActivityName=".OwnerHomeActivity"
@@ -354,9 +345,9 @@
                 android:value="com.customerservice.login.AdminHomeActivity" />
         </activity>
         <activity
-            android:name=".FlatOwner.FormSuggestion"
+            android:name=".FlatOwner.OwnerSuggestion"
             android:label="@string/title_activity_form_suggestion"
-            android:parentActivityName=".AdminHomeActivity"
+            android:parentActivityName=".OwnerHomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

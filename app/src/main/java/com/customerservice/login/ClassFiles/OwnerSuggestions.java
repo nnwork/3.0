@@ -1,7 +1,7 @@
 package com.customerservice.login.ClassFiles;
 
 public class OwnerSuggestions {
-    String suggestion_id,user_id,suggestion_field,suggestion_date_time;
+    String suggestion_id,user_id,suggestion_text,suggestion_date_time;
 
     public String getSuggestion_id() {
         return suggestion_id;
@@ -19,12 +19,12 @@ public class OwnerSuggestions {
         this.user_id = user_id;
     }
 
-    public String getSuggestion_field() {
-        return suggestion_field;
+    public String getSuggestion_text() {
+        return suggestion_text;
     }
 
-    public void setSuggestion_field(String suggestion_field) {
-        this.suggestion_field = suggestion_field;
+    public void setSuggestion_text(String suggestion_text) {
+        this.suggestion_text = suggestion_text;
     }
 
     public String getSuggestion_date_time() {

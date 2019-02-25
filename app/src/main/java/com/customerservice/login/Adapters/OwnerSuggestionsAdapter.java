@@ -16,7 +16,7 @@ import java.util.List;
 
 public class OwnerSuggestionsAdapter extends BaseAdapter {
     Activity activity;
-    List<OwnerSuggestions>ownerSuggestionsList;
+    List<OwnerSuggestions> ownerSuggestionsList;
 
     public OwnerSuggestionsAdapter(Activity activity, List<OwnerSuggestions> ownerSuggestionsList) {
         this.activity = activity;
@@ -44,9 +44,9 @@ public class OwnerSuggestionsAdapter extends BaseAdapter {
 
         TextView owner_suggestion_field=(TextView)view.findViewById(R.id.owner_suggestion_field);
 
-        OwnerSuggestions item=ownerSuggestionsList.get(position);
+        OwnerSuggestions item= ownerSuggestionsList.get(position);
 
-        owner_suggestion_field.setText(item.getSuggestion_field());
+        owner_suggestion_field.setText(item.getSuggestion_text());
         return view;
     }
 }

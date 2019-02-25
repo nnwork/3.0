@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.customerservice.login.ClassFiles.OwnerSuggestions;
 import com.customerservice.login.FlatOwner.AccountsActivity;
 import com.customerservice.login.FlatOwner.NotificationActivity;
 import com.customerservice.login.FlatOwner.OwnerChangePasswordActivity;
@@ -23,7 +24,7 @@ import com.customerservice.login.FlatOwner.OwnerEventActivity;
 import com.customerservice.login.FlatOwner.OwnerFundActivity;
 import com.customerservice.login.FlatOwner.OwnerHallActivity;
 import com.customerservice.login.FlatOwner.OwnerMaintenanceActivity;
-import com.customerservice.login.FlatOwner.OwnerSuggestionsActivity;
+import com.customerservice.login.FlatOwner.OwnerSuggestion;
 import com.customerservice.login.Utility.SessionManager;
 
 public class OwnerHomeActivity extends AppCompatActivity
@@ -136,7 +137,7 @@ public class OwnerHomeActivity extends AppCompatActivity
         }
         else if(id==R.id.nav_owner_yourSuggestion)
         {
-            Intent intent=new Intent(OwnerHomeActivity.this, OwnerSuggestionsActivity.class);
+            Intent intent=new Intent(OwnerHomeActivity.this, OwnerSuggestion.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_owner_logout)
