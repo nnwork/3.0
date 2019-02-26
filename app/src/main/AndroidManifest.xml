@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Watchman.AddVisitorActivity"
+            android:label="@string/title_activity_add_visitor"
+            android:parentActivityName=".Watchman.NewVisitorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Watchman.NewVisitorActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.NewVisitorActivity"
+            android:label="@string/title_activity_new_visitor"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
             android:name=".FlatOwner.OwnerProfileActivity"
             android:label="@string/title_activity_owner_profile"
             android:parentActivityName=".OwnerHomeActivity"

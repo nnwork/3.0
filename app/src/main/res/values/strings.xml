@@ -141,6 +141,8 @@
     <string name="title_activity_owner_hall_detail">OwnerHallDetailActivity</string>
     <string name="title_activity_hall_booking">Hall Booking</string>
     <string name="title_activity_owner_profile">OwnerProfileActivity</string>
+    <string name="title_activity_new_visitor">New Visitor</string>
+    <string name="title_activity_add_visitor">Add Visitor</string>
 
 
 </resources>
