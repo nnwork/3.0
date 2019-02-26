@@ -24,6 +24,7 @@ import com.customerservice.login.FlatOwner.OwnerEventActivity;
 import com.customerservice.login.FlatOwner.OwnerFundActivity;
 import com.customerservice.login.FlatOwner.OwnerHallActivity;
 import com.customerservice.login.FlatOwner.OwnerMaintenanceActivity;
+import com.customerservice.login.FlatOwner.OwnerProfileActivity;
 import com.customerservice.login.FlatOwner.OwnerSuggestion;
 import com.customerservice.login.Utility.SessionManager;
 
@@ -99,7 +100,11 @@ public class OwnerHomeActivity extends AppCompatActivity
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerChangePasswordActivity.class);
             startActivity(intent);
         }
-
+        if(id==R.id.nav_owner_my_profile)
+        {
+            Intent intent=new Intent(OwnerHomeActivity.this, OwnerProfileActivity.class);
+            startActivity(intent);
+        }
         else if(id==R.id.nav_owner_events)
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerEventActivity.class);
