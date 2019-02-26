@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FlatOwner.OwnerComplainDetailsActivity"
+    tools:showIn="@layout/activity_owner_complain_details">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain ID"
+            android:id="@+id/owner_complain_display_id"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain User ID"
+            android:id="@+id/owner_complain_display_user_id"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain Fcat ID"
+            android:id="@+id/owner_complain_display_fcat_id"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain Prolems"
+            android:id="@+id/owner_complain_display_problems"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain Img_Uri"
+            android:id="@+id/owner_complain_display_img_uri"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain Display Date"
+            android:id="@+id/owner_complain_display_date"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain Status"
+            android:id="@+id/owner_complain_display_status"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain V Date"
+            android:id="@+id/owner_complain_display_v_date"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain V Time"
+            android:id="@+id/owner_complain_display_v_time"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complain Date And Time"
+            android:id="@+id/owner_complain_display_date_time"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</RelativeLayout>

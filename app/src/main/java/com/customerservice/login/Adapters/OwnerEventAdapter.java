@@ -43,6 +43,7 @@ public class OwnerEventAdapter extends BaseAdapter {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singleownerevent,null);
 
+        TextView owner_event_cat_id=(TextView)view.findViewById(R.id.owner_event_cat_id);
         TextView owner_event_title=(TextView)view.findViewById(R.id.owner_event_title);
         TextView owner_event_desc=(TextView)view.findViewById(R.id.owner_event_desc);
         TextView owner_event_venue=(TextView)view.findViewById(R.id.owner_event_venue);
@@ -54,7 +55,7 @@ public class OwnerEventAdapter extends BaseAdapter {
 
 
         Events ltem=ownerEventList.get(position);
-
+        owner_event_cat_id.setText(ltem.getCat_id());
         owner_event_title.setText(ltem.getEvent_title());
         owner_event_desc.setText(ltem.getEvent_desc());
         owner_event_venue.setText(ltem.getEvent_venue());

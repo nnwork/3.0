@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,8 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.customerservice.login.Adapters.OwnerEventAdapter;
-import com.customerservice.login.ClassFiles.Events;
+import com.customerservice.login.Adapters.OwnerVisitorAdapter;
+import com.customerservice.login.ClassFiles.Visitor;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -28,17 +29,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+public class OwnerVisitorActivity extends AppCompatActivity {
 
-public class OwnerEventActivity extends AppCompatActivity {
-
-    ListView list_view_event;
-    OwnerEventAdapter ownerEventAdapter;
-    List<Events>ownerEventList=new ArrayList<>();
+    ListView owner_visitor_list_view;
+    OwnerVisitorAdapter ownerVisitorAdapter;
+    List<Visitor> visitorList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_owner_event);
+        setContentView(R.layout.activity_owner_visitor);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,54 +46,48 @@ public class OwnerEventActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent Intentwidget=new Intent(OwnerVisitorActivity.this,OwnerComplainDetailsActivity.class);
+                startActivity(Intentwidget);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        list_view_event=(ListView)findViewById(R.id.list_view_event);
-        ownerEventAdapter=new OwnerEventAdapter(OwnerEventActivity.this,ownerEventList);
-        list_view_event.setAdapter(ownerEventAdapter);
+        owner_visitor_list_view=(ListView)findViewById(R.id.owner_visitor_list_view);
+        ownerVisitorAdapter=new OwnerVisitorAdapter(OwnerVisitorActivity.this,visitorList);
+        owner_visitor_list_view.setAdapter(ownerVisitorAdapter);
 
-        list_view_event.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        owner_visitor_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Events item=ownerEventList.get(position);
-                Intent intent=new Intent(OwnerEventActivity.this, OwnerEventDetailsActivity.class);
-                intent.putExtra("EventObject",item);
+                Visitor item=visitorList.get(position);
+                Intent intent=new Intent(OwnerVisitorActivity.this,OwnerVisitorDetailsActivity.class);
+                intent.putExtra("visitoribject",item);
                 startActivity(intent);
             }
         });
 
-        StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_events, new Response.Listener<String>() {
+
+        StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_visitor, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
-                    for(int i=0;i<array.length();i++)
+                    for (int i=0;i<array.length();i++)
                     {
                         JSONObject object=array.getJSONObject(i);
 
-                        Events ownerEvent=new Events();
-                        ownerEvent.setCat_id(object.getString("cat_id"));
+                        Visitor Visitor =new Visitor();
+                        Visitor.setVisitors_id(object.getString("visitors_id"));
+                        Visitor.setVisitors_name(object.getString("visitors_name"));
+                        Visitor.setVisitors_contect(object.getString("visitors_contect"));
+                        visitorList.add(Visitor);
 
-                        ownerEvent.setEvent_id(object.getString("event_id"));
-                        ownerEvent.setEvent_title(object.getString("event_title"));
-                        ownerEvent.setEvent_desc(object.getString("event_desc"));
-                        ownerEvent.setEvent_venue(object.getString("event_venue"));
-
-                        ownerEvent.setEvent_address(object.getString("event_address"));
-                        ownerEvent.setEvent_landmark(object.getString("event_landmark"));
-                        ownerEvent.setPincode(object.getString("pincode"));
-                        ownerEvent.setEvent_speciality(object.getString("event_speciality"));
-                        ownerEventList.add(ownerEvent);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 finally {
-                    ownerEventAdapter.notifyDataSetChanged();
+                    ownerVisitorAdapter.notifyDataSetChanged();
                 }
 
             }

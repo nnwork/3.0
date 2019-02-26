@@ -1,11 +1,12 @@
 package com.customerservice.login.FlatOwner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -26,9 +27,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class OwnerMaintenanceActivity extends AppCompatActivity {
     ListView owner_maintenance_listview;
     OwnerMaintenanceAdapter adapter;
@@ -45,16 +43,26 @@ public class OwnerMaintenanceActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent Intentwidget=new Intent(OwnerMaintenanceActivity.this, OwnerMaintenanceWidgetActivity.class);
+                startActivity(Intentwidget);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         owner_maintenance_listview=(ListView)findViewById(R.id.owner_maintenance_listview);
         adapter=new OwnerMaintenanceAdapter(OwnerMaintenanceActivity.this,ownerMaintenanceList);
         owner_maintenance_listview.setAdapter(adapter);
 
+        owner_maintenance_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Maintenance item=ownerMaintenanceList.get(position);
+                Intent intent=new Intent(OwnerMaintenanceActivity.this, OwnerMaintenanceDetailsActivity.class);
+                intent.putExtra("maintenanceObject",item);
+                startActivity(intent);
+            }
+        });
         StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_maintenance, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -65,7 +73,12 @@ public class OwnerMaintenanceActivity extends AppCompatActivity {
                         JSONObject object=array.getJSONObject(i);
                         Maintenance classfile=new Maintenance();
 
-                        classfile.setStatus(object.getString("status"));
+                        classfile.setStatus(object.getString("user_id"));
+                        classfile.setStatus(object.getString("amount"));
+                        classfile.setStatus(object.getString("pay_date"));
+                        classfile.setStatus(object.getString("transaction_number"));
+                        classfile.setStatus(object.getString("pay_mode"));
+
                         ownerMaintenanceList.add(classfile);
                     }
                 } catch (JSONException e) {

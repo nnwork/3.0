@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FlatOwner.OwnerEventDetailsActivity"
+    tools:showIn="@layout/activity_owner_event_display">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="12">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event ID"
+            android:id="@+id/owner_display_event_id"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Cat ID"
+            android:id="@+id/owner_display_event_cat_name"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:id="@+id/owner_display_event_title"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event description"
+            android:id="@+id/owner_display_event_desc"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Venue"
+            android:id="@+id/owner_display_event_venue"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Address"
+            android:id="@+id/owner_display_event_address"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Landmark"
+            android:id="@+id/owner_display_event_landmark"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pincode"
+            android:id="@+id/owner_display_pincode"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Date"
+            android:id="@+id/owner_display_event_date"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Time"
+            android:id="@+id/owner_display_event_time"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Speciality"
+            android:id="@+id/owner_display_event_speciality"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Date And Time"
+            android:id="@+id/owner_display_added_datetime"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

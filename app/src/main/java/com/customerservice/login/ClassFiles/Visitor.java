@@ -1,7 +1,10 @@
 package com.customerservice.login.ClassFiles;
 
-public class watchmanvisitor {
+import java.io.Serializable;
 
+public class Visitor implements Serializable {
+
+    String  visitors_id;
     String 	visitors_name;
     String  visitors_contect;
     String  visitors_flat_id;
@@ -12,6 +15,14 @@ public class watchmanvisitor {
     String  visitors_flat_approve;
     String 	visitors_app_date_time;
     String  visitors_exit_date_time;
+
+    public String getVisitors_id() {
+        return visitors_id;
+    }
+
+    public void setVisitors_id(String visitors_id) {
+        this.visitors_id = visitors_id;
+    }
 
     public String getVisitors_name() {
         return visitors_name;

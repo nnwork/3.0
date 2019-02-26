@@ -12,15 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FlatOwner.OwnerProfileActivity"
-            android:label="@string/title_activity_owner_profile"
-            android:parentActivityName=".OwnerHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.OwnerHomeActivity" />
-        </activity>
-        <activity
             android:name=".FlatOwner.HallBookingActivity"
             android:label="@string/title_activity_hall_booking"
             android:parentActivityName=".FlatOwner.OwnerHallDetailActivity"

@@ -1,68 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FlatOwner.OwnerVisitorDetailsActivity"
+    tools:showIn="@layout/activity_owner_visitor_details">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_cat_id"
+            android:id="@+id/owner_visitors_id"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_title"
+            android:id="@+id/owner_visiters_name"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_desc"
+            android:id="@+id/owner_visiters_contect"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_venue"
+            android:id="@+id/owner_visitors_flat_id"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_address"
+            android:id="@+id/owner_visitors_photo"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_landmark"
+            android:id="@+id/owner_visitors_watchman_id"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_pincode"
+            android:id="@+id/owner_visitors_v_date"
+            android:layout_weight="1"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/owner_visitors_v_time"
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_event_speciality"
+            android:id="@+id/owner_visitors_flat_approve"
             android:layout_weight="1"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/owner_visitors_app_date_time"
+            android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/owner_visitors_exit_date_time"
+            android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,13 +93,7 @@
             android:layout_weight="1"
             />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            />
-
     </LinearLayout>
+
 
 </RelativeLayout>

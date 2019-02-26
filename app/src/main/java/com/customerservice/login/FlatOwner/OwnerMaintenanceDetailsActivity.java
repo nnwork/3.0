@@ -1,4 +1,4 @@
-package com.customerservice.login.Watchman;
+package com.customerservice.login.FlatOwner;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -6,7 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.customerservice.login.ClassFiles.Visitor;
+import com.customerservice.login.ClassFiles.Maintenance;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -22,22 +22,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-
-
-public class WatchmanVisitorActivity extends AppCompatActivity {
-
-    ListView visitor_list_view;
-    WatchmanVisitorAdapter watchmanVisitorAdapter;
-    List<Visitor>watchmanvisitorList=new ArrayList<>();
+public class OwnerMaintenanceDetailsActivity extends AppCompatActivity {
+    TextView amount,status,pay_mode,owner_maintenance_display_user_id;
+    Maintenance maintenanceObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_watchman_visitor);
+        setContentView(R.layout.activity_owner_maintenance_design);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -51,30 +43,28 @@ public class WatchmanVisitorActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        visitor_list_view=(ListView)findViewById(R.id.visitor_list_view);
-        watchmanVisitorAdapter=new WatchmanVisitorAdapter(WatchmanVisitorActivity.this,watchmanvisitorList);
-        visitor_list_view.setAdapter(watchmanVisitorAdapter);
+        amount=(TextView)findViewById(R.id.owner_maintenance_display_amount);
+        status=(TextView)findViewById(R.id.owner_maintenance_display_status);
+        pay_mode=(TextView)findViewById(R.id.owner_maintenance_display_pay_mode);
+        owner_maintenance_display_user_id=(TextView)findViewById(R.id.owner_maintenance_display_user_id);
 
-        StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_visitor, new Response.Listener<String>() {
+        maintenanceObject=(Maintenance) getIntent().getSerializableExtra("maintenanceObject");
+
+        StringRequest request=new StringRequest(Request.Method.POST, Config.READ_OwnerUserMaintenance, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
-                    for (int i=0;i<array.length();i++)
+                    for(int i=0;i<array.length();i++)
                     {
                         JSONObject object=array.getJSONObject(i);
 
-                        Visitor watchmanvisitor=new Visitor();
-                        watchmanvisitor.setVisitors_name(object.getString("visitors_name"));
-                        watchmanvisitor.setVisitors_contect(object.getString("visitors_contect"));
-                        watchmanvisitorList.add(watchmanvisitor);
+                        String username=object.getString("user_name");
+                        owner_maintenance_display_user_id.setText(username);
 
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                }
-                finally {
-                    watchmanVisitorAdapter.notifyDataSetChanged();
                 }
 
 
@@ -86,7 +76,12 @@ public class WatchmanVisitorActivity extends AppCompatActivity {
             }
         });
         RequestQueue queue= Volley.newRequestQueue(this);
-        queue.add(rq);
+        queue.add(request);
+
+        toolbar.setTitle(maintenanceObject.getAmount());
+        amount.setText(maintenanceObject.getAmount());
+        status.setText(maintenanceObject.getStatus());
+        pay_mode.setText(maintenanceObject.getPay_mode());
     }
 
 }

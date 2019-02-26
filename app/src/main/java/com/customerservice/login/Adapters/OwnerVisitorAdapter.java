@@ -12,24 +12,24 @@ import com.customerservice.login.R;
 
 import java.util.List;
 
-public class WatchmanVisitorAdapter extends BaseAdapter {
+public class OwnerVisitorAdapter extends BaseAdapter {
 
     Activity activity;
-    List<Visitor> watchmanvisitorList;
+    List<Visitor>visitorList;
 
-    public WatchmanVisitorAdapter(Activity activity, List<Visitor> watchmanvisitorList) {
-        this.activity=activity;
-        this.watchmanvisitorList=watchmanvisitorList;
+    public OwnerVisitorAdapter(Activity activity, List<Visitor> visitorList) {
+        this.activity = activity;
+        this.visitorList = visitorList;
     }
 
     @Override
     public int getCount() {
-        return watchmanvisitorList.size();
+        return visitorList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return watchmanvisitorList.get(position);
+        return visitorList.get(position);
     }
 
     @Override
@@ -39,16 +39,15 @@ public class WatchmanVisitorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         LayoutInflater inflater=activity.getLayoutInflater();
-        View view=inflater.inflate(R.layout.watchmanvisitordesign,null);
-        TextView textViewName=(TextView)view.findViewById(R.id.wachman_visiters_name);
-        TextView textViewContact=(TextView)view.findViewById(R.id.wachman_visiters_contect);
+        View view=inflater.inflate(R.layout.singleownervisitordesign,null);
+        TextView textViewName=(TextView)view.findViewById(R.id.owner_visiters_name);
+        TextView textViewContact=(TextView)view.findViewById(R.id.owner_visiters_contect);
 
-        Visitor item=watchmanvisitorList.get(position);
+        Visitor item= visitorList.get(position);
         textViewName.setText(item.getVisitors_name());
         textViewContact.setText(item.getVisitors_contect());
         return view;
-    }
 
+    }
 }

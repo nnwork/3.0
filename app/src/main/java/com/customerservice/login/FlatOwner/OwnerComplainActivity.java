@@ -1,11 +1,12 @@
 package com.customerservice.login.FlatOwner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -27,11 +28,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class OwnerComplainActivity extends AppCompatActivity {
     ListView owner_complain_list_view;
     OwnerComplainAdapter adapter;
     List<ComplainClassFile>complainClassFileList=new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +46,8 @@ public class OwnerComplainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent Intentwidget=new Intent(OwnerComplainActivity.this, Formcomplain.class);
+                startActivity(Intentwidget);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -53,6 +55,16 @@ public class OwnerComplainActivity extends AppCompatActivity {
         owner_complain_list_view=(ListView)findViewById(R.id.owner_complain_list_view);
         adapter=new OwnerComplainAdapter(OwnerComplainActivity.this,complainClassFileList) ;
         owner_complain_list_view.setAdapter(adapter);
+
+        owner_complain_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ComplainClassFile item=complainClassFileList.get(position);
+                Intent intent=new Intent(OwnerComplainActivity.this, OwnerComplainDetailsActivity.class);
+                intent.putExtra("complainObject",item);
+                startActivity(intent);
+            }
+        });
 
         StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_owner_complain, new Response.Listener<String>() {
             @Override
@@ -66,6 +78,7 @@ public class OwnerComplainActivity extends AppCompatActivity {
                                 ComplainClassFile classFile=new ComplainClassFile();
 
                                 classFile.setComplain_problem(object.getString("complain_problem"));
+                                classFile.setComplain_id(object.getString("complain_id"));
                                 complainClassFileList.add(classFile);
                             }
                 } catch (JSONException e) {
