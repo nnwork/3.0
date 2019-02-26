@@ -10,8 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".FlatOwner.OwnerProfileActivity"
+            android:label="@string/title_activity_owner_profile"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
         <activity
             android:name=".FlatOwner.HallBookingActivity"
             android:label="@string/title_activity_hall_booking"
@@ -524,51 +532,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
-        </activity>
-        <activity
-            android:name=".FlatOwner.OwnerVisitorActivity"
-            android:label="@string/title_activity_send_otp"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.MainActivity" />
-        </activity>
-        <activity
-            android:name=".FlatOwner.OwnerVisitorDetailsActivity"
-            android:label="@string/title_activity_owner_visitor_details"
-            android:parentActivityName=".FlatOwner.OwnerVisitorActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.FlatOwner.OwnerVisitorActivity" />
-        </activity>
-        <activity
-            android:name=".FlatOwner.OwnerComplainDetailsActivity"
-            android:label="@string/title_activity_owner_complain_details"
-            android:parentActivityName=".FlatOwner.OwnerComplainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.FlatOwner.OwnerComplainActivity" />
-        </activity>
-        <activity
-            android:name=".FlatOwner.OwnerMaintenanceDetailsActivity"
-            android:label="@string/title_activity_owner_maintenance_design"
-            android:parentActivityName=".FlatOwner.OwnerMaintenanceActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.FlatOwner.OwnerMaintenanceActivity" />
-        </activity>
-        <activity
-            android:name=".FlatOwner.OwnerEventDetailsActivity"
-            android:label="@string/title_activity_owner_event_display"
-            android:parentActivityName=".FlatOwner.OwnerEventActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.FlatOwner.OwnerEventActivity" />
         </activity>
         <activity android:name=".Admin.AdminDashboardActivity" />
         <activity

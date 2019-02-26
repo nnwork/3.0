@@ -16,14 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.customerservice.login.Utility.SessionManager;
+import com.customerservice.login.Watchman.NewVisitorActivity;
 import com.customerservice.login.Watchman.WatchmanContactActivity;
 import com.customerservice.login.Watchman.WatchmanEmergencyActivity;
 import com.customerservice.login.Watchman.WatchmanSuggestionActivity;
 import com.customerservice.login.Watchman.WatchmanVisitorActivity;
 import com.customerservice.login.Watchman.WatchmanVisitorReportActivity;
 
-public class WatchMenHomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class WatchMenHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     SessionManager session;
 
     @Override
@@ -89,7 +89,7 @@ public class WatchMenHomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_watchman_new_visitor) {
-            Intent intent_visitor = new Intent(WatchMenHomeActivity.this, WatchmanVisitorActivity.class);
+            Intent intent_visitor = new Intent(WatchMenHomeActivity.this, NewVisitorActivity.class);
             startActivity(intent_visitor);
             // Handle the camera action
         } else if (id == R.id.nav_watchman_new_visitor_report) {
