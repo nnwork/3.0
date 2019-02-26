@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class Maintenance {
+import java.io.Serializable;
+
+public class Maintenance implements Serializable {
 
     String maintenance_id,user_id,amount,status;
     String pay_date,transaction_number,pay_mode;

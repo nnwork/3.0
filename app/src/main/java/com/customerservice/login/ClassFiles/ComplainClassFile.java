@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class ComplainClassFile {
+import java.io.Serializable;
+
+public class ComplainClassFile implements Serializable {
 
     String complain_id,complain_user_id,complain_fcat_id,complain_problem,complain_img_uri,complain_date,complain_status,complain_v_date,complain_v_time,complain_date_time;
 

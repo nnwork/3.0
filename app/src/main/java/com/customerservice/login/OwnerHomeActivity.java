@@ -26,6 +26,7 @@ import com.customerservice.login.FlatOwner.OwnerHallActivity;
 import com.customerservice.login.FlatOwner.OwnerMaintenanceActivity;
 import com.customerservice.login.FlatOwner.OwnerProfileActivity;
 import com.customerservice.login.FlatOwner.OwnerSuggestion;
+import com.customerservice.login.FlatOwner.OwnerVisitorActivity;
 import com.customerservice.login.Utility.SessionManager;
 
 public class OwnerHomeActivity extends AppCompatActivity
@@ -100,11 +101,6 @@ public class OwnerHomeActivity extends AppCompatActivity
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerChangePasswordActivity.class);
             startActivity(intent);
         }
-        if(id==R.id.nav_owner_my_profile)
-        {
-            Intent intent=new Intent(OwnerHomeActivity.this, OwnerProfileActivity.class);
-            startActivity(intent);
-        }
         else if(id==R.id.nav_owner_events)
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerEventActivity.class);
@@ -130,19 +126,14 @@ public class OwnerHomeActivity extends AppCompatActivity
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerFundActivity.class);
             startActivity(intent);
         }
-        else if(id==R.id.nav_owner_accounts)
-        {
-            Intent intent=new Intent(OwnerHomeActivity.this, AccountsActivity.class);
-            startActivity(intent);
-        }
-        else if(id==R.id.nav_owner_notification)
-        {
-            Intent intent=new Intent(OwnerHomeActivity.this, NotificationActivity.class);
-            startActivity(intent);
-        }
         else if(id==R.id.nav_owner_yourSuggestion)
         {
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerSuggestion.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.nav_owner_visitor_request)
+        {
+            Intent intent=new Intent(OwnerHomeActivity.this, OwnerVisitorActivity.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_owner_logout)
@@ -152,7 +143,7 @@ public class OwnerHomeActivity extends AppCompatActivity
             session.setName("");
             session.setContact("");
             session.setType("");
-            Intent intent=new Intent(OwnerHomeActivity.this,MainActivity.class);
+            Intent intent = new Intent(OwnerHomeActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }

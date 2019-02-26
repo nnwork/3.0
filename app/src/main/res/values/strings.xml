@@ -141,5 +141,11 @@
     <string name="title_activity_owner_hall_detail">OwnerHallDetailActivity</string>
     <string name="title_activity_hall_booking">Hall Booking</string>
 
-
+    <string name="title_activity_maintenance_details">MaintenanceDetailsActivity</string>
+    <string name="title_activity_owner_event_display">OwnerEventDisplayActivity</string>
+    <string name="title_activity_owner_maintenance_design">OwnerMaintenanceDesignActivity</string>
+    <string name="title_activity_owner_complain_details">OwnerComplainDetailsActivity</string>
+    <string name="title_activity_owner_maintenance_widget">Maintenance Widget</string>
+    <string name="title_activity_owner_complain_widget">OwnerComplainWidgetActivity</string>
+    <string name="title_activity_owner_visitor_details">OwnerVisitorDetailsActivity</string>
 </resources>

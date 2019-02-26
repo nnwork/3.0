@@ -1,7 +1,7 @@
 package com.customerservice.login.Utility;
 
 public class Config {
-    public static String BASE_URL="http://192.168.1.146:8089/Webservices/";
+    public static String BASE_URL="http://192.168.1.121:8089/Webservices/";
 
     public static String ADD_BUILDING=BASE_URL+"insertBuilding.php";
 
@@ -12,7 +12,7 @@ public class Config {
     public static String Add_Event=BASE_URL+"insertEvent.php";
     public static String Add_User=BASE_URL+"insertUser.php";
 
-
+    public static String READ_GetUserinfo=BASE_URL+"getUserInfo.php";
     public static String READ_BUILDINGS=BASE_URL+"getBuildings.php";
     public static String READ_Flat=BASE_URL+"getFlat.php";
     public static String READ_Event=BASE_URL+"getEvents.php";
@@ -27,6 +27,13 @@ public class Config {
     public static String READ_Helper_Category=BASE_URL+"getHelperCategory.php";
     public static String READ_Suggestion=BASE_URL+"getSuggestion.php";
     public static String READ_FlatUserDetail=BASE_URL+"getFlatDetail.php";
+
+    public static String READ_AdminUserMaintenance=BASE_URL+"GetAdminUserMaintenance.php";
+    public static String READ_UserEvents=BASE_URL+"GetUserEvents.php";
+    public static String READ_OwnerUserMaintenance=BASE_URL+"GetOwnerUserMaintenance.php";
+    public static String READ_OwnerUserComplain=BASE_URL+"GetOwnerUserComplain.php";
+    public static String READ_OwnerUserVisitor=BASE_URL+"GetOwnerUserVisitor.php";
+
 
 
     public static String ADD_tbl_complain=BASE_URL+"insert_tbl_complain.php";
