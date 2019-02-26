@@ -136,6 +136,11 @@ public class OwnerHomeActivity extends AppCompatActivity
             Intent intent=new Intent(OwnerHomeActivity.this, OwnerVisitorActivity.class);
             startActivity(intent);
         }
+        else if(id==R.id.nav_owner_accounts)
+        {
+            Intent intent=new Intent(OwnerHomeActivity.this, AccountsActivity.class);
+            startActivity(intent);
+        }
         else if(id==R.id.nav_owner_logout)
         {
             session.setLogin(false);
