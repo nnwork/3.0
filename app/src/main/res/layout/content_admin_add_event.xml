@@ -32,9 +32,9 @@
                 android:id="@+id/AddEventTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
                 android:hint="@string/EventTitle"
+                android:background="@drawable/roundtextview"
+                android:layout_margin="@dimen/layout_margin"
                 android:inputType="text"
                 android:padding="@dimen/edittextsize"
                 android:drawableLeft="@drawable/ic_vintage_cellphone"
@@ -147,8 +147,6 @@
                 android:padding="@dimen/edittextsize"
                 android:drawableLeft="@drawable/ic_vintage_cellphone"
                 />
-
-
 
             <Button
                 android:layout_width="match_parent"

@@ -15,6 +15,26 @@ public class Visitor implements Serializable {
     String  visitors_flat_approve;
     String 	visitors_app_date_time;
     String  visitors_exit_date_time;
+    String BuildingName;
+    String BuildingId;
+
+    public String getBuildingId() {
+        return BuildingId;
+    }
+
+    public void setBuildingId(String buildingId) {
+        BuildingId = buildingId;
+    }
+
+
+
+    public String getBuildingName() {
+        return BuildingName;
+    }
+
+    public void setBuildingName(String buildingName) {
+        BuildingName = buildingName;
+    }
 
     public String getVisitors_id() {
         return visitors_id;

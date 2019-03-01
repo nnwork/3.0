@@ -1,13 +1,16 @@
 package com.customerservice.login.FlatOwner;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,6 +42,10 @@ public class OwnerMaintenanceActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,16 +75,18 @@ public class OwnerMaintenanceActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
+                   // Toast.makeText(OwnerMaintenanceActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                     for(int i=0;i<array.length();i++)
                     {
                         JSONObject object=array.getJSONObject(i);
                         Maintenance classfile=new Maintenance();
 
-                        classfile.setStatus(object.getString("user_id"));
-                        classfile.setStatus(object.getString("amount"));
-                        classfile.setStatus(object.getString("pay_date"));
-                        classfile.setStatus(object.getString("transaction_number"));
-                        classfile.setStatus(object.getString("pay_mode"));
+                        classfile.setUser_id(object.getString("user_id"));
+                        classfile.setStatus(object.getString("status"));
+                        classfile.setAmount(object.getString("amount"));
+                        classfile.setPay_date(object.getString("pay_date"));
+                        classfile.setTransaction_number(object.getString("transaction_number"));
+                        classfile.setPay_mode(object.getString("pay_mode"));
 
                         ownerMaintenanceList.add(classfile);
                     }

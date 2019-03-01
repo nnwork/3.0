@@ -1,12 +1,14 @@
 package com.customerservice.login.FlatOwner;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -42,14 +44,18 @@ public class OwnerVisitorActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent Intentwidget=new Intent(OwnerVisitorActivity.this,OwnerComplainDetailsActivity.class);
-                startActivity(Intentwidget);
-            }
-        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
+        //FloatingActionButton fab = findViewById(R.id.fab);
+//        //fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent Intentwidget=new Intent(OwnerVisitorActivity.this,Owner.class);
+//                startActivity(Intentwidget);
+//            }
+//        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         owner_visitor_list_view=(ListView)findViewById(R.id.owner_visitor_list_view);
@@ -72,15 +78,22 @@ public class OwnerVisitorActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
+
                     for (int i=0;i<array.length();i++)
                     {
+
                         JSONObject object=array.getJSONObject(i);
 
+
                         Visitor Visitor =new Visitor();
+                        //Toast.makeText(OwnerVisitorActivity.this, ""+Visitor.getBuildingName(), Toast.LENGTH_SHORT).show();
                         Visitor.setVisitors_id(object.getString("visitors_id"));
                         Visitor.setVisitors_name(object.getString("visitors_name"));
                         Visitor.setVisitors_contect(object.getString("visitors_contect"));
+                        Visitor.setBuildingId(object.getString("BuildingId"));
+                        Visitor.setBuildingName(object.getString("BuildingName"));
                         visitorList.add(Visitor);
+
 
                     }
                 } catch (JSONException e) {
@@ -97,7 +110,7 @@ public class OwnerVisitorActivity extends AppCompatActivity {
 
             }
         });
-        RequestQueue queue= Volley.newRequestQueue(this);
+        RequestQueue queue= Volley.newRequestQueue(OwnerVisitorActivity.this);
         queue.add(rq);
     }
 
