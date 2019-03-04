@@ -6,55 +6,64 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".FlatOwner.OwnerVisitorDetailsActivity"
-    tools:showIn="@layout/activity_owner_visitor_details">
+    tools:showIn="@layout/activity_owner_visitor_details"
+    android:gravity="center"
+    >
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/textmarginleft"
+        >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:orientation="vertical"
+       android:gravity="center"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_id"
-            android:layout_weight="1"/>
+            android:layout_marginTop="@dimen/textmargintop"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visiters_name"
-            android:layout_weight="1"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visiters_contect"
-            android:layout_weight="1"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_flat_id"
-            android:layout_weight="1"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_photo"
-            android:layout_weight="1"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_watchman_id"
-            android:layout_weight="1"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_v_date"
-            android:layout_weight="1"/>
+            />
 
 
         <TextView
@@ -67,20 +76,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_flat_approve"
-            android:layout_weight="1"/>
+           />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_app_date_time"
-            android:layout_weight="1"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/owner_visitors_exit_date_time"
-            android:layout_weight="1"/>
-
+            />
         <TextView
             android:layout_width="wrap_content"
             android:text="Building 1"
@@ -90,7 +98,6 @@
             android:gravity="center"
             android:textStyle="bold"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             />
     </LinearLayout>
             <LinearLayout
@@ -124,5 +131,5 @@
             </LinearLayout>
 
 
-
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

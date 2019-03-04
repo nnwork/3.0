@@ -1,12 +1,14 @@
 package com.customerservice.login.FlatOwner;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
+import com.customerservice.login.Utility.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,45 +40,30 @@ import java.util.Map;
 public class Formcomplain extends AppCompatActivity {
 
     Button complainbtn;
-    EditText complainid,complainproblem,complain_date,complain_v_date,complain_v_time,complain_datet_ime;
-    Spinner complainstatus,complainuserid,complainfcatid;
-
-    //ArrayList<String> buildingNameList=new ArrayList<>();
-    //ArrayList<String> buildingIdList=new ArrayList<>();
-
-    ArrayList<String> usre_id_List=new ArrayList<>();
-    ArrayList<String> user_name_List=new ArrayList<>();
+    EditText complainproblem;
+    Spinner complainfcatid;
 
     ArrayList<String> hcat_id_List=new ArrayList<>();
     ArrayList<String> hcat_name_List=new ArrayList<>();
 
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formcomplain);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
         complainbtn = (Button) findViewById(R.id.complainbtn);
-
-        complainid = (EditText) findViewById(R.id.complainid);
         complainproblem = (EditText) findViewById(R.id.complainproblem);
-        complain_date = (EditText) findViewById(R.id.complain_date);
-        complain_v_date = (EditText) findViewById(R.id.complain_v_date);
-        complain_v_time = (EditText) findViewById(R.id.complain_v_time);
-        complain_datet_ime = (EditText) findViewById(R.id.complain_datet_ime);
 
-       final Spinner spinner_complainstatus =(Spinner) findViewById(R.id.complainstatus);
+        sessionManager = new SessionManager(this);
+       //final Spinner spinner_complainstatus =(Spinner) findViewById(R.id.complainstatus);
        final Spinner spinner_complainfcatid=(Spinner)findViewById(R.id.complainfcatid);
 
 
@@ -84,6 +72,7 @@ public class Formcomplain extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try {
+                   // Toast.makeText(Formcomplain.this, ""+response, Toast.LENGTH_SHORT).show();
 
                     JSONArray co_help_cat_JsonArray = new JSONArray(response);
 
@@ -111,83 +100,16 @@ public class Formcomplain extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
             }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                return super.getParams();
-
-            }
-        };
+        });
         RequestQueue disp_halpercat_queue=Volley.newRequestQueue(Formcomplain.this);
         disp_halpercat_queue.add(complains_halpercat_disp_rq);
-
-
-        /////////////////////////////////////
-        //Disp user complain
-            StringRequest complains_user_disp_rq=new StringRequest(Request.Method.POST, Config.Disp_tbl_user_comlain, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONArray co_jsonArray=new JSONArray(response);
-                        for(int i=0;i<co_jsonArray.length();i++)
-                        {
-                            JSONObject co_jsonObject=co_jsonArray.getJSONObject(i);
-
-
-                            String usre_id=co_jsonObject.getString("usre_id");
-                            String user_name=co_jsonObject.getString("user_name");
-
-                            user_name_List.add(user_name);
-                            usre_id_List.add(usre_id);
-
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    finally {
-                        ArrayAdapter co_arrayAdapter=new ArrayAdapter(Formcomplain.this,android.R.layout.simple_dropdown_item_1line,user_name_List);
-                        spinner_complainstatus.setAdapter(co_arrayAdapter);
-                    }
-
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                }
-            }){
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    return super.getParams();
-                }
-            };
-            RequestQueue co_user_disp_queue=Volley.newRequestQueue(Formcomplain.this);
-        co_user_disp_queue.add(complains_user_disp_rq);
 
         ////Diplay/////////////////////////////////////////////////////////////////////
         complainbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String complainidstr = complainid.getText().toString();
-               // Toast.makeText(Formcomplain.this, "complainidstr" + complainid, Toast.LENGTH_SHORT).show();
 
                 final String  complainproblemstr = complainproblem.getText().toString();
-               // Toast.makeText(Formcomplain.this, "complainproblemstr" + complainproblem, Toast.LENGTH_SHORT).show();
-
-                String complain_datestr = complain_date.getText().toString();
-               // Toast.makeText(Formcomplain.this, "complain_datestr" + complain_datestr, Toast.LENGTH_SHORT).show();
-
-                String complain_v_datestr = complain_v_date.getText().toString();
-               // Toast.makeText(Formcomplain.this, "complain_v_datestr" + complain_v_date, Toast.LENGTH_SHORT).show();
-
-                String complain_v_timestr = complain_v_time.getText().toString();
-              // Toast.makeText(Formcomplain.this, "complain_v_timestr" + complain_v_time, Toast.LENGTH_SHORT).show();
-
-                String complain_datet_imestr = complain_datet_ime.getText().toString();
-              //  Toast.makeText(Formcomplain.this, "complain_datet_imestr" + complain_datet_ime, Toast.LENGTH_SHORT).show();
-
 
 //                if (complainidstr.length() == 0) {
 //                    Toast.makeText(Formcomplain.this, "Please Enter complain ID", Toast.LENGTH_SHORT).show();
@@ -208,8 +130,8 @@ public class Formcomplain extends AppCompatActivity {
                     StringRequest comlain_rq=new StringRequest(Request.Method.POST,Config.ADD_tbl_complain, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-
-                            Toast.makeText(Formcomplain.this, "Response : "+response, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Formcomplain.this, ""+sessionManager.getId(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(Formcomplain.this, "Response : "+response, Toast.LENGTH_SHORT).show();
 
                             if(response.equals("successfully"))
                             {
@@ -233,9 +155,8 @@ public class Formcomplain extends AppCompatActivity {
                             Map<String,String> co_params=new HashMap<>();
                             co_params.put("complainproblem",complainproblemstr);
 
-                            int user_position=spinner_complainstatus.getSelectedItemPosition();
-                            String usreid=usre_id_List.get(user_position);
-                            co_params.put("usreid",usreid);
+                            co_params.put("userid",sessionManager.getId());
+
 
                         //////helper_categori
                             int help_cat_position=spinner_complainfcatid.getSelectedItemPosition();

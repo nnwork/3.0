@@ -13,78 +13,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp"
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_gravity="center"
+            >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="25dp"
             android:orientation="vertical"
-            android:background="#ffffff">
+            >
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Complain"
-                android:gravity="center"
-                android:layout_margin="25dp"
-                android:layout_marginTop="10dp"
-                android:textSize="25dp"
-                />
-
-            <EditText
-                android:id="@+id/complainid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="complainID"
-                android:textColor="@color/textcolorwhite"
-                android:inputType="number"
-                android:padding="7dp"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
-
-            <Spinner
-                android:id="@+id/complainuserid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="UserID"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="number"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
 
             <Spinner
                 android:id="@+id/complainfcatid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="FcatID"
-                android:textColor="@color/design_default_color_primary_dark"
-                android:padding="7dp"
-                android:inputType="number"
+                android:layout_margin="@dimen/layout_margin"
                 android:background="@drawable/spinner_round"
-                android:drawablePadding="10dp"
+                android:textColor="@color/textcolorwhite"
                 />
 
             <EditText
                 android:id="@+id/complainproblem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="Problem"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="text"
                 android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
+                android:layout_margin="@dimen/layout_margin"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/edittextsize"
                 />
 
             <Button
@@ -93,90 +53,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
-                android:hint="img_usi"
+                android:hint="img_url"
                 android:textColor="@color/textcolorwhite"
                 android:padding="7dp"
-                />
-
-            <EditText
-                android:id="@+id/complain_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="Date"
-                android:textColor="@color/textcolorwhite"
-                android:background="@drawable/roundtextview"
-                android:padding="10dp"
-                android:inputType="date"
-                />
-
-            <Spinner
-                android:id="@+id/complainstatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/roundtextview"
-                android:gravity="left"
-                android:hint="Status"
-                android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:inputType="number"
-                />
-
-            <EditText
-                android:id="@+id/complain_v_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="VDate"
-                android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:inputType="date"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
-
-            <EditText
-                android:id="@+id/complain_v_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="Vtime"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="datetime"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
-
-            <EditText
-                android:id="@+id/complain_datet_ime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="complainDateTime"
-                android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:inputType="number"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
+                android:layout_margin="@dimen/layout_margin"
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/complainbtn"
-                android:text="submit"
+                android:background="#ad1457"
+                android:text="@string/submitbutton"
                 android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:textSize="25dp"
-                android:background="@drawable/roundbutton"
+                android:layout_margin="@dimen/layout_margin"
+                android:textSize="@dimen/buttontextsize"
+                android:padding="@dimen/edittextsize"
                 />
 
         </LinearLayout>
+        </android.support.v7.widget.CardView>
     </ScrollView>
 </RelativeLayout>

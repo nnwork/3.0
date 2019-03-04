@@ -1,11 +1,14 @@
 package com.customerservice.login.FlatOwner;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OwnerComplainDetailsActivity extends AppCompatActivity {
-    TextView complain_id,complain_user_id,complain_fcat_id,complain_problem,complain_img_uri,complain_date,complain_status;
+    TextView complain_id,complain_user_id,complain_fcat_id,owner_complain_display_problems,complain_img_uri,complain_date,complain_status;
     TextView complain_v_date,complain_v_time,complain_date_time;
     ComplainClassFile complainObject;
     @Override
@@ -38,17 +41,14 @@ public class OwnerComplainDetailsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        complain_problem=(TextView)findViewById(R.id.owner_complain_display_problems);
+        owner_complain_display_problems=(TextView)findViewById(R.id.owner_complain_display_problems);
         complain_img_uri=(TextView)findViewById(R.id.owner_complain_display_img_uri);
         complain_status=(TextView)findViewById(R.id.owner_complain_display_status);
 
@@ -61,7 +61,7 @@ public class OwnerComplainDetailsActivity extends AppCompatActivity {
         StringRequest request=new StringRequest(Request.Method.POST, Config.READ_OwnerUserComplain, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(OwnerComplainDetailsActivity.this, ""+response, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(OwnerComplainDetailsActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray array=new JSONArray(response);
 
@@ -98,9 +98,10 @@ public class OwnerComplainDetailsActivity extends AppCompatActivity {
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(request);
 
-        toolbar.setTitle(complainObject.getComplain_problem());
-        complain_problem.setText(complainObject.getComplain_problem());
-        complain_img_uri.setText(complainObject.getComplain_img_uri());
+        //toolbar.setTitle(complainObject.getComplain_problem());
+        owner_complain_display_problems.setText(complainObject.getComplain_problem());
+       // Log.d("pjkjkjjjjjjjjjj",complainObject.getComplain_problem());
+       // complain_img_uri.setText(complainObject.getComplain_img_uri());
         complain_status.setText(complainObject.getComplain_status());
 
     }

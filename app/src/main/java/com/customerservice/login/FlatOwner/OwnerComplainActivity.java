@@ -1,11 +1,13 @@
 package com.customerservice.login.FlatOwner;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -41,6 +43,10 @@ public class OwnerComplainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_owner_complain);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +77,7 @@ public class OwnerComplainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
+
                             for(int i=0;i<array.length();i++)
                             {
                                 JSONObject object=array.getJSONObject(i);
@@ -79,6 +86,14 @@ public class OwnerComplainActivity extends AppCompatActivity {
 
                                 classFile.setComplain_problem(object.getString("complain_problem"));
                                 classFile.setComplain_id(object.getString("complain_id"));
+                                classFile.setComplain_user_id(object.getString("complain_user_id"));
+                                classFile.setComplain_fcat_id(object.getString("complain_hcat_id"));
+                                classFile.setComplain_img_uri(object.getString("complain_img_uri"));
+                                classFile.setComplain_date(object.getString("complain_date"));
+                                classFile.setComplain_status(object.getString("complain_status"));
+                                classFile.setComplain_v_date(object.getString("complain_v_date"));
+                                classFile.setComplain_v_time(object.getString("complain_v_time"));
+                                classFile.setComplain_date_time(object.getString("complain_date_time"));
                                 complainClassFileList.add(classFile);
                             }
                 } catch (JSONException e) {

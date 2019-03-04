@@ -1,11 +1,13 @@
     package com.customerservice.login.FlatOwner;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +32,7 @@ import java.util.Map;
 
     public class OwnerVisitorDetailsActivity extends AppCompatActivity {
     TextView owner_visitors_id,owner_visiters_name,owner_visiters_contect,owner_visitors_flat_id,owner_visitors_photo,owner_visitors_watchman_id;
-    TextView owner_visitors_v_date,owner_visitors_v_time,owner_visitors_flat_approve,owner_visitors_app_date_time,owner_visitors_exit_date_time;
+    TextView owner_visitors_v_date,owner_visitors_v_time,owner_visitors_flat_approve,owner_visitors_app_date_time,owner_visitors_exit_date_time,txtbuildingname;
     Visitor visitoribject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +41,15 @@ import java.util.Map;
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         visitoribject=(Visitor)getIntent().getSerializableExtra("visitoribject");
 
+        txtbuildingname=(TextView)findViewById(R.id.txtbuildingname);
         owner_visitors_id=(TextView)findViewById(R.id.owner_visitors_id);
         owner_visiters_name=(TextView)findViewById(R.id.owner_visiters_name);
         owner_visiters_contect=(TextView)findViewById(R.id.owner_visiters_contect);
@@ -76,6 +76,9 @@ import java.util.Map;
 
                         String FlatNumber = object.getString("FlatNumber");
                         owner_visitors_flat_id.setText(FlatNumber);
+
+                        String BuildingName = object.getString("BuildingName");
+                        txtbuildingname.setText(BuildingName);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -85,7 +88,7 @@ import java.util.Map;
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(OwnerVisitorDetailsActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
             }
         })  {
             @Override

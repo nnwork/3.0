@@ -1,7 +1,7 @@
 package com.customerservice.login.Utility;
 
 public class Config {
-    public static String BASE_URL="http://192.168.1.122:8089/Webservices/";
+    public static String BASE_URL="http://192.168.43.117:8089/Webservices/";
 
     public static String ADD_BUILDING=BASE_URL+"insertBuilding.php";
 

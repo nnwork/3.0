@@ -39,10 +39,11 @@
                 android:minLines="6"
                 android:gravity="top|left"
                 android:maxLines="10"
-                android:layout_margin="10dp"
+                android:layout_margin="15dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:scrollbars="vertical"
+                android:padding="@dimen/textpadding"
                 android:background="@color/backGround"
 
 
