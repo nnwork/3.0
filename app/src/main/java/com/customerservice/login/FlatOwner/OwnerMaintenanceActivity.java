@@ -73,11 +73,12 @@ public class OwnerMaintenanceActivity extends AppCompatActivity {
                         JSONObject object=array.getJSONObject(i);
                         Maintenance classfile=new Maintenance();
 
-                        classfile.setStatus(object.getString("user_id"));
-                        classfile.setStatus(object.getString("amount"));
-                        classfile.setStatus(object.getString("pay_date"));
-                        classfile.setStatus(object.getString("transaction_number"));
-                        classfile.setStatus(object.getString("pay_mode"));
+                        classfile.setStatus(object.getString("status"));
+                        classfile.setUser_id(object.getString("user_id"));
+                        classfile.setAmount(object.getString("amount"));
+                        classfile.setPay_date(object.getString("pay_date"));
+                        classfile.setTransaction_number(object.getString("transaction_number"));
+                        classfile.setPay_mode(object.getString("pay_mode"));
 
                         ownerMaintenanceList.add(classfile);
                     }
