@@ -82,7 +82,6 @@ ExpencesAdapter expencesAdapter;
         RequestQueue queue = Volley.newRequestQueue(AccountsActivity.this);
         queue.add(stringRequest);
 
-
     }
 
 }
