@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
-                android:hint="img_usi"
+                android:hint="img_url"
                 android:textColor="@color/textcolorwhite"
                 android:padding="7dp"
                 android:layout_margin="@dimen/layout_margin"

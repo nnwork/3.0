@@ -77,6 +77,7 @@ public class OwnerComplainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
+
                             for(int i=0;i<array.length();i++)
                             {
                                 JSONObject object=array.getJSONObject(i);
@@ -85,6 +86,14 @@ public class OwnerComplainActivity extends AppCompatActivity {
 
                                 classFile.setComplain_problem(object.getString("complain_problem"));
                                 classFile.setComplain_id(object.getString("complain_id"));
+                                classFile.setComplain_user_id(object.getString("complain_user_id"));
+                                classFile.setComplain_fcat_id(object.getString("complain_hcat_id"));
+                                classFile.setComplain_img_uri(object.getString("complain_img_uri"));
+                                classFile.setComplain_date(object.getString("complain_date"));
+                                classFile.setComplain_status(object.getString("complain_status"));
+                                classFile.setComplain_v_date(object.getString("complain_v_date"));
+                                classFile.setComplain_v_time(object.getString("complain_v_time"));
+                                classFile.setComplain_date_time(object.getString("complain_date_time"));
                                 complainClassFileList.add(classFile);
                             }
                 } catch (JSONException e) {

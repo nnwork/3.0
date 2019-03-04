@@ -41,10 +41,15 @@ public class OwnerComplainAdapter extends BaseAdapter {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singleownercomplaindesign,null);
 
-        TextView owner_complain_problem=(TextView)view.findViewById(R.id.owner_complain_problem);
+//        TextView owner_complain_problem=(TextView)view.findViewById(R.id.owner_complain_problem);
+        TextView owner_complain_hcat_id=(TextView)view.findViewById(R.id.owner_complain_hcat_id);
+        TextView owner_complain_status=(TextView)view.findViewById(R.id.owner_complain_status);
+        TextView owner_complain_date_time=(TextView)view.findViewById(R.id.owner_complain_date_time);
 
         ComplainClassFile item= complainClassFileList.get(position);
-        owner_complain_problem.setText(item.getComplain_problem());
+        owner_complain_hcat_id.setText(item.getComplain_fcat_id());
+        owner_complain_status.setText(item.getComplain_status());
+        owner_complain_date_time.setText(item.getComplain_date_time());
         return view;
     }
 }

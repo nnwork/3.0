@@ -50,6 +50,14 @@ public class OwnerHallActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OwnerHallActivity.this,FormHallBooking.class);
+                startActivity(intent);
+            }
+        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         list_view_hall=(ListView)findViewById(R.id.list_view_hall);
