@@ -92,6 +92,9 @@ public class OwnerVisitorActivity extends AppCompatActivity {
                         Visitor.setVisitors_contect(object.getString("visitors_contect"));
                         Visitor.setBuildingId(object.getString("BuildingId"));
                         Visitor.setBuildingName(object.getString("BuildingName"));
+                        Visitor.setFlatId(object.getString("FlatId"));
+                        Visitor.setFlatNumber(object.getString("FlatNumber"));
+
                         visitorList.add(Visitor);
 
 

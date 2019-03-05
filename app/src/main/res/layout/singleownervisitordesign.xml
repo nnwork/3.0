@@ -44,13 +44,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/owner_visiters_contect" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Building 1"
-            android:id="@+id/txtbuildingname"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            />
+
         </LinearLayout>
 
         <LinearLayout

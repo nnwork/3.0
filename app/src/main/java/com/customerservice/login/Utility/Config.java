@@ -1,7 +1,7 @@
 package com.customerservice.login.Utility;
 
 public class Config {
-    public static String BASE_URL="http://192.168.1.146:8089/Webservices/";
+    public static String BASE_URL="http://192.168.1.147:8089/Webservices/";
 
     public static String ADD_BUILDING=BASE_URL+"insertBuilding.php";
 
@@ -35,7 +35,7 @@ public class Config {
     public static String READ_OwnerUserVisitor=BASE_URL+"GetOwnerUserVisitor.php";
 
 
-
+    public static String ADD_tbl_Visitors=BASE_URL+"AddVisitor.php";
     public static String ADD_tbl_complain=BASE_URL+"insert_tbl_complain.php";
     public static String ADD_tbl_fund=BASE_URL+"insert_tbl_fund.php";
     public static String ADD_tbl_expence=BASE_URL+"insert_tbl_expense.php";
