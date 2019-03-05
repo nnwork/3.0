@@ -12,6 +12,7 @@ public class Config {
     public static String Add_Event=BASE_URL+"insertEvent.php";
     public static String Add_User=BASE_URL+"insertUser.php";
 
+    public static String READ_GetUserContactinfo=BASE_URL+"getUserContactInfo.php";
     public static String READ_GetUserinfo=BASE_URL+"getUserInfo.php";
     public static String READ_BUILDINGS=BASE_URL+"getBuildings.php";
     public static String READ_Flat=BASE_URL+"getFlat.php";

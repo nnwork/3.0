@@ -149,6 +149,8 @@
     <string name="title_activity_owner_maintenance_widget">Maintenance Widget</string>
     <string name="title_activity_owner_complain_widget">OwnerComplainWidgetActivity</string>
     <string name="title_activity_owner_visitor_details">OwnerVisitorDetailsActivity</string>
+    <string name="title_activity_watchmen_visitor">Visitors</string>
+    <string name="title_activity_watchmen_suggestion">Suggestion</string>
 
 
 </resources>

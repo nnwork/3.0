@@ -19,9 +19,9 @@ import com.customerservice.login.Utility.SessionManager;
 import com.customerservice.login.Watchman.NewVisitorActivity;
 import com.customerservice.login.Watchman.WatchmanContactActivity;
 import com.customerservice.login.Watchman.WatchmanEmergencyActivity;
-import com.customerservice.login.Watchman.WatchmanSuggestionActivity;
 import com.customerservice.login.Watchman.WatchmanVisitorActivity;
 import com.customerservice.login.Watchman.WatchmanVisitorReportActivity;
+import com.customerservice.login.Watchman.WatchmenSuggestion;
 
 public class WatchMenHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     SessionManager session;
@@ -95,9 +95,12 @@ public class WatchMenHomeActivity extends AppCompatActivity implements Navigatio
         } else if (id == R.id.nav_watchman_new_visitor_report) {
             Intent intent_visitor_report = new Intent(WatchMenHomeActivity.this, WatchmanVisitorReportActivity.class);
             startActivity(intent_visitor_report);
+        }else if (id == R.id.nav_watchman_visitor) {
+            Intent intent_visitor = new Intent(WatchMenHomeActivity.this, WatchmanVisitorActivity.class);
+            startActivity(intent_visitor);
 
         }else if (id == R.id.nav_watchman_new_visitor_your_suggestion) {
-            Intent intent_suggestion = new Intent(WatchMenHomeActivity.this, WatchmanSuggestionActivity.class);
+            Intent intent_suggestion = new Intent(WatchMenHomeActivity.this, WatchmenSuggestion.class);
             startActivity(intent_suggestion);
 
         } else if (id == R.id.nav_watchman_new_visitor_emergency) {

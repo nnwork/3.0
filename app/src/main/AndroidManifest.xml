@@ -10,9 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Watchman.WatchmenSuggestion"
+            android:label="@string/title_activity_watchmen_suggestion"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
         <activity
             android:name=".Watchman.AddVisitorActivity"
             android:label="@string/title_activity_send_otp"
@@ -241,15 +249,6 @@
         <activity
             android:name=".Watchman.WatchmanContactActivity"
             android:label="@string/title_activity_watchman_contact"
-            android:parentActivityName=".WatchMenHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.WatchMenHomeActivity" />
-        </activity>
-        <activity
-            android:name=".Watchman.WatchmanSuggestionActivity"
-            android:label="@string/title_activity_watchman_suggestion"
             android:parentActivityName=".WatchMenHomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
