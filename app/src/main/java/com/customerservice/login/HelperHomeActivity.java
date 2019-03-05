@@ -20,6 +20,7 @@ import com.customerservice.login.Helper.HelperComplainActivity;
 import com.customerservice.login.Helper.HelperContactActivity;
 import com.customerservice.login.Helper.HelperDashboardActivity;
 import com.customerservice.login.Helper.HelperMyProfileActivity;
+import com.customerservice.login.Helper.HelperNotificationActivity;
 import com.customerservice.login.Utility.SessionManager;
 
 public class HelperHomeActivity extends AppCompatActivity
@@ -106,6 +107,10 @@ public class HelperHomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_helper_my_profile) {
             Intent intent_my_profile=new Intent(HelperHomeActivity.this, HelperMyProfileActivity.class);
             startActivity(intent_my_profile);
+        }
+        else if (id == R.id.nav_notificatione) {
+            Intent intent_notificatione=new Intent(HelperHomeActivity.this, HelperNotificationActivity.class);
+            startActivity(intent_notificatione);
         }
         else if (id == R.id.nav_helper_logout) {
 

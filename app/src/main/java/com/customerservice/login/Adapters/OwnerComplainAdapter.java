@@ -47,7 +47,7 @@ public class OwnerComplainAdapter extends BaseAdapter {
         TextView owner_complain_date_time=(TextView)view.findViewById(R.id.owner_complain_date_time);
 
         ComplainClassFile item= complainClassFileList.get(position);
-        owner_complain_hcat_id.setText(item.getComplain_fcat_id());
+        owner_complain_hcat_id.setText(item.getComplain_hcat_id());
         owner_complain_status.setText(item.getComplain_status());
         owner_complain_date_time.setText(item.getComplain_date_time());
         return view;

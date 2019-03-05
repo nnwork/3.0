@@ -87,7 +87,7 @@ public class OwnerComplainActivity extends AppCompatActivity {
                                 classFile.setComplain_problem(object.getString("complain_problem"));
                                 classFile.setComplain_id(object.getString("complain_id"));
                                 classFile.setComplain_user_id(object.getString("complain_user_id"));
-                                classFile.setComplain_fcat_id(object.getString("complain_hcat_id"));
+                                classFile.setComplain_hcat_id(object.getString("complain_hcat_id"));
                                 classFile.setComplain_img_uri(object.getString("complain_img_uri"));
                                 classFile.setComplain_date(object.getString("complain_date"));
                                 classFile.setComplain_status(object.getString("complain_status"));

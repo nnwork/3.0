@@ -37,45 +37,30 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_user_id"
+                    android:id="@+id/notification_id"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_hcat_id"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_problem"
+                    android:id="@+id/notification_user_id"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_img_uri"
+                    android:id="@+id/notification_title"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_status"
+                    android:id="@+id/notification_description"
                     />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_v_date"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_v_time"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/helper_complain_date_time"
+                    android:id="@+id/description_date_time"
                     />
                 />
             </LinearLayout>
@@ -98,5 +83,6 @@
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
 
 </RelativeLayout>

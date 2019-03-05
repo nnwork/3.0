@@ -45,10 +45,27 @@ public class HelperComplainAdapter extends BaseAdapter {
 
         LayoutInflater layoutInflater=activity.getLayoutInflater();
         View view=layoutInflater.inflate(R.layout.singlehelperdesign,null);
-        TextView textView=(TextView)view.findViewById(R.id.helper_complain_problem);
+
+
+        TextView helper_complain_hcat_id=(TextView)view.findViewById(R.id.helper_complain_hcat_id);
+        TextView helper_complain_problem=(TextView)view.findViewById(R.id.helper_complain_problem);
+        TextView helper_complain_img_uri=(TextView)view.findViewById(R.id.helper_complain_img_uri);
+
+        TextView helper_complain_status=(TextView)view.findViewById(R.id.helper_complain_status);
+        TextView helper_complain_v_date=(TextView)view.findViewById(R.id.helper_complain_v_date);
+        TextView helper_complain_v_time=(TextView)view.findViewById(R.id.helper_complain_v_time);
+        TextView helper_complain_date_time=(TextView)view.findViewById(R.id.helper_complain_date_time);
+
+
 
         ComplainClassFile item= complainClassFileList.get(position);
-        textView.setText(item.getComplain_problem());
+
+        helper_complain_problem.setText(item.getComplain_problem());
+        helper_complain_img_uri.setText(item.getComplain_img_uri());
+        helper_complain_status.setText(item.getComplain_status());
+        helper_complain_v_date.setText(item.getComplain_v_date());
+        helper_complain_v_time.setText(item.getComplain_v_time());
+        helper_complain_date_time.setText(item.getComplain_date_time());
         return view;
     }
 }
