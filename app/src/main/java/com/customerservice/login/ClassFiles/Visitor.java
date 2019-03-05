@@ -4,19 +4,9 @@ import java.io.Serializable;
 
 public class Visitor implements Serializable {
 
-    String  visitors_id;
-    String 	visitors_name;
-    String  visitors_contect;
-    String  visitors_flat_id;
-    String  visitors_photo;
-    String 	visitors_watchman_id;
-    String  visitors_v_date;
-    String  visitors_v_time;
-    String  visitors_flat_approve;
-    String 	visitors_app_date_time;
-    String  visitors_exit_date_time;
-    String BuildingName;
-    String BuildingId;
+    String  visitors_id,visitors_name,visitors_contect,visitors_flat_id,visitors_photo,visitors_watchman_id,visitors_v_date,visitors_v_time,visitors_flat_approve;
+    String 	visitors_app_date_time,visitors_exit_date_time,BuildingName,BuildingId,FlatNumber,FlatId;
+
 
     public String getBuildingId() {
         return BuildingId;
@@ -26,14 +16,28 @@ public class Visitor implements Serializable {
         BuildingId = buildingId;
     }
 
-
-
     public String getBuildingName() {
         return BuildingName;
     }
 
     public void setBuildingName(String buildingName) {
         BuildingName = buildingName;
+    }
+
+    public String getFlatNumber() {
+        return FlatNumber;
+    }
+
+    public void setFlatNumber(String flatNumber) {
+        FlatNumber = flatNumber;
+    }
+
+    public String getFlatId() {
+        return FlatId;
+    }
+
+    public void setFlatId(String flatId) {
+        FlatId = flatId;
     }
 
     public String getVisitors_id() {

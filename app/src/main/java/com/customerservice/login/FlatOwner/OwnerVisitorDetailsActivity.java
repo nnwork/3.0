@@ -73,12 +73,6 @@ import java.util.Map;
 
                         String watchmen = object.getString("watchmen");
                         owner_visitors_watchman_id.setText(watchmen);
-
-                        String FlatNumber = object.getString("FlatNumber");
-                        owner_visitors_flat_id.setText(FlatNumber);
-
-                        String BuildingName = object.getString("BuildingName");
-                        txtbuildingname.setText(BuildingName);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -112,6 +106,11 @@ import java.util.Map;
         owner_visitors_flat_approve.setText(visitoribject.getVisitors_flat_approve());
         owner_visitors_app_date_time.setText(visitoribject.getVisitors_app_date_time());
         owner_visitors_exit_date_time.setText(visitoribject.getVisitors_exit_date_time());
+        String FlatNumber = visitoribject.getFlatNumber();
+        owner_visitors_flat_id.setText(FlatNumber);
+
+        String BuildingName = visitoribject.getBuildingName();
+        txtbuildingname.setText(BuildingName);
 
     }
 

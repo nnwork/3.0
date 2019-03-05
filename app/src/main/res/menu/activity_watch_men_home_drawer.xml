@@ -9,9 +9,13 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="New Visitor" />
         <item
-            android:id="@+id/nav_watchman_new_visitor_report"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Visitor Report" />
+            android:id="@+id/nav_watchman_visitor"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Visitor" />
+        <item
+        android:id="@+id/nav_watchman_new_visitor_report"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Visitor Report" />
 
         <item
             android:id="@+id/nav_watchman_new_visitor_your_suggestion"

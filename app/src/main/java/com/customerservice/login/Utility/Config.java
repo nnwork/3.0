@@ -1,7 +1,7 @@
 package com.customerservice.login.Utility;
 
 public class Config {
-    public static String BASE_URL="http://192.168.1.122:8089/Webservices/";
+    public static String BASE_URL="http://192.168.1.146:8089/Webservices/";
 
     public static String ADD_BUILDING=BASE_URL+"insertBuilding.php";
 
@@ -33,7 +33,6 @@ public class Config {
     public static String READ_OwnerUserMaintenance=BASE_URL+"GetOwnerUserMaintenance.php";
     public static String READ_OwnerUserComplain=BASE_URL+"GetOwnerUserComplain.php";
     public static String READ_OwnerUserVisitor=BASE_URL+"GetOwnerUserVisitor.php";
-    public static String READ_HelperUserComplain=BASE_URL+"GetHelperUserComplain.php";
 
 
 
@@ -50,7 +49,6 @@ public class Config {
     public static String Disp_tbl_halper_comlain=BASE_URL+"disp_help_cat_tbl_complain.php";
     public static String Disp_tbl_user_comlain=BASE_URL+"disp_user_tbl_complain.php";
 
-
     public static String list_tbl_complain=BASE_URL+"disp_tbl_complain.php";
     public static String list_tbl_visitor=BASE_URL+"disp_tbl_visitor.php";
     public static String list_tbl_events=BASE_URL+"disp_tbl_events.php";
@@ -59,7 +57,7 @@ public class Config {
     public static String list_tbl_maintenance=BASE_URL+"disp_tbl_maintenance.php";
     public static String list_tbl_fund=BASE_URL+"disp_tbl_fund.php";
     public static String list_tbl_suggestions=BASE_URL+"disp_tbl_suggestion.php";
-    public static String list_tbl_notification=BASE_URL+"disp_tbl_Notification.php";
+
 
 
 }

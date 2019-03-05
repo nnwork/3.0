@@ -44,12 +44,12 @@ public class OwnerVisitorAdapter extends BaseAdapter {
         View view=inflater.inflate(R.layout.singleownervisitordesign,null);
         TextView textViewName=(TextView)view.findViewById(R.id.owner_visiters_name);
         TextView textViewContact=(TextView)view.findViewById(R.id.owner_visiters_contect);
-        TextView txtbuildingname=(TextView)view.findViewById(R.id.txtbuildingname);
+
 
         Visitor item = visitorList.get(position);
         textViewName.setText(item.getVisitors_name());
         textViewContact.setText(item.getVisitors_contect());
-        txtbuildingname.setText(item.getBuildingName());
+
         return view;
 
     }
