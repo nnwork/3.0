@@ -17,6 +17,15 @@
                 android:title="Flat" />
         </menu>
         </item>
+        <item android:title="@string/action_owner">
+            <menu>
+                <item
+                    android:id="@+id/nav_owner"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Owners" />
+
+            </menu>
+        </item>
 
         <item android:title="@string/action_events">
         <menu>

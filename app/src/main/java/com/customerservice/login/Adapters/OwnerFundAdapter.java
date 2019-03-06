@@ -45,7 +45,7 @@ public class OwnerFundAdapter extends BaseAdapter {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singleownerfunddesign,null);
 
-        TextView owner_fund_title=(TextView)view.findViewById(R.id.owner_fund_title);
+        TextView owner_fund_title= view.findViewById(R.id.owner_fund_title);
 
         Funds item=list.get(position);
         owner_fund_title.setText(item.getFund_title());

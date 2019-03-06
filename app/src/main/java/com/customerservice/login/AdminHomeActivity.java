@@ -27,6 +27,7 @@ import com.customerservice.login.Admin.HelperViewActivity;
 import com.customerservice.login.Admin.IncomeActivity;
 import com.customerservice.login.Admin.MaintenanceViewActivity;
 import com.customerservice.login.Admin.MonthlyAmountActivity;
+import com.customerservice.login.Admin.OwnerListActivity;
 import com.customerservice.login.Admin.SuggestionViewActivity;
 import com.customerservice.login.Admin.VisitorActivity;
 import com.customerservice.login.Admin.FlatViewActivity;
@@ -108,6 +109,11 @@ public class AdminHomeActivity extends AppCompatActivity
         else if(id==R.id.nav_Flat)
         {
             Intent intent = new Intent(AdminHomeActivity.this, FlatViewActivity.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.nav_owner)
+        {
+            Intent intent = new Intent(AdminHomeActivity.this, OwnerListActivity.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_events)

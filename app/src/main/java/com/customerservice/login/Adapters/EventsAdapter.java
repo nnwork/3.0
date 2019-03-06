@@ -43,7 +43,7 @@ public class EventsAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = activity.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.singleeventdesign,null);
 
-        TextView textView = (TextView)view.findViewById(R.id.txtevent);
+        TextView textView = view.findViewById(R.id.txtevent);
 
         Events item = eventsList.get(position);
         textView.setText(item.getEvent_title());

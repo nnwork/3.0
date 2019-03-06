@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -27,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +62,7 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         dialog=new ProgressDialog(this);
         dialog.setMessage("Please Wait...");
         dialog.setCancelable(false);
@@ -67,6 +70,7 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         buildinglistview=(ListView)findViewById(R.id.buildinglistview);
         adapter=new BuildingAdapter(this,buildingList);
         buildinglistview.setAdapter(adapter);
+
 
 
         //Server DataString
@@ -107,6 +111,20 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         q.add(str);
         //
 
+
+        //Flatview
+
+        buildinglistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Building item = buildingList.get(position);
+               Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
+               intent.putExtra("objectBuilding", item);
+               startActivity(intent);
+            }
+        });
+
+        //
     }
 
 }

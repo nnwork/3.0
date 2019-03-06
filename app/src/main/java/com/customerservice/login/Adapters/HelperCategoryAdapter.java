@@ -41,7 +41,7 @@ public class HelperCategoryAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = activity.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.singleownerhelperviewdesign,null);
 
-        TextView txthelpername = (TextView)view.findViewById(R.id.txthelpername);
+        TextView txthelpername = view.findViewById(R.id.txthelpername);
 
         HelperCategory item = helperCategoryList.get(position);
 

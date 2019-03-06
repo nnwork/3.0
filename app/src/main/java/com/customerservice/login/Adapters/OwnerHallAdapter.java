@@ -46,8 +46,8 @@ public class OwnerHallAdapter extends BaseAdapter {
         View view=inflater.inflate(R.layout.singleownerhalldesign,null);
 
       //  TextView owner_hall_id=(TextView)view.findViewById(R.id.owner_hall_id);
-        TextView owner_hall_title=(TextView)view.findViewById((R.id.owner_hall_title));
-        TextView owner_hall_capacity=(TextView)view.findViewById(R.id.owner_hall_capacity);
+        TextView owner_hall_title= view.findViewById((R.id.owner_hall_title));
+        TextView owner_hall_capacity= view.findViewById(R.id.owner_hall_capacity);
 
         Hall item=ownerHallList.get(position);
 

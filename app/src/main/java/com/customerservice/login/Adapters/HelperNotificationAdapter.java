@@ -42,11 +42,11 @@ public class HelperNotificationAdapter extends BaseAdapter {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singlenotificationdesign,null);
 
-        TextView notification_id=(TextView)view.findViewById(R.id.notification_id);
-        TextView notification_user_id=(TextView)view.findViewById(R.id.notification_user_id);
-        TextView notification_title=(TextView)view.findViewById(R.id.notification_title);
-        TextView notification_description=(TextView)view.findViewById(R.id.notification_description);
-        TextView description_date_time=(TextView)view.findViewById(R.id.description_date_time);
+        TextView notification_id= view.findViewById(R.id.notification_id);
+        TextView notification_user_id= view.findViewById(R.id.notification_user_id);
+        TextView notification_title= view.findViewById(R.id.notification_title);
+        TextView notification_description= view.findViewById(R.id.notification_description);
+        TextView description_date_time= view.findViewById(R.id.description_date_time);
 
         Notification item=notificationList.get(position);
 

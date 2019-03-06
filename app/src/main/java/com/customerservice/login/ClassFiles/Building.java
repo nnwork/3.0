@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class Building
+import java.io.Serializable;
+
+public class Building implements Serializable
 {
     String BuildingId;
     String BuildingName;

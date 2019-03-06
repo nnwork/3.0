@@ -45,8 +45,8 @@ public class SuggestionAdapter extends BaseAdapter {
         LayoutInflater inflater = activity.getLayoutInflater();
         View view =  inflater.inflate(R.layout.singlesuggestiondesign,null);
 
-        TextView txtusername = (TextView)view.findViewById(R.id.txtusername);
-        TextView txtsuggestion = (TextView)view.findViewById(R.id.txtsuggestion);
+        TextView txtusername = view.findViewById(R.id.txtusername);
+        TextView txtsuggestion = view.findViewById(R.id.txtsuggestion);
 
        Suggestion item = suggestionList.get(position);
 

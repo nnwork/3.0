@@ -43,8 +43,8 @@ public class FlatAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = activity.getLayoutInflater();
         View view=layoutInflater.inflate(R.layout.singleflatdesign,null);
 
-        TextView textView= (TextView)view.findViewById(R.id.txtflatnumber);
-        TextView txtbuildingname= (TextView)view.findViewById(R.id.txtbuildingname);
+        TextView textView= view.findViewById(R.id.txtflatnumber);
+        TextView txtbuildingname= view.findViewById(R.id.txtbuildingname);
 
         Flat item=flatList.get(position);
         txtbuildingname.setText(item.getBuldingName());

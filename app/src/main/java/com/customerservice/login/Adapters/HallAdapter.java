@@ -42,8 +42,8 @@ public class HallAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = activity.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.singlehallviewdesign,null);
 
-        TextView txttitle = (TextView)view.findViewById(R.id.txttitle);
-        TextView txtcapacity = (TextView)view.findViewById(R.id.txthallcapacity);
+        TextView txttitle = view.findViewById(R.id.txttitle);
+        TextView txtcapacity = view.findViewById(R.id.txthallcapacity);
 
 
        Hall hall = hallList.get(position);

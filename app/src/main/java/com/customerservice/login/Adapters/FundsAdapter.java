@@ -42,7 +42,7 @@ public class FundsAdapter extends BaseAdapter {
         LayoutInflater inflater =activity.getLayoutInflater();
         View view = inflater.inflate(R.layout.singlefundsdesign,null);
 
-        TextView txtfunds = (TextView)view.findViewById(R.id.txtfunds);
+        TextView txtfunds = view.findViewById(R.id.txtfunds);
         Funds item = fundsList.get(position);
 
         txtfunds.setText(item.getFund_title());

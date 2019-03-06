@@ -12,6 +12,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp"
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_gravity="center"
+            >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,32 +26,6 @@
             android:layout_marginTop="25dp"
             android:orientation="vertical"
             android:background="#ffffff">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Hall"
-                android:gravity="center"
-                android:layout_margin="25dp"
-                android:layout_marginTop="10dp"
-                android:textSize="25dp"
-                android:textColor="#000000"
-                />
-
-            <EditText
-                android:id="@+id/hallid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="HallID"
-                android:textColor="@color/textcolorwhite"
-                android:inputType="number"
-                android:padding="7dp"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
 
             <EditText
                 android:id="@+id/halltitle"
@@ -109,6 +90,7 @@
                 />
 
         </LinearLayout>
+        </android.support.v7.widget.CardView>
     </ScrollView>
 
 </RelativeLayout>

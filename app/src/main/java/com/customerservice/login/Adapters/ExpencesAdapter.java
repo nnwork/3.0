@@ -41,9 +41,9 @@ public class ExpencesAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater= activity.getLayoutInflater();
         View  view= layoutInflater.inflate(R.layout.singleexpencesdesign,null);
-        TextView txtexpencetitle = (TextView)view.findViewById(R.id.txtexpencetitle);
-        TextView txtexpenceamount = (TextView)view.findViewById(R.id.txtexpenceamount);
-        TextView txtexpencesdatetime = (TextView)view.findViewById(R.id.txtexpencesdatetime);
+        TextView txtexpencetitle = view.findViewById(R.id.txtexpencetitle);
+        TextView txtexpenceamount = view.findViewById(R.id.txtexpenceamount);
+        TextView txtexpencesdatetime = view.findViewById(R.id.txtexpencesdatetime);
 
         Expences expences = expencesAdapterList.get(position);
 

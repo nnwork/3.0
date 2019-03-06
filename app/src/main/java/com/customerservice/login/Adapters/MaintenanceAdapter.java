@@ -42,7 +42,7 @@ public class MaintenanceAdapter extends BaseAdapter {
         LayoutInflater layoutInflater= activity.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.singlemaintenancedesign,null);
 
-        TextView txtmaintenance=(TextView)view.findViewById(R.id.txtmaintenance);
+        TextView txtmaintenance= view.findViewById(R.id.txtmaintenance);
 
         Maintenance item = maintenanceList.get(position);
 

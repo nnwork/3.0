@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.BuildingAdapter;
 import com.customerservice.login.Adapters.FlatAdapter;
+import com.customerservice.login.ClassFiles.Building;
 import com.customerservice.login.ClassFiles.Flat;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
@@ -28,13 +30,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FlatViewActivity extends AppCompatActivity {
 
     ListView flatlistview;
     FlatAdapter adapter;
     List<Flat> flatList=new ArrayList<Flat>();
+    String buildingid="all";
+
+    Building objectBiulding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +53,17 @@ public class FlatViewActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+
+        if(getIntent().hasExtra("objectBuilding"))
+        {
+            objectBiulding = (Building) getIntent().getSerializableExtra("objectBuilding");
+            buildingid=objectBiulding.getBuildingId();
+        }
+        else
+        {
+            buildingid="all";
+        }
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +85,7 @@ public class FlatViewActivity extends AppCompatActivity {
                 Flat item = flatList.get(position);
 
                 Intent intent = new Intent(FlatViewActivity.this,FlatDetailActivity.class);
-                intent.putExtra("FlatId",item.getFlatId());
-                intent.putExtra("FlatNumber",item.getFlatNumber());
+                intent.putExtra("objectFlat",item);
                 startActivity(intent);
             }
         });
@@ -103,7 +121,14 @@ public class FlatViewActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String>params = new HashMap<>();
+                params.put("BuildingId",buildingid);
+                return params;
+            }
+        };
         RequestQueue requestQueue = Volley.newRequestQueue(FlatViewActivity.this);
         requestQueue.add(request);
     }

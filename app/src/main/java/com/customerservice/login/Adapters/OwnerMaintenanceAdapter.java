@@ -45,9 +45,9 @@ public class OwnerMaintenanceAdapter extends BaseAdapter {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singleownermaintenancedesign,null);
 
-        TextView owner_maintenance_amount=(TextView)view.findViewById(R.id.owner_maintenance_amount);
-        TextView owner_maintenance_status=(TextView)view.findViewById(R.id.owner_maintenance_status);
-        TextView owner_maintenance_pay_date=(TextView)view.findViewById(R.id.owner_maintenance_pay_date);
+        TextView owner_maintenance_amount= view.findViewById(R.id.owner_maintenance_amount);
+        TextView owner_maintenance_status= view.findViewById(R.id.owner_maintenance_status);
+        TextView owner_maintenance_pay_date= view.findViewById(R.id.owner_maintenance_pay_date);
 
         Maintenance item=ownerMaintenanceList.get(position);
         owner_maintenance_amount.setText(item.getAmount());

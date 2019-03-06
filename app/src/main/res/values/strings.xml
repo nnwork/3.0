@@ -69,7 +69,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="action_society">Society</string>
+    <string name="action_owner">Society</string>
+    <string name="action_society">Owner</string>
     <string name="action_events">Events</string>
     <string name="action_maintenance">Maintenance</string>
     <string name="action_helper">Helper</string>
@@ -149,6 +150,9 @@
     <string name="title_activity_owner_maintenance_widget">Maintenance Widget</string>
     <string name="title_activity_owner_complain_widget">OwnerComplainWidgetActivity</string>
     <string name="title_activity_owner_visitor_details">OwnerVisitorDetailsActivity</string>
+    <string name="title_activity_owner_list">Flat Owners</string>
+    <string name="title_activity_owner_details">Owner Details</string>
+    <string name="title_activity_suggestion_details">Suggestion Details</string>
 
 
 </resources>

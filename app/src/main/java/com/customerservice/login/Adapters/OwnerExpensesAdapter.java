@@ -41,9 +41,9 @@ public class OwnerExpensesAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = activity.getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.singleownerexpensesdesign,null);
 
-        TextView txtexpencetitle = (TextView)view.findViewById(R.id.txtexpencetitle);
-        TextView txtexpenceamount = (TextView)view.findViewById(R.id.txtexpenceamount);
-        TextView txtexpencesdatetime = (TextView)view.findViewById(R.id.txtexpencesdatetime);
+        TextView txtexpencetitle = view.findViewById(R.id.txtexpencetitle);
+        TextView txtexpenceamount = view.findViewById(R.id.txtexpenceamount);
+        TextView txtexpencesdatetime = view.findViewById(R.id.txtexpencesdatetime);
 
         Expences expences = expencesList.get(position);
 

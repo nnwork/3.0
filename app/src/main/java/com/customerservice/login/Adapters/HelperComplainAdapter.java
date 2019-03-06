@@ -47,14 +47,14 @@ public class HelperComplainAdapter extends BaseAdapter {
         View view=layoutInflater.inflate(R.layout.singlehelperdesign,null);
 
 
-        TextView helper_complain_hcat_id=(TextView)view.findViewById(R.id.helper_complain_hcat_id);
-        TextView helper_complain_problem=(TextView)view.findViewById(R.id.helper_complain_problem);
-        TextView helper_complain_img_uri=(TextView)view.findViewById(R.id.helper_complain_img_uri);
+        TextView helper_complain_hcat_id= view.findViewById(R.id.helper_complain_hcat_id);
+        TextView helper_complain_problem= view.findViewById(R.id.helper_complain_problem);
+        TextView helper_complain_img_uri= view.findViewById(R.id.helper_complain_img_uri);
 
-        TextView helper_complain_status=(TextView)view.findViewById(R.id.helper_complain_status);
-        TextView helper_complain_v_date=(TextView)view.findViewById(R.id.helper_complain_v_date);
-        TextView helper_complain_v_time=(TextView)view.findViewById(R.id.helper_complain_v_time);
-        TextView helper_complain_date_time=(TextView)view.findViewById(R.id.helper_complain_date_time);
+        TextView helper_complain_status= view.findViewById(R.id.helper_complain_status);
+        TextView helper_complain_v_date= view.findViewById(R.id.helper_complain_v_date);
+        TextView helper_complain_v_time= view.findViewById(R.id.helper_complain_v_time);
+        TextView helper_complain_date_time= view.findViewById(R.id.helper_complain_date_time);
 
 
 

@@ -42,9 +42,9 @@ public class OwnerComplainAdapter extends BaseAdapter {
         View view=inflater.inflate(R.layout.singleownercomplaindesign,null);
 
 //        TextView owner_complain_problem=(TextView)view.findViewById(R.id.owner_complain_problem);
-        TextView owner_complain_hcat_id=(TextView)view.findViewById(R.id.owner_complain_hcat_id);
-        TextView owner_complain_status=(TextView)view.findViewById(R.id.owner_complain_status);
-        TextView owner_complain_date_time=(TextView)view.findViewById(R.id.owner_complain_date_time);
+        TextView owner_complain_hcat_id= view.findViewById(R.id.owner_complain_hcat_id);
+        TextView owner_complain_status= view.findViewById(R.id.owner_complain_status);
+        TextView owner_complain_date_time= view.findViewById(R.id.owner_complain_date_time);
 
         ComplainClassFile item= complainClassFileList.get(position);
         owner_complain_hcat_id.setText(item.getComplain_hcat_id());

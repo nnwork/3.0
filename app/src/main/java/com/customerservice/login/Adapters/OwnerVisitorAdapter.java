@@ -42,8 +42,8 @@ public class OwnerVisitorAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singleownervisitordesign,null);
-        TextView textViewName=(TextView)view.findViewById(R.id.owner_visiters_name);
-        TextView textViewContact=(TextView)view.findViewById(R.id.owner_visiters_contect);
+        TextView textViewName= view.findViewById(R.id.owner_visiters_name);
+        TextView textViewContact= view.findViewById(R.id.owner_visiters_contect);
 
 
         Visitor item = visitorList.get(position);

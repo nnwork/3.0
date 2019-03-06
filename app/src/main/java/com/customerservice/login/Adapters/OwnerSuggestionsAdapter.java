@@ -42,7 +42,7 @@ public class OwnerSuggestionsAdapter extends BaseAdapter {
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.singleownersuggestionsdesign,null);
 
-        TextView owner_suggestion_field=(TextView)view.findViewById(R.id.owner_suggestion_field);
+        TextView owner_suggestion_field= view.findViewById(R.id.owner_suggestion_field);
 
         OwnerSuggestions item= ownerSuggestionsList.get(position);
 

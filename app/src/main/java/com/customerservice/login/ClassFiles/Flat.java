@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class Flat  {
+import java.io.Serializable;
+
+public class Flat implements Serializable {
     public String getFlatId() {
         return FlatId;
     }

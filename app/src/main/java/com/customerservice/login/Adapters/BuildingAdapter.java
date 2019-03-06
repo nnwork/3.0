@@ -48,7 +48,7 @@ public class BuildingAdapter extends BaseAdapter
         LayoutInflater inflater=activity.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.singlebuildingdesign,null);
 
-        TextView txtbuildingname=(TextView)rowView.findViewById(R.id.txtbuildingname);
+        TextView txtbuildingname= rowView.findViewById(R.id.txtbuildingname);
 
         Building item=buildingList.get(position);
 

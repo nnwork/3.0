@@ -44,8 +44,8 @@ public class MonthAmountAdapter  extends BaseAdapter {
         LayoutInflater inflater = activity.getLayoutInflater();
         View view =  inflater.inflate(R.layout.singlemonthamountdesign,null);
 
-        TextView txtmonth = (TextView)view.findViewById(R.id.txtmonth);
-        TextView txtmonthamount = (TextView)view.findViewById(R.id.txtmonthamount);
+        TextView txtmonth = view.findViewById(R.id.txtmonth);
+        TextView txtmonthamount = view.findViewById(R.id.txtmonthamount);
 
         MonthAmount item = monthAmountList.get(position);
 

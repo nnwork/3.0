@@ -42,8 +42,8 @@ public class WatchmanVisitorAdapter extends BaseAdapter {
 
         LayoutInflater inflater=activity.getLayoutInflater();
         View view=inflater.inflate(R.layout.watchmanvisitordesign,null);
-        TextView textViewName=(TextView)view.findViewById(R.id.wachman_visiters_name);
-        TextView textViewContact=(TextView)view.findViewById(R.id.wachman_visiters_contect);
+        TextView textViewName= view.findViewById(R.id.wachman_visiters_name);
+        TextView textViewContact= view.findViewById(R.id.wachman_visiters_contect);
 
         Visitor item=watchmanvisitorList.get(position);
         textViewName.setText(item.getVisitors_name());

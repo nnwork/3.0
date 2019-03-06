@@ -35,6 +35,7 @@ public class FlatDetailActivity extends AppCompatActivity {
 
     TextView txtFlatNumber,txtusername,txtusercontact,txtuseremail,txtuserpassword,txtuser_is_block,txtuser_is_rent;
 
+    Flat objectFlat;
 
 
     @Override
@@ -65,8 +66,7 @@ public class FlatDetailActivity extends AppCompatActivity {
         final String FlatId = getIntent().getStringExtra("FlatId");
         final String FlatNumber = getIntent().getStringExtra("FlatNumber");
 
-
-        Toast.makeText(FlatDetailActivity.this, "Rsponse"+FlatId, Toast.LENGTH_SHORT).show();
+        objectFlat= (Flat)getIntent().getSerializableExtra("objectFlat");
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_FlatUserDetail, new Response.Listener<String>() {
             @Override
@@ -112,6 +112,7 @@ public class FlatDetailActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String>params = new HashMap<>();
                 params.put("FlatId",FlatId);
+                params.put("BuildingId",objectFlat.getBuildingId());
                 return  params;
             }
         };
