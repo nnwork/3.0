@@ -20,39 +20,13 @@
             android:orientation="vertical"
             android:background="#ffffff">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="HallBooking"
-                android:gravity="center"
-                android:layout_margin="25dp"
-                android:layout_marginTop="10dp"
-                android:textSize="25dp"
-                android:textColor="#000000"
-                />
 
-            <EditText
-                android:id="@+id/hallbookingid"
+            <TextView
+                android:id="@+id/halltitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
-                android:hint="hallbooking ID"
-                android:textColor="@color/textcolorwhite"
-                android:inputType="number"
-                android:padding="7dp"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
-
-            <EditText
-                android:id="@+id/hallid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="hall ID"
                 android:textColor="@color/textcolorwhite"
                 android:inputType="number"
                 android:padding="7dp"
@@ -88,22 +62,8 @@
                 android:drawablePadding="10dp"
                 />
 
-            <EditText
-                android:id="@+id/hallbookingdatetime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="hallbooking DTAE AND TIME"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="text"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
 
-
-            <EditText
+            <TextView
                 android:id="@+id/hallbookingamt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,19 +89,6 @@
                 android:drawablePadding="10dp"
                 />
 
-            <Spinner
-                android:id="@+id/hallbookinguserid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="hallbooking USER ID"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="number"
-                android:background="@drawable/spinner_round"
-                android:drawablePadding="10dp"
-                />
 
             <Spinner
                 android:id="@+id/hallbookingstatus"

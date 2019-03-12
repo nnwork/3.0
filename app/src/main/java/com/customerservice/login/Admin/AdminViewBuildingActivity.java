@@ -4,10 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -20,8 +25,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.BuildingAdapter;
+import com.customerservice.login.Adapters.BuildingAdapterRecycle;
 import com.customerservice.login.ClassFiles.Building;
 import com.customerservice.login.R;
+import com.customerservice.login.RecyclerTouchListener;
 import com.customerservice.login.Utility.Config;
 
 import org.json.JSONArray;
@@ -35,8 +42,8 @@ import java.util.List;
 public class AdminViewBuildingActivity extends AppCompatActivity {
 
 
-    ListView buildinglistview;
-    BuildingAdapter adapter;
+    RecyclerView buildinglistview;
+    BuildingAdapterRecycle adapter;
     List<Building> buildingList=new ArrayList<>();
 
     ProgressDialog dialog;
@@ -67,8 +74,11 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         dialog.setMessage("Please Wait...");
         dialog.setCancelable(false);
 
-        buildinglistview=(ListView)findViewById(R.id.buildinglistview);
-        adapter=new BuildingAdapter(this,buildingList);
+        buildinglistview=(RecyclerView)findViewById(R.id.buildinglistview);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        buildinglistview.setLayoutManager(mLayoutManager);
+        buildinglistview.setItemAnimator(new DefaultItemAnimator());
+        adapter=new BuildingAdapterRecycle(buildingList);
         buildinglistview.setAdapter(adapter);
 
 
@@ -114,15 +124,34 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
 
         //Flatview
 
-        buildinglistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        buildinglistview.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), buildinglistview, new RecyclerTouchListener.ClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Building item = buildingList.get(position);
+            public void onClick(View view, int position)
+            {
+               Building item = buildingList.get(position);
                Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
                intent.putExtra("objectBuilding", item);
                startActivity(intent);
             }
-        });
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+
+
+//
+//        buildinglistview.setOn(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Building item = buildingList.get(position);
+//               Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
+//               intent.putExtra("objectBuilding", item);
+//               startActivity(intent);
+//            }
+//        });
 
         //
     }

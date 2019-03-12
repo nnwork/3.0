@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -57,6 +58,17 @@ public class MonthlyAmountActivity extends AppCompatActivity {
         monthAmountAdapter=new MonthAmountAdapter(MonthlyAmountActivity.this,monthAmountList);
         monthamountview.setAdapter(monthAmountAdapter);
 
+        monthamountview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MonthAmount  monthAmount = monthAmountList.get(position);
+                Intent intent= new Intent(MonthlyAmountActivity.this,MaintenanceViewActivity.class);
+                intent.putExtra("objectMonthamount",monthAmount);
+                startActivity(intent);
+
+            }
+        });
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_MonthlyAmount, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -67,9 +79,9 @@ public class MonthlyAmountActivity extends AppCompatActivity {
                         JSONObject jsonObject = array.getJSONObject(i);
 
                         MonthAmount item = new MonthAmount();
-
+                        item.setMonth_id(jsonObject.getString("month_id"));
                         item.setMonth(jsonObject.getString("month"));
-                        item.setMonth(jsonObject.getString("month_amount"));
+                        item.setMonth_amount(jsonObject.getString("month_amount"));
                         monthAmountList.add(item);
 
 

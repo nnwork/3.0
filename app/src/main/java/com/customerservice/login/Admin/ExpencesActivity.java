@@ -1,5 +1,6 @@
 package com.customerservice.login.Admin;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -49,8 +50,8 @@ public class ExpencesActivity extends AppCompatActivity  {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ExpencesActivity.this,Formexpence.class);
+                startActivity(intent);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,7 +69,7 @@ public class ExpencesActivity extends AppCompatActivity  {
                         JSONObject jsonObject = array.getJSONObject(i);
 
                         Expences item = new Expences();
-
+                        item.setExpense_id(jsonObject.getString("expense_id"));
                         item.setExpense_title(jsonObject.getString("expense_title"));
                         item.setExpense_amt(jsonObject.getString("expense_amt"));
                         item.setExpense_date_time(jsonObject.getString("expense_date_time"));

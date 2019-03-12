@@ -13,6 +13,24 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Admin.HallBookingDetailActivity"
+            android:label="@string/title_activity_hall_booking_detail"
+            android:parentActivityName=".Admin.HallBookingViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.HallBookingViewActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallDetailActivity"
+            android:label="@string/title_activity_hall_detail"
+            android:parentActivityName=".Admin.HallViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.HallViewActivity" />
+        </activity>
+        <activity
             android:name=".Admin.SuggestionDetailsActivity"
             android:label="@string/title_activity_suggestion_details"
             android:parentActivityName=".Admin.SuggestionViewActivity"
@@ -101,15 +119,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.FlatOwner.OwnerEventActivity" />
-        </activity>
-        <activity
-            android:name=".FlatOwner.HallBookingActivity"
-            android:label="@string/title_activity_hall_booking"
-            android:parentActivityName=".FlatOwner.OwnerHallDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.FlatOwner.OwnerHallDetailActivity" />
         </activity>
         <activity
             android:name=".FlatOwner.OwnerHallDetailActivity"
@@ -346,6 +355,15 @@
                 android:value="com.customerservice.login.AdminHomeActivity" />
         </activity>
         <activity
+            android:name=".Admin.AdminMaintenanceDetailsActivity"
+            android:label="@string/title_activity_account_report"
+            android:parentActivityName=".Admin.MaintenanceViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
             android:name=".Admin.ExpencesActivity"
             android:label="@string/title_activity_expences"
             android:parentActivityName=".AdminHomeActivity"
@@ -411,7 +429,7 @@
         <activity
             android:name=".Admin.MaintenanceViewActivity"
             android:label="@string/title_activity_maintenance"
-            android:parentActivityName=".AdminHomeActivity"
+            android:parentActivityName=".Admin.MonthlyAmountActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

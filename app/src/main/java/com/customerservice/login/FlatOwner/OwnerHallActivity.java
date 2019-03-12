@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,6 +39,7 @@ public class OwnerHallActivity extends AppCompatActivity {
     ListView list_view_hall;
     OwnerHallAdapter adapter;
     List<Hall> ownerHallList =new ArrayList<>();
+    String hall_booking_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +52,6 @@ public class OwnerHallActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(OwnerHallActivity.this,FormHallBooking.class);
-                startActivity(intent);
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         list_view_hall=(ListView)findViewById(R.id.list_view_hall);
@@ -69,25 +63,32 @@ public class OwnerHallActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Hall hall = ownerHallList.get(position);
                 Intent intent = new Intent(OwnerHallActivity.this,OwnerHallDetailActivity.class);
+                //intent.putExtra("hall_booking_id",hall_booking_id);
                 intent.putExtra("hallObject",hall);
                 startActivity(intent);
+
             }
         });
 
-        StringRequest rq=new StringRequest(Request.Method.POST, Config.list_tbl_hall, new Response.Listener<String>() {
+        
+        StringRequest rq=new StringRequest(Request.Method.POST, Config.READ_Hall, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
+                    //Toast.makeText(OwnerHallActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                             for (int i=0;i<array.length();i++)
                             {
                                 JSONObject object=array.getJSONObject(i);
-                                Hall ownerHall =new Hall();
+                                hall_booking_id = object.getString("hall_booking_id");
+                                Hall ownerHall = new Hall();
 
                                 ownerHall.setHall_id(object.getString("hall_id"));
                                 ownerHall.setHall_title(object.getString("hall_title"));
                                 ownerHall.setHall_capacity(object.getString("hall_capacity"));
-
+                                ownerHall.setHallrent(object.getString("hallrent"));
+                                ownerHall.setHall_img_1(object.getString("hall_img_1"));
+                                ownerHall.setHall_img_2(object.getString("hall_img_1"));
                                 ownerHallList.add(ownerHall);
                             }
                 } catch (JSONException e) {
@@ -100,9 +101,12 @@ public class OwnerHallActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(OwnerHallActivity.this, "Server Message"+error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(rq);
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.customerservice.login.Admin;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.textservice.SuggestionsInfo;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -51,6 +54,15 @@ public class SuggestionViewActivity extends AppCompatActivity {
         suggestionAdapter= new SuggestionAdapter(SuggestionViewActivity.this,suggestionList);
         suggestionview.setAdapter(suggestionAdapter);
 
+        suggestionview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Suggestion suggestion = suggestionList.get(position);
+                Intent intent = new Intent(SuggestionViewActivity.this, SuggestionDetailsActivity.class);
+                intent.putExtra("objectSuggestion",suggestion);
+                startActivity(intent);
+            }
+        });
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Suggestion, new Response.Listener<String>() {
             @Override
@@ -62,7 +74,11 @@ public class SuggestionViewActivity extends AppCompatActivity {
                         JSONObject object= array.getJSONObject(i);
 
                         Suggestion item = new Suggestion();
+                        item.setSuggestion_id(object.getString("suggestion_id"));
                         item.setUser_name(object.getString("user_name"));
+                        item.setUser_id(object.getString("user_id"));
+                        item.setSuggestion_text(object.getString("suggestion_text"));
+                        item.setSuggestion_date_time(object.getString("suggestion_date_time"));
                        // item.setSuggestion_text(object.getString("suggestion_text"));
                         suggestionList.add(item);
                     }

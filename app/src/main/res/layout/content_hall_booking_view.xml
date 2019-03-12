@@ -8,4 +8,10 @@
     tools:context=".Admin.HallBookingViewActivity"
     tools:showIn="@layout/activity_hall_booking_view">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hallview"
+        ></ListView>
+
 </android.support.constraint.ConstraintLayout>

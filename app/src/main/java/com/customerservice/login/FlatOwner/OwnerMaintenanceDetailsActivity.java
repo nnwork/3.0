@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -81,6 +82,8 @@ public class OwnerMaintenanceDetailsActivity extends AppCompatActivity {
         amount.setText(maintenanceObject.getAmount());
         status.setText(maintenanceObject.getStatus());
         pay_mode.setText(maintenanceObject.getPay_mode());
+
+
     }
 
 }

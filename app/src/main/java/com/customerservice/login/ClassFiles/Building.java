@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class Building implements Serializable
 {
+
     String BuildingId;
+
     String BuildingName;
 
     public String getBuildingId() {

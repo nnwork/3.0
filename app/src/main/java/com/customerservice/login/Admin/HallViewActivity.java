@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -61,6 +62,15 @@ public class HallViewActivity extends AppCompatActivity {
         hallAdapter= new HallAdapter(HallViewActivity.this,hallList);
         hallview.setAdapter(hallAdapter);
 
+        hallview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Hall hall = hallList.get(position);
+                Intent intent = new Intent(HallViewActivity.this,HallDetailActivity.class);
+                intent.putExtra("hallObject",hall);
+                startActivity(intent);
+            }
+        });
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Hall, new Response.Listener<String>() {
             @Override
@@ -74,6 +84,10 @@ public class HallViewActivity extends AppCompatActivity {
                         Hall item = new Hall();
                         item.setHall_title(object.getString("hall_title"));
                         item.setHall_capacity(object.getString("hall_capacity"));
+                        item.setHall_id(object.getString("hall_id"));
+                        item.setHallrent(object.getString("hallrent"));
+                        item.setHall_img_1(object.getString("hall_img_1"));
+                        item.setHall_img_2(object.getString("hall_img_1"));
                         hallList.add(item);
                     }
                 } catch (JSONException e) {

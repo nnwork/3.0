@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class MonthAmount {
+import java.io.Serializable;
+
+public class MonthAmount implements Serializable {
     String 	month_id,month,month_amount;
 
     public String getMonth_id() {

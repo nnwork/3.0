@@ -3,7 +3,7 @@ package com.customerservice.login.ClassFiles;
 import java.io.Serializable;
 
 public class Hall implements Serializable {
-    String hall_id,hall_title,hall_capacity,hall_img_1,	hall_img_2;
+    String hall_id,hall_title,hall_capacity,hallrent,hall_img_1,hall_img_2;
 
     public String getHall_id() {
         return hall_id;
@@ -27,6 +27,14 @@ public class Hall implements Serializable {
 
     public void setHall_capacity(String hall_capacity) {
         this.hall_capacity = hall_capacity;
+    }
+
+    public String getHallrent() {
+        return hallrent;
+    }
+
+    public void setHallrent(String hallrent) {
+        this.hallrent = hallrent;
     }
 
     public String getHall_img_1() {

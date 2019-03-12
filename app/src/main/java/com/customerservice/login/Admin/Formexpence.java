@@ -62,21 +62,22 @@ public class Formexpence extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
         expencebtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                // String expenceidstr = expenceid.getText().toString();
                 String expencetitlestr = expencetitle.getText().toString();
                 String expenceamtstr = expenceamt.getText().toString();
-                String expencedatestr = expencedate.getText().toString();
-
 
                  if (expencetitlestr.length() == 0) {
                     Toast.makeText(Formexpence.this, "Please Enter expence Title", Toast.LENGTH_SHORT).show();
                 } else if (expenceamtstr.length() == 0) {
                     Toast.makeText(Formexpence.this, "Please Enter Amount", Toast.LENGTH_SHORT).show();
-                } else if (expencedatestr.length() == 0) {
-                    Toast.makeText(Formexpence.this, "Please Enter Date", Toast.LENGTH_SHORT).show();
-                } else
+            }
+//                else if (expencedatestr.length() == 0) {
+//                    Toast.makeText(Formexpence.this, "Please Enter Date", Toast.LENGTH_SHORT).show();
+//                }
+                 else
                     {
                         StringRequest expencetitleexrq=new StringRequest(Request.Method.POST, Config.ADD_tbl_expence, new Response.Listener<String>() {
                             @Override
@@ -93,7 +94,7 @@ public class Formexpence extends AppCompatActivity {
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-
+                                Toast.makeText(Formexpence.this, "Server Error"+error.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }){
                             @Override

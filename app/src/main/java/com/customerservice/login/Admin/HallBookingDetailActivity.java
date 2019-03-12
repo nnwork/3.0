@@ -1,18 +1,12 @@
-package com.customerservice.login.FlatOwner;
+package com.customerservice.login.Admin;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,8 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.customerservice.login.Admin.HallBookingDetailActivity;
 import com.customerservice.login.ClassFiles.Hall;
+import com.customerservice.login.FlatOwner.FormHallBooking;
+import com.customerservice.login.FlatOwner.OwnerHallDetailActivity;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 
@@ -37,15 +32,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class OwnerHallDetailActivity extends AppCompatActivity {
+public class HallBookingDetailActivity extends AppCompatActivity {
     TextView halltitle,hallcapacity,hallrent,hallbookingusername,hallbookingdate,hallbookingtime,hallbookingsubject,hallbookingstatus;
     Button payment;
-    String hallbookingid;
-    Hall hallObject;
+   String hallbookingid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_owner_hall_detail);
+        setContentView(R.layout.activity_hall_booking_detail);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -63,8 +57,9 @@ public class OwnerHallDetailActivity extends AppCompatActivity {
         hallbookingsubject= findViewById(R.id.hallbookingsubject);
         hallbookingstatus=findViewById(R.id.hallbookingstatus);
 
+        hallbookingid = getIntent().getStringExtra("hallbookingid");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.Disp_tbl_hall_booking, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Hall_BookingDetail, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -72,7 +67,7 @@ public class OwnerHallDetailActivity extends AppCompatActivity {
                     for (int i=0;i<array.length();i++)
                     {
                         JSONObject object= array.getJSONObject(i);
-                        String string =object.getString("hall_booking_id");
+
                         hallbookingusername.setText(object.getString("user_name"));
                         halltitle.setText(object.getString("hall_title"));
                         hallcapacity.setText(object.getString("hall_capacity"));
@@ -81,6 +76,8 @@ public class OwnerHallDetailActivity extends AppCompatActivity {
                         hallbookingdate.setText(object.getString("hall_booking_b_time"));
                         hallbookingtime.setText(object.getString("hall_booking_date_time"));
                         hallrent.setText(object.getString("hallrent"));
+
+
 
                     }
                 } catch (JSONException e) {
@@ -91,27 +88,23 @@ public class OwnerHallDetailActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(OwnerHallDetailActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HallBookingDetailActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String>params = new HashMap<>();
-               // params.put("hall_booking_id",);
+                params.put("hall_booking_id",hallbookingid);
                 return params;
             }
         };
-        RequestQueue queue = Volley.newRequestQueue(OwnerHallDetailActivity.this);
+        RequestQueue queue = Volley.newRequestQueue(HallBookingDetailActivity.this);
         queue.add(stringRequest);
 
-        payment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(OwnerHallDetailActivity.this,FormHallBooking.class);
-                startActivity(intent);
-            }
-        });
+
+
 
     }
 
 }
+

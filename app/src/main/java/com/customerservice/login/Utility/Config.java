@@ -12,6 +12,7 @@ public class Config {
     public static String Add_Event=BASE_URL+"insertEvent.php";
     public static String Add_User=BASE_URL+"insertUser.php";
 
+
     public static String READ_HelperUserComplain=BASE_URL+"GetHelperUserComplain.php";
     public static String list_tbl_notification=BASE_URL+"disp_tbl_Notification.php";
 
@@ -35,6 +36,8 @@ public class Config {
     public static String READ_Expences=BASE_URL+"getExpences.php";
     public static String READ_Hall=BASE_URL+"getHall.php";
     public static String READ_Hall_Booking=BASE_URL+"getHallBooking.php";
+    public static String READ_Hall_BookingDetail=BASE_URL+"getHallBookingDetail.php";
+
     public static String READ_Helper_Category=BASE_URL+"getHelperCategory.php";
     public static String READ_Suggestion=BASE_URL+"getSuggestion.php";
     public static String READ_FlatUserDetail=BASE_URL+"getFlatDetail.php";
@@ -54,7 +57,7 @@ public class Config {
     public static String ADD_tbl_hall_booking=BASE_URL+"insert_tbl_hall_booking.php";
     public static String ADD_tbl_suggestion=BASE_URL+"insert_tbl_suggestion.php";
 
-    public static String Disp_tbl_hid_hall=BASE_URL+"disp_tbl_hid_hall_booking.php";
+    public static String Disp_tbl_hall_booking=BASE_URL+"disp_tbl_hall_booking.php";
     public static String Disp_tbl_user_hall=BASE_URL+"disp_tbl_user_hall_booking.php";
     public static String Disp_tbl_user_suggestion=BASE_URL+"disp_tbl_suggestion.php";
     public static String Disp_tbl_halper_comlain=BASE_URL+"disp_help_cat_tbl_complain.php";

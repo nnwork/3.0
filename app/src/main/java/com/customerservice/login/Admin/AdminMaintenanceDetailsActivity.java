@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ import org.json.JSONObject;
 
 public class AdminMaintenanceDetailsActivity extends AppCompatActivity {
 
-    TextView amount,status,pay_mode,admin_maintenance_display_user_id;
+    TextView amount,status,pay_mode,user_name,transaction_number,pay_date,monthlyamount;
     Maintenance maintenanceObject;
 
     @Override
@@ -35,49 +36,48 @@ public class AdminMaintenanceDetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         amount=(TextView)findViewById(R.id.admin_maintenance_display_amount);
         status=(TextView)findViewById(R.id.admin_maintenance_display_status);
         pay_mode=(TextView)findViewById(R.id.admin_maintenance_display_pay_mode);
-        admin_maintenance_display_user_id=(TextView)findViewById(R.id.admin_maintenance_display_user_id);
-
+        user_name=(TextView)findViewById(R.id.admin_maintenance_display_user_name);
+        transaction_number=(TextView)findViewById(R.id.admin_maintenance_display_transaction_number);
+        pay_date=(TextView)findViewById(R.id.admin_maintenance_display_pay_date);
+        monthlyamount=(TextView)findViewById(R.id.monthlyamount);
         maintenanceObject=(Maintenance) getIntent().getSerializableExtra("maintenanceObject");
 
-        StringRequest request=new StringRequest(Request.Method.POST, Config.READ_AdminUserMaintenance, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONArray array=new JSONArray(response);
-                    for(int i=0;i<array.length();i++)
-                    {
-                        JSONObject object=array.getJSONObject(i);
-
-                        String username=object.getString("user_name");
-                        admin_maintenance_display_user_id.setText(username);
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        RequestQueue queue= Volley.newRequestQueue(this);
-        queue.add(request);
+//        StringRequest request=new StringRequest(Request.Method.POST, Config.READ_AdminUserMaintenance, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                try {
+//                    JSONArray array=new JSONArray(response);
+//                    for(int i=0;i<array.length();i++)
+//                    {
+                      // JSONObject object=array.getJSONObject(i);
+                        user_name.setText(maintenanceObject.getAmount());
+                        //amount.setText(maintenanceObject.getAmount());
+                        //status.setText(maintenanceObject.getAmount());
+                        pay_date.setText(maintenanceObject.getPay_date());
+                        transaction_number.setText(maintenanceObject.getTransaction_number());
+                        //pay_mode.setText(maintenanceObject.getAmount());
+                        monthlyamount.setText(maintenanceObject.getMonth());
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//            }
+//        });
+//        RequestQueue queue= Volley.newRequestQueue(this);
+//        queue.add(request);
 
         toolbar.setTitle(maintenanceObject.getAmount());
         amount.setText(maintenanceObject.getAmount());
@@ -86,5 +86,14 @@ public class AdminMaintenanceDetailsActivity extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                break;
+        }
+        return true;
+    }
 }

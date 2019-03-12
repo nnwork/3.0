@@ -1,6 +1,8 @@
 package com.customerservice.login.ClassFiles;
 
-public class Suggestion {
+import java.io.Serializable;
+
+public class Suggestion implements Serializable {
     String 	suggestion_id;
     String user_id;
     String suggestion_text;

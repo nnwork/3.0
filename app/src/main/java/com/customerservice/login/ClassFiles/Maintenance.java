@@ -5,7 +5,37 @@ import java.io.Serializable;
 public class Maintenance implements Serializable {
 
     String maintenance_id,user_id,amount,status;
-    String pay_date,transaction_number,pay_mode;
+    String pay_date;
+    String transaction_number;
+    String pay_mode;
+    String month_id;
+    String user_name;
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    String month;
+
+    public String getMonth_id() {
+        return month_id;
+    }
+
+    public void setMonth_id(String month_id) {
+        this.month_id = month_id;
+    }
 
     public String getMaintenance_id() {
         return maintenance_id;

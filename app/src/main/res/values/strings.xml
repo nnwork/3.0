@@ -153,6 +153,8 @@
     <string name="title_activity_owner_list">Flat Owners</string>
     <string name="title_activity_owner_details">Owner Details</string>
     <string name="title_activity_suggestion_details">Suggestion Details</string>
+    <string name="title_activity_hall_detail">Hall Detail</string>
+    <string name="title_activity_hall_booking_detail">Bookings Detail</string>
 
 
 </resources>

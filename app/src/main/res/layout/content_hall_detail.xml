@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".FlatOwner.OwnerHallDetailActivity"
-    tools:showIn="@layout/activity_owner_hall_detail">
-
+    tools:context=".Admin.HallDetailActivity"
+    tools:showIn="@layout/activity_hall_detail">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -52,14 +51,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingusername"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:id="@+id/halltitle"
                     android:paddingTop="10dp"
                     android:text="title"
@@ -73,7 +64,14 @@
                     android:paddingTop="10dp"
                     android:layout_margin="@dimen/layout_margin"
                     />
-
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hallstatus"
+                    android:paddingTop="10dp"
+                    android:text="title"
+                    android:layout_margin="@dimen/layout_margin"
+                    />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -82,53 +80,18 @@
                     android:paddingTop="10dp"
                     android:layout_margin="@dimen/layout_margin"
                     />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingdate"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingtime"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingsubject"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingstatus"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
 
 
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/payment"
-                android:paddingTop="20dp"
-                android:layout_margin="10dp"
-                android:text="Book"
-                android:textSize="20sp"
-                />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/payment"
+                    android:paddingTop="20dp"
+                    android:layout_margin="10dp"
+                    android:text="Book"
+                    android:textSize="20sp"
+                    />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-
 </RelativeLayout>
