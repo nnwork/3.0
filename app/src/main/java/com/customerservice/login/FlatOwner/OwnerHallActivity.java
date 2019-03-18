@@ -3,8 +3,6 @@ package com.customerservice.login.FlatOwner;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -39,12 +37,12 @@ public class OwnerHallActivity extends AppCompatActivity {
     ListView list_view_hall;
     OwnerHallAdapter adapter;
     List<Hall> ownerHallList =new ArrayList<>();
-    String hall_booking_id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_hall);
+        setContentView(R.layout.activity_owner_hall);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -63,7 +61,6 @@ public class OwnerHallActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Hall hall = ownerHallList.get(position);
                 Intent intent = new Intent(OwnerHallActivity.this,OwnerHallDetailActivity.class);
-                //intent.putExtra("hall_booking_id",hall_booking_id);
                 intent.putExtra("hallObject",hall);
                 startActivity(intent);
 
@@ -75,14 +72,14 @@ public class OwnerHallActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try {
+                    Toast.makeText(OwnerHallActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                     JSONArray array=new JSONArray(response);
                     //Toast.makeText(OwnerHallActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                             for (int i=0;i<array.length();i++)
                             {
                                 JSONObject object=array.getJSONObject(i);
-                                hall_booking_id = object.getString("hall_booking_id");
-                                Hall ownerHall = new Hall();
 
+                                Hall ownerHall = new Hall();
                                 ownerHall.setHall_id(object.getString("hall_id"));
                                 ownerHall.setHall_title(object.getString("hall_title"));
                                 ownerHall.setHall_capacity(object.getString("hall_capacity"));

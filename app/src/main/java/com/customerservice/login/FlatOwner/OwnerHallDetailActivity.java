@@ -38,9 +38,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OwnerHallDetailActivity extends AppCompatActivity {
-    TextView halltitle,hallcapacity,hallrent,hallbookingusername,hallbookingdate,hallbookingtime,hallbookingsubject,hallbookingstatus;
+    TextView halltitle,hallcapacity,hallrent;
     Button payment;
-    String hallbookingid;
+
     Hall hallObject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,59 +55,20 @@ public class OwnerHallDetailActivity extends AppCompatActivity {
         halltitle = findViewById(R.id.halltitle);
         hallcapacity= findViewById(R.id.hallcapacity);
         hallrent= findViewById(R.id.hallrent);
-        payment=findViewById(R.id.payment);
-        hallbookingusername= findViewById(R.id.hallbookingusername);
-        hallbookingdate= findViewById(R.id.hallbookingdate);
-        hallbookingtime=findViewById(R.id.hallbookingtime);
-        hallbookingusername= findViewById(R.id.hallbookingusername);
-        hallbookingsubject= findViewById(R.id.hallbookingsubject);
-        hallbookingstatus=findViewById(R.id.hallbookingstatus);
+        payment= findViewById(R.id.payment);
 
+        hallObject = (Hall)getIntent().getSerializableExtra("hallObject");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.Disp_tbl_hall_booking, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONArray array = new JSONArray(response);
-                    for (int i=0;i<array.length();i++)
-                    {
-                        JSONObject object= array.getJSONObject(i);
-                        String string =object.getString("hall_booking_id");
-                        hallbookingusername.setText(object.getString("user_name"));
-                        halltitle.setText(object.getString("hall_title"));
-                        hallcapacity.setText(object.getString("hall_capacity"));
-                        hallbookingsubject.setText(object.getString("hall_booking_subject"));
-                        hallbookingstatus.setText(object.getString("hall_booking_status"));
-                        hallbookingdate.setText(object.getString("hall_booking_b_time"));
-                        hallbookingtime.setText(object.getString("hall_booking_date_time"));
-                        hallrent.setText(object.getString("hallrent"));
+        halltitle.setText(hallObject.getHall_title());
+        hallcapacity.setText(hallObject.getHall_capacity());
+        hallrent.setText(hallObject.getHallrent());
 
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(OwnerHallDetailActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String>params = new HashMap<>();
-               // params.put("hall_booking_id",);
-                return params;
-            }
-        };
-        RequestQueue queue = Volley.newRequestQueue(OwnerHallDetailActivity.this);
-        queue.add(stringRequest);
 
         payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OwnerHallDetailActivity.this,FormHallBooking.class);
+                intent.putExtra("hallObject",hallObject);
                 startActivity(intent);
             }
         });

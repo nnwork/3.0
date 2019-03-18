@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".FlatOwner.OwnerHallActivity"
-    tools:showIn="@layout/activity_admin_hall">
+    tools:showIn="@layout/activity_owner_hall">
 
     <ListView
         android:id="@+id/list_view_hall"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@null"
+
+        >
     </ListView>
 
 </RelativeLayout>

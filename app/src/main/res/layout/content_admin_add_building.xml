@@ -6,12 +6,17 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Admin.AdminAddBuildingActivity"
+    android:id="@+id/coordinator"
     tools:showIn="@layout/activity_admin_add_building"
-    android:gravity="center">
+    android:gravity="center"
+    >
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
+
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view"
@@ -24,18 +29,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         >
 
+        <EditText
+            android:id="@+id/edtBuildingName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_margin"
+            android:background="@drawable/roundtextview"
+            android:hint="@string/Category"
+            android:inputType="text"
+            android:padding="@dimen/edittextsize"
+            android:drawableLeft="@drawable/ic_buildings"
+            android:drawablePadding="10dp"
+            />
 
-           <EditText
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_margin="@dimen/layout_margin"
-               android:hint="Building Name"
-               android:background="@drawable/roundtextview"
-               android:padding="@dimen/edittextsize"
-               android:id="@+id/edtBuildingName"
-               ></EditText>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+           android:gravity="center"
+            android:padding="20dp"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_menu_camera"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_menu_gallery"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
 
             <Button
                 android:id="@+id/btnUserSubmit"
@@ -46,13 +79,6 @@
                 android:text="@string/submitbutton"
                 android:textColor="@color/textcolorwhite"
                 android:textSize="@dimen/buttontextsize" />
-
-
-
-
-
-
-
 
     </LinearLayout>
         </android.support.v7.widget.CardView>

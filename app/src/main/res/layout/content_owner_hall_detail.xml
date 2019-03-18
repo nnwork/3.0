@@ -49,14 +49,7 @@
 
 
                 >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingusername"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,38 +71,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/hallrent"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingdate"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingtime"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingsubject"
-                    android:text="capacity"
-                    android:paddingTop="10dp"
-                    android:layout_margin="@dimen/layout_margin"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/hallbookingstatus"
                     android:text="capacity"
                     android:paddingTop="10dp"
                     android:layout_margin="@dimen/layout_margin"

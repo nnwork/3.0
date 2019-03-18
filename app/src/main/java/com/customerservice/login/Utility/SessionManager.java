@@ -20,6 +20,7 @@ public class SessionManager {
     private static final String KEY_NAME = "name";
     private static final String KEY_CONTACT = "contact";
     private static final String KEY_TYPE = "type";
+    private static final String KEY_TOKEN = "token";
 
     public SessionManager(Context context) {
         this._context = context;
@@ -58,9 +59,21 @@ public class SessionManager {
     }
     public String getName()
     {
-        return pref.getString(KEY_NAME,"");
+        return pref.getString(KEY_TOKEN,"");
     }
     //contact
+    public void setToken(String token)
+    {
+        editor.putString(KEY_TOKEN,token);
+        editor.commit();
+    }
+
+    public String getToken()
+    {
+        return pref.getString(KEY_TOKEN,"");
+    }
+
+
     public void setContact(String contact)
     {
         editor.putString(KEY_CONTACT,contact);
@@ -70,6 +83,8 @@ public class SessionManager {
     {
         return pref.getString(KEY_CONTACT,"");
     }
+
+
     //type
     public void setType(String type)
     {

@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         session=new SessionManager(this);
 
+        Toast.makeText(this, ""+session.getToken(), Toast.LENGTH_SHORT).show();
+
         if(session.isLoggedIn())
         {
 
@@ -170,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
                             params.put("MobileNumber",MobileNumber);
                             params.put("password",password);
+                            params.put("token",session.getToken());
                             return  params;
                         }
                     };

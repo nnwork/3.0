@@ -1,7 +1,7 @@
 package com.customerservice.login.Utility;
 
 public class Config {
-    public static String BASE_URL="http://192.168.43.27:8089/Webservices/";
+    public static String BASE_URL="http://192.168.1.146:8089/Webservices/";
 
     public static String ADD_BUILDING=BASE_URL+"insertBuilding.php";
 
@@ -73,5 +73,18 @@ public class Config {
     public static String list_tbl_suggestions=BASE_URL+"disp_tbl_suggestion.php";
 
 
+
+    // global topic to receive app wide push notifications
+    public static final String TOPIC_GLOBAL = "global";
+
+    // broadcast receiver intent filters
+    public static final String REGISTRATION_COMPLETE = "registrationComplete";
+    public static final String PUSH_NOTIFICATION = "pushNotification";
+
+    // id to handle the notification in the notification tray
+    public static final int NOTIFICATION_ID = 100;
+    public static final int NOTIFICATION_ID_BIG_IMAGE = 101;
+
+    public static final String SHARED_PREF = "ah_firebase";
 
 }
