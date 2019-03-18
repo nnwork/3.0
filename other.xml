@@ -1,0 +1,65 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.SPLIT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.LEFT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.TOOL_ORDER" value="PALETTE,PROPERTIES,COMPONENT_TREE" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Preview.PALETTE.AUTO_HIDE" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Preview.PALETTE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Preview.PALETTE.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Preview.TOOL_ORDER" value="PALETTE" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.COMPONENT_TREE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.COMPONENT_TREE.SPLIT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.LEFT.UNSCALED.WIDTH" value="225" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.PALETTE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.PROPERTIES.MINIMIZED" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.RIGHT.UNSCALED.WIDTH" value="251" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.TEXT_SEARCH_HISTORY" value="ca&#10;R&#10;edit&#10;im" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.TOOL_ORDER" value="PALETTE,PROPERTIES,COMPONENT_TREE" />
+    <property name="ATTACHED_TOOL_WINDOW.Preview.LEFT.UNSCALED.WIDTH" value="225" />
+    <property name="ATTACHED_TOOL_WINDOW.Preview.PALETTE.AUTO_HIDE" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.Preview.PALETTE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.Preview.RIGHT.UNSCALED.WIDTH" value="225" />
+    <property name="ATTACHED_TOOL_WINDOW.Preview.TOOL_ORDER" value="PALETTE" />
+    <property name="AndroidInitConfigurator.V1" value="true" />
+    <property name="AndroidInitConfigurator.V3" value="true" />
+    <property name="AndroidInitConfigurator.V5" value="true" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.6882068" />
+    <property name="CommittedChanges.SplitterProportions.0" value="700" />
+    <property name="CommittedChanges.SplitterProportions.1" value="500" />
+    <property name="Copy.OpenInEditor" value="true" />
+    <property name="Default.savedEditorTheme" value="_@user_Default" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
+    <property name="LayoutEditorPreferenceAutoConnect" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="ResourceChooserGridMode" value="true" />
+    <property name="SAVED_ANDROID_PACKAGE" value="com.example" />
+    <property name="SAVED_RENDER_LANGUAGE" value="Java" />
+    <property name="Vcs.Push.Splitter.Proportion" value="0.5312085" />
+    <property name="android-component-compatibility-check" value="1552453430128" />
+    <property name="build.toolwindow.Build Output.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.Build.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="colorPickerCategoryProperty" value="MATERIAL_500" />
+    <property name="decompiler.legal.notice.accepted" value="true" />
+    <property name="dir.diff.panel.divider.location" value="0" />
+    <property name="export.settings.path" value="D:\infotech\Karon Work\AndroidProject\settings.jar" />
+    <property name="file.chooser.recent.files" value="D:/infotech/Karon Work/4.0&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject/4.0&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject&#10;D:/infotech/Karon Work/AndroidProject/TMP_PROJECT/March 18/4.0&#10;D:/infotech/Karon Work/AndroidProject/TMP_PROJECT/March 18&#10;D:/infotech/Karon Work/AndroidProject/TMP_PROJECT&#10;D:/infotech/Karon Work/AndroidProject/2.5update_26_feb&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject/2.0/CustomerService&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject/projectupdate26Fab/CustomerService.zip&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject/projectupdate26Fab&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject/3.0&#10;C:/Program Files/Git/bin/git.exe&#10;D:/infotech/Karon Work/AndroidProject/CurrentProject/2.0&#10;D:/infotech/Karon Work/AndroidProject/CustomerService&#10;D:/infotech/Karon Work/Android/icon/plus.svg&#10;D:/infotech/Karon Work/Android/icon/plus-sign-in-a-black-circle.svg&#10;D:/infotech/Karon Work/AndroidProject&#10;C:/bdlog.txt&#10;D:/infotech/Karon Work/Android/icon/lock.svg&#10;D:/infotech/Karon Work/Android/icon/whatsapp.svg&#10;D:/infotech/Karon Work/Android/icon/id-card.svg&#10;D:/infotech/Karon Work/Android/icon/key-silhouette-security-tool-interface-symbol-of-password.svg&#10;D:/infotech/Karon Work/Android/icon/telephone-with-glasses-and-moustache.svg" />
+    <property name="file.gist.reindex.count" value="1445" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="inspector.open.textAppearance" value="true" />
+    <property name="installed.kotlin.plugin.version" value="1.3.11-release-Studio3.4-2" />
+    <property name="last.imported.location" value="D:/infotech/Karon Work/AndroidProject/CurrentProject/2.0/CustomerService" />
+    <property name="lastTip" value="102" />
+    <property name="newly.installed.api.level" value="26" />
+    <property name="properties.mode" value="INSPECTOR" />
+  </component>
+</application>
