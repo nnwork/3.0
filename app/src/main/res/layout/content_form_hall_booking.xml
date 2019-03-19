@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FlatOwner.FormHallBooking"
+    tools:showIn="@layout/activity_form_hall_booking">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/halltitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:textColor="#000000"
+                android:inputType="number"
+                android:padding="7dp"
+                android:background="@drawable/roundtextview"
+                android:drawablePadding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/hallbookingbookingdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="B DATE"
+                android:textColor="#000000"
+                android:padding="7dp"
+                android:inputType="date"
+                android:background="@drawable/roundtextview"
+                android:drawablePadding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/hallbookingtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="B TIME"
+                android:textColor="@color/textcolorwhite"
+                android:padding="7dp"
+                android:inputType="datetime"
+                android:background="@drawable/roundtextview"
+                android:drawablePadding="10dp"
+                />
+            <TextView
+                android:id="@+id/hallbookingamt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="hallbooking AMOUNT"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:inputType="number"
+                />
+            <EditText
+                android:id="@+id/hallbookingsubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="hallbooking SUBJECT"
+                android:textColor="@color/textcolorwhite"
+                android:padding="10dp"
+                android:inputType="text"
+                android:background="@drawable/roundtextview"
+                android:drawablePadding="10dp"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hallbookingbtn"
+                android:text="submit"
+                android:textColor="@color/textcolorwhite"
+                android:padding="10dp"
+                android:textSize="25dp"
+                android:background="@drawable/roundbutton"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/action_society">
+        <menu>
+            <item
+                android:id="@+id/nav_building"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Building" />
+
+            <item
+                android:id="@+id/nav_Flat"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Flat" />
+        </menu>
+        </item>
+        <item android:title="@string/action_owner">
+            <menu>
+                <item
+                    android:id="@+id/nav_owner"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Owners" />
+
+            </menu>
+        </item>
+
+        <item android:title="@string/action_events">
+        <menu>
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Events" />
+        </menu>
+        </item>
+
+        <item android:title="@string/action_suggestion">
+            <menu>
+                <item
+                    android:id="@+id/nav_suggestion"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Suggestion" />
+            </menu>
+        </item>
+
+
+        <item android:title="@string/action_helper">
+            <menu>
+                <item
+                    android:id="@+id/nav_new_complain"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="New Complain" />
+
+                <item
+                    android:id="@+id/nav_Process_Complain"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Status Process" />
+
+                <item
+                    android:id="@+id/nav_helper"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Helpers" />
+            </menu>
+        </item>
+
+        <item android:title="@string/action_maintenance">
+        <menu>
+        <item
+            android:id="@+id/nav_monthly_amount"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Monthly Amount" />
+
+            <item
+                android:id="@+id/nav_Maintenance"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Maintenance" />
+        </menu>
+        </item>
+        <item android:title="@string/action_watchman">
+        <menu>
+        <item
+            android:id="@+id/nav_visitor"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Visitor" />
+
+        <item
+        android:id="@+id/nav_watchman"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Watchman" />
+        </menu>
+        </item>
+
+
+        <item android:title="@string/action_fund">
+            <menu>
+                <item
+                    android:id="@+id/nav_fund"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="funds" />
+
+                <item
+                    android:id="@+id/nav_fund_report"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Report" />
+            </menu>
+        </item>
+
+        <item android:title="@string/action_accounts">
+            <menu>
+                <item
+                    android:id="@+id/nav_income"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Income" />
+
+                <item
+                    android:id="@+id/nav_expences"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Expences" />
+
+                <item
+                    android:id="@+id/nav_account_Report"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Report" />
+            </menu>
+        </item>
+
+        <item android:title="@string/action_hall">
+            <menu>
+                <item
+                    android:id="@+id/nav_hall"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Hall" />
+
+                <item
+                    android:id="@+id/nav_hall_booking"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Booking" />
+
+
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_admin_change_password"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/title_activity_owner_change_password" />
+            <item
+                android:id="@+id/nav_admin_logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

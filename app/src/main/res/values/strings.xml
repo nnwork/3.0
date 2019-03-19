@@ -1,0 +1,163 @@
+<resources>
+    <string name="app_name">Smart Society</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="mobile_number_hint">Enter Mobile Number</string>
+
+    <string name="password_hint">Enter Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+
+    <string name="New_password">New Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="title_activity_change_password">ChangePassword</string>
+
+    <string name="old_password">Old Password</string>
+    <string name="enter_oldpassword_hint">Enter Old Password</string>
+
+    <string name="submitbutton">Submit</string>
+
+    <string name="Username">UserName</string>
+
+    <string name="UserEmail">Email</string>
+    <string name="UserAadharNumber">Aadhar Number</string>
+
+    <string name="FlatMember">Flat Member</string>
+
+    <string name="EventTitle">Event Title</string>
+    <string name="EventDesc">Event Description</string>
+    <string name="EventVenue">Event Venue</string>
+    <string name="EventAddress">Address</string>
+    <string name="Landmark">Landmark</string>
+    <string name="Pincode">Pincode</string>
+    <string name="EventSpeciality">Speciality</string>
+
+    <string name="Category">Category</string>
+
+    <string name="Amount">Amount</string>
+
+    <string name="TransactionNumber">Transaction Number</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="loginbutton">Login</string>
+    <string name="sendotpbutton">Send OTP</string>
+    <string name="title_activity_send_otp">Visitors</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="title_activity_otp">OTP</string>
+    <string name="title_activity_pwd_change">PwdChange</string>
+    <string name="title_activity_admin_add_building">Add Building</string>
+    <string name="title_activity_admin_add_user">AdminAddUserActivity</string>
+    <string name="title_activity_admin_add_flat">AdminAddFlatActivity</string>
+    <string name="title_activity_add_event">AddEventActivity</string>
+    <string name="title_activity_add_category">AddCategoryActivity</string>
+    <string name="title_activity_add_month">AddMonthActivity</string>
+    <string name="title_activity_add_maintenance">AddMaintenanceActivity</string>
+    <string name="title_activity_add_helper_category">AddHelperCategoryActivity</string>
+
+
+    <string-array name="status">
+        <item>Pending</item>
+        <item>Approve</item>
+        <item>Accept</item>
+        <item>Complete</item>
+    </string-array>
+    <string name="title_activity_owner_home">Owner</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_society">Society</string>
+    <string name="action_owner">Society</string>
+    <string name="action_events">Events</string>
+    <string name="action_maintenance">Maintenance</string>
+    <string name="action_helper">Helper</string>
+    <string name="action_fund">Funds</string>
+    <string name="action_accounts">Accounts</string>
+    <string name="action_hall">Hall</string>
+    <string name="action_watchman">Watchman</string>
+    <string name="action_suggestion">Suggestion</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_admin_home">Admin</string>
+    <string name="title_activity_watch_men_home">Watchmen</string>
+    <string name="title_activity_helper_home">Helper</string>
+    <string name="title_activity_owner_change_password">Change Password</string>
+    <string name="title_activity_helper_change_password">HelperChangePasswordActivity</string>
+    <string name="title_activity_watchman_change_password">WatchmanChangePasswordActivity</string>
+    <string name="title_activity_formcomplain">Complain</string>
+    <string name="title_activity_form_fund">Fund</string>
+    <string name="title_activity_formexpence">Expence</string>
+    <string name="title_activity_formhall">Hall</string>
+    <string name="title_activity_form_hall_booking">HallBooking</string>
+    <string name="title_activity_form_suggestion">Suggestion</string>
+    <string name="title_activity_admin_view_building">Buildings</string>
+    <string name="title_activity_flat_view">Flats</string>
+    <string name="title_activity_events_view">Events</string>
+    <string name="title_activity_monthly_amount">MonthlyAmountActivity</string>
+    <string name="title_activity_maintenance">MaintenanceActivity</string>
+    <string name="title_activity_visitor">VisitorActivity</string>
+    <string name="title_activity_watchman">WatchmanActivity</string>
+    <string name="title_activity_funds_view">FundsViewActivity</string>
+    <string name="title_activity_halll_view">HalllViewActivity</string>
+    <string name="title_activity_month_amount">MonthAmountActivity</string>
+    <string name="title_activity_funds_report">FundsReportActivity</string>
+    <string name="title_activity_income">IncomeActivity</string>
+    <string name="title_activity_expences">ExpencesActivity</string>
+    <string name="title_activity_account_report">AccountReport</string>
+    <string name="title_activity_hall">HallActivity</string>
+    <string name="title_activity_hall_booking_view">HallBookingViewActivity</string>
+    <string name="title_activity_helper_view">Helpers</string>
+    <string name="title_activity_suggestion_view">SuggestionViewActivity</string>
+
+    <string name="title_activity_owner_event">OwnerEventActivity</string>
+    <string name="title_activity_admin_hall">AdminHallActivity</string>
+    <string name="title_activity_owner_complain">OwnerComplainActivity</string>
+    <string name="title_activity_owner_maintenance">Owner Maintenance</string>
+    <string name="title_activity_owner_fund">Owner Fund</string>
+    <string name="title_activity_owner_suggestions">OwnerSuggestionsActivity</string>
+
+
+    <string name="title_activity_helper_contact">Contact</string>
+    <string name="title_activity_helper_dashboard">DashboardActivity</string>
+    <string name="title_activity_helper_my_profile">HelperMyProfileActivity</string>
+    <string name="title_activity_helper_complain">HelperComplainActivity</string>
+    <string name="title_activity_watchman_visitor">WatchmanVisitorPage</string>
+    <string name="title_activity_watchman_visitor_report">WatchmanVisitorReportActivity</string>
+    <string name="title_activity_watchman_emergency">WatchmanEmergencyPage</string>
+    <string name="title_activity_watchman_suggestion">Watchman Suggestion Page</string>
+    <string name="title_activity_watchman_contact">Watchman Contact Page</string>
+    <string name="title_activity_admin_event_details">Event Details</string>
+    <string name="title_activity_flat_detail">Flat Details</string>
+    <string name="title_activity_owner_fund_detail">Funds Detail</string>
+    <string name="title_activity_notification">Notification</string>
+    <string name="title_activity_accounts">Accounts</string>
+    <string name="title_activity_owner_hall_detail">OwnerHallDetailActivity</string>
+    <string name="title_activity_hall_booking">Hall Booking</string>
+    <string name="title_activity_owner_profile">OwnerProfileActivity</string>
+
+    <string name="title_activity_maintenance_details">MaintenanceDetailsActivity</string>
+    <string name="title_activity_owner_event_display">OwnerEventDisplayActivity</string>
+    <string name="title_activity_owner_maintenance_design">OwnerMaintenanceDesignActivity</string>
+    <string name="title_activity_owner_complain_details">OwnerComplainDetailsActivity</string>
+    <string name="title_activity_owner_maintenance_widget">Maintenance Widget</string>
+    <string name="title_activity_owner_complain_widget">OwnerComplainWidgetActivity</string>
+    <string name="title_activity_owner_visitor_details">OwnerVisitorDetailsActivity</string>
+
+    <string name="title_activity_owner_list">Flat Owners</string>
+    <string name="title_activity_owner_details">Owner Details</string>
+    <string name="title_activity_admin_complain">Admin Complain</string>
+    <string name="title_activity_admin_comaplain_details">Admin Comaplain Details</string>
+    <string name="title_activity_admin_complain_status">Admin Complain Status</string>
+    <string name="title_activity_admin_complain_status_details">Complain Status Details</string>
+    <string name="title_activity_admin_visitor">Admin Visitor</string>
+    <string name="title_activity_admin_visitor_details_actvity">Admin Visitor Details</string>
+    <string name="title_activity_admin_watchmen_details">Admin Watchmen Details</string>
+</resources>

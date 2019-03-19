@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Admin.AdminAddEventActivity"
+    tools:showIn="@layout/activity_admin_add_event">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:id="@+id/SpinAddCat"
+                android:background="@drawable/spinner_round"
+                android:textColor="@color/textcolorwhite"
+                ></Spinner>
+
+            <EditText
+                android:id="@+id/AddEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/EventTitle"
+                android:background="@drawable/roundtextview"
+                android:layout_margin="@dimen/layout_margin"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventDesc"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventVenue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventVenue"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventAddress"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventLandmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/Landmark"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/Pincode"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventVenue"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventVenue"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddEventSpeciality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventSpeciality"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                />
+
+            <EditText
+                android:id="@+id/AddedDateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:background="@drawable/roundtextview"
+                android:hint="@string/EventVenue"
+                android:inputType="text"
+                android:padding="@dimen/edittextsize"
+                android:drawableLeft="@drawable/ic_vintage_cellphone"
+                android:drawablePadding="10dp"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:id="@+id/btnUserSubmit"
+                android:background="@drawable/roundbutton"
+                android:text="@string/submitbutton"
+                android:textColor="@color/textcolorwhite"
+                android:textSize="@dimen/buttontextsize" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

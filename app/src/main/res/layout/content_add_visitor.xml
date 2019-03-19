@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Watchman.AddVisitorActivity"
+    tools:showIn="@layout/activity_add_visitor">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinBuildingID"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            >
+        </Spinner>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinFlatid"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/textpadding"
+            >
+        </Spinner>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:src="@drawable/profile"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/textpadding"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/textpadding"
+            android:id="@+id/visitorname"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/textpadding"
+            android:id="@+id/visitorcontact"
+            />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:textSize="20sp"
+        android:id="@+id/addvisitor"
+        />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

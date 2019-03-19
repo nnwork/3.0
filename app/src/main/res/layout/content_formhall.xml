@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Admin.Formhall"
+    tools:showIn="@layout/activity_formhall"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp"
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_gravity="center"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <EditText
+                android:id="@+id/halltitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="hall TITLE"
+                android:textColor="@color/textcolorwhite"
+                android:padding="7dp"
+                android:inputType="text"
+                android:background="@drawable/roundtextview"
+                android:drawablePadding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/hallcapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="hall CAPACITY"
+                android:textColor="@color/textcolorwhite"
+                android:padding="7dp"
+                android:inputType="number"
+                android:background="@drawable/roundtextview"
+                android:drawablePadding="10dp"
+                />
+
+
+            <Button
+                android:id="@+id/hallimg1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="hall img1"
+                android:textColor="@color/textcolorwhite"
+                android:padding="7dp"
+                />
+
+            <Button
+                android:id="@+id/hallimg2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="left"
+                android:hint="hall img2"
+                android:textColor="@color/textcolorwhite"
+                android:padding="7dp"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hallbtn"
+                android:text="submit"
+                android:textColor="@color/textcolorwhite"
+                android:padding="10dp"
+                android:textSize="25dp"
+                android:background="@drawable/roundbutton"
+                />
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+
+</RelativeLayout>
