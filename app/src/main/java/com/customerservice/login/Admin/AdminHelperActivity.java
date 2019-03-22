@@ -70,7 +70,7 @@ public class AdminHelperActivity extends AppCompatActivity {
             }
         });
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Helper_Category, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Helper, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {

@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Adapters.MaintenanceAdapter;
+import com.customerservice.login.ClassFiles.Building;
 import com.customerservice.login.ClassFiles.Maintenance;
 import com.customerservice.login.ClassFiles.MonthAmount;
 import com.customerservice.login.R;
@@ -42,6 +43,7 @@ public class MaintenanceViewActivity extends AppCompatActivity {
     List<Maintenance>maintenanceList  = new ArrayList<>();
     MaintenanceAdapter maintenanceAdapter;
 
+    String month_id;
     MonthAmount objectMonthamount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,19 @@ public class MaintenanceViewActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getIntent().hasExtra("objectMonthamount"))
+        {
+            objectMonthamount = (MonthAmount) getIntent().getSerializableExtra("objectMonthamount");
+            month_id=objectMonthamount.getMonth_id();
+          // Toast.makeText(this, ""+month_id, Toast.LENGTH_SHORT).show();
 
+        }
+        else
+        {
+            month_id="all";
+            //Toast.makeText(this, ""+month_id, Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(this, ""+month_id, Toast.LENGTH_SHORT).show();
         maintenanaceview=(ListView)findViewById(R.id.maintenanaceview);
         maintenanceAdapter=new MaintenanceAdapter(MaintenanceViewActivity.this,maintenanceList);
         maintenanaceview.setAdapter(maintenanceAdapter);
@@ -122,7 +136,7 @@ public class MaintenanceViewActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String>paramas= new HashMap<>();
-                paramas.put("month_id",objectMonthamount.getMonth_id());
+               paramas.put("month_id",month_id);
                 return paramas;
             }
         };

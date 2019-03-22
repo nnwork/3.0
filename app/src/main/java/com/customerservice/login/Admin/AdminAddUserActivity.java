@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -87,20 +88,50 @@ public class AdminAddUserActivity extends AppCompatActivity {
 
 
         UserTypelist.add("Admin");
-        UserTypelist.add("Employee");
-        UserTypelist.add("Users");
+        UserTypelist.add("Flat Owner");
+        UserTypelist.add("Helper");
+        UserTypelist.add("Watchmen");
         usertypeadpter = new ArrayAdapter(AdminAddUserActivity.this,android.R.layout.simple_dropdown_item_1line,UserTypelist);
         UserType.setAdapter(usertypeadpter);
+
+
+        UserType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String type=UserTypelist.get(position);
+                if(type.equals("Flat Owner"))
+                {
+                    UserFlat.setVisibility(View.VISIBLE);
+                    HcategoryName.setVisibility(View.GONE);
+                }
+                else if(type.equals("Helper"))
+                {
+                    UserFlat.setVisibility(View.GONE);
+                    HcategoryName.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    UserFlat.setVisibility(View.GONE);
+                    HcategoryName.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 
 
         // HelperCategory
-        StringRequest s=new StringRequest(Request.Method.POST, "http://192.168.1.146:8089/Webservices/getHelperCategory.php", new Response.Listener<String>() {
+        StringRequest s=new StringRequest(Request.Method.POST, Config.READ_Helper_Category, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONArray array=new JSONArray(response);
+                    Toast.makeText(AdminAddUserActivity.this, ""+response, Toast.LENGTH_SHORT).show();
                     for(int i=0;i<array.length();i++)
                     {
                         JSONObject obj=array.getJSONObject(i);
@@ -130,12 +161,8 @@ public class AdminAddUserActivity extends AppCompatActivity {
         queue.add(s);
         //HelperCategory
 
-
-
-
-
         //FlatNumberBegin
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Flat, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_UserFlat, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -235,16 +262,19 @@ public class AdminAddUserActivity extends AppCompatActivity {
                                int position=HcategoryName.getSelectedItemPosition();
                                String hcat_id=hcatidlist.get(position);
 
+                                int position2=UserFlat.getSelectedItemPosition();
+                                String flat_id=FlatIDlist.get(position2);
                                 int position1=UserType.getSelectedItemPosition();
                                 String usertype=UserTypelist.get(position1);
 
                                 params.put("Username",Username);
                                 params.put("Mobilenumber",Mobilenumber);
-                                params.put("Useremail",Useremail);
+                                params.put("Usere_mail",Useremail);
                                 params.put("Userpassword",Userpassword);
                                 params.put("Aadharnumber",Aadharnumber);
                                 params.put("TotalFlatmember",TotalFlatmember);
                                 params.put("hcat_id",hcat_id);
+                                params.put("flat_id",hcat_id);
                                 params.put("usertype",usertype);
                                return params;
                             }
@@ -252,7 +282,6 @@ public class AdminAddUserActivity extends AppCompatActivity {
                         RequestQueue requestQueue = Volley.newRequestQueue(AdminAddUserActivity.this);
                         requestQueue.add(stringrequest);
                     }
-
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

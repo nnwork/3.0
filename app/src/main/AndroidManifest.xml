@@ -4,6 +4,9 @@
     package="com.customerservice.login">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +14,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Helper.HelperBottomActivity"></activity>
+        <activity
+            android:name=".Admin.AccountActivity"
+            android:label="@string/title_activity_account"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
         <activity
             android:name=".Admin.AdminComplainStatusDetailsActivity"
             android:label="@string/title_activity_admin_complain_status_details"
@@ -22,6 +35,24 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.Admin.AdminComplainStatusActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerHallDetailActivity"
+            android:label="@string/title_activity_owner_hall_detail"
+            android:parentActivityName=".FlatOwner.OwnerHallActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerHallActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallBookingDetailActivity"
+            android:label="@string/title_activity_hall_booking_detail"
+            android:parentActivityName=".Admin.HallBookingViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.HallBookingViewActivity" />
         </activity>
         <activity
             android:name=".Admin.AdminComplainStatusActivity"
@@ -184,25 +215,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.FlatOwner.OwnerEventActivity" />
-        </activity>
-        <!--<activity-->
-            <!--android:name=".FlatOwner.HallBookingActivity"-->
-            <!--android:label="@string/title_activity_hall_booking"-->
-            <!--android:parentActivityName=".FlatOwner.OwnerHallDetailActivity"-->
-            <!--android:theme="@style/AppTheme.NoActionBar">-->
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.customerservice.login.FlatOwner.OwnerHallDetailActivity" />-->
-        <!--</activity>-->
-        <activity
-            android:name=".FlatOwner.OwnerHallDetailActivity"
-            android:label="@string/title_activity_owner_hall_detail"
-            android:parentActivityName=".FlatOwner.OwnerHallActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.customerservice.login.FlatOwner.OwnerHallActivity" />
-        </activity>
+        </activity> <!-- <activity -->
+        <!-- android:name=".FlatOwner.HallBookingActivity" -->
+        <!-- android:label="@string/title_activity_hall_booking" -->
+        <!-- android:parentActivityName=".FlatOwner.OwnerHallDetailActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="com.customerservice.login.FlatOwner.OwnerHallDetailActivity" /> -->
+        <!-- </activity> -->
         <activity
             android:name=".FlatOwner.AccountsActivity"
             android:label="@string/title_activity_accounts"
@@ -240,6 +261,24 @@
                 android:value="com.customerservice.login.Admin.FlatViewActivity" />
         </activity>
         <activity
+            android:name=".Admin.AdminMaintenanceDetailsActivity"
+            android:label="@string/title_activity_account_report"
+            android:parentActivityName=".Admin.MaintenanceViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallDetailActivity"
+            android:label="@string/title_activity_hall_detail"
+            android:parentActivityName=".Admin.HallViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.HallViewActivity" />
+        </activity>
+        <activity
             android:name=".Admin.AdminEventDetailsActivity"
             android:label="@string/title_activity_admin_event_details"
             android:parentActivityName=".Admin.EventsViewActivity"
@@ -274,6 +313,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperComplainDetailsActivity"
+            android:label="@string/title_activity_helper_complain_details"
+            android:parentActivityName=".Helper.HelperComplainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Helper.HelperComplainActivity" />
         </activity>
         <activity
             android:name=".Helper.HelperContactActivity"
@@ -337,17 +385,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.WatchMenHomeActivity" />
-        </activity>
-        <!--<activity-->
-            <!--android:name=".Watchman.WatchmanSuggestion"-->
-            <!--android:label="@string/title_activity_watchman_suggestion"-->
-            <!--android:parentActivityName=".WatchMenHomeActivity"-->
-            <!--android:theme="@style/AppTheme.NoActionBar"-->
-            <!--tools:ignore="InnerclassSeparator">-->
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.customerservice.login.WatchMenHomeActivity" />-->
-        <!--</activity>-->
+        </activity> <!-- <activity -->
+        <!-- android:name=".Watchman.WatchmanSuggestion" -->
+        <!-- android:label="@string/title_activity_watchman_suggestion" -->
+        <!-- android:parentActivityName=".WatchMenHomeActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" -->
+        <!-- tools:ignore="InnerclassSeparator"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="com.customerservice.login.WatchMenHomeActivity" /> -->
+        <!-- </activity> -->
         <activity
             android:name=".Watchman.WatchmanEmergencyActivity"
             android:label="@string/title_activity_watchman_emergency"
@@ -385,9 +432,9 @@
                 android:value="com.customerservice.login.AdminHomeActivity" />
         </activity>
         <activity
-            android:name=".Admin.HallBookingViewActivity"
-            android:label="@string/title_activity_hall_booking_view"
-            android:parentActivityName=".AdminHomeActivity"
+            android:name=".Admin.AdminHelperDetailsActivity"
+            android:label="@string/title_activity_helper_detail"
+            android:parentActivityName=".Admin.AdminHelperActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -592,6 +639,33 @@
                 android:value="com.customerservice.login.MainActivity" />
         </activity>
         <activity
+            android:name=".Watchman.AddVisitorActivity"
+            android:label="@string/title_activity_send_otp"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.NewVisitorActivity"
+            android:label="@string/title_activity_send_otp"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.WatchmenSuggestion"
+            android:label="@string/title_activity_watchman_suggestion"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
             android:name=".AdminHomeActivity"
             android:label="@string/title_activity_admin_home"
             android:parentActivityName=".MainActivity"
@@ -718,13 +792,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.MainActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

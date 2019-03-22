@@ -1,5 +1,7 @@
 package com.customerservice.login.FlatOwner;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,9 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -32,6 +36,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,11 +44,13 @@ import java.util.Map;
 
 public class FormHallBooking extends AppCompatActivity {
 
-    Button hallbookingbtn;
-    EditText hallbookingsubject;
+    Button hallbookingbtn,hallbookinggdate,btnhallbookinggtime;
+    EditText hallbookingsubject,txtdate,hallbookingtime;
     TextView hallbookingamt,halltitle;
     Hall hallObject;
     SessionManager sessionManager;
+
+    private int mYear, mMonth, mDay, mHour, mMinute;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +62,12 @@ public class FormHallBooking extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         hallbookingbtn=(Button)findViewById(R.id.hallbookingbtn);
+        btnhallbookinggtime=(Button)findViewById(R.id.btnhallbookinggtime);
+        hallbookinggdate= (Button) findViewById(R.id.hallbookinggdate);
         hallbookingamt=(TextView) findViewById(R.id.hallbookingamt);
         halltitle=(TextView) findViewById(R.id.halltitle);
+        txtdate=(EditText)findViewById(R.id.txtdate);
+        hallbookingtime=(EditText)findViewById(R.id.hallbookingtime);
         hallbookingsubject=(EditText)findViewById(R.id.hallbookingsubject);
 
 
@@ -67,6 +78,55 @@ public class FormHallBooking extends AppCompatActivity {
         Toast.makeText(this, "ddd"+hallbookingsubject.getText().toString(), Toast.LENGTH_SHORT).show();
 
 
+
+        hallbookinggdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v==hallbookinggdate)
+                {
+                    final Calendar c = Calendar.getInstance();
+                    mYear = c.get(Calendar.YEAR);
+                    mMonth = c.get(Calendar.MONTH);
+                    mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(FormHallBooking.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                            hallbookinggdate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        }
+                    }, mYear, mMonth, mDay);
+                    datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                    datePickerDialog.show();
+                }
+            }
+        });
+        btnhallbookinggtime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == btnhallbookinggtime) {
+
+                    // Get Current Time
+                    final Calendar c = Calendar.getInstance();
+                    mHour = c.get(Calendar.HOUR_OF_DAY);
+                    mMinute = c.get(Calendar.MINUTE);
+
+                    // Launch Time Picker Dialog
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(FormHallBooking.this,
+                            new TimePickerDialog.OnTimeSetListener() {
+
+                                @Override
+                                public void onTimeSet(TimePicker view, int hourOfDay,
+                                                      int minute) {
+
+                                    btnhallbookinggtime.setText(hourOfDay + ":" + minute);
+                                }
+                            }, mHour, mMinute, false);
+                    timePickerDialog.show();
+                }
+            }
+        });
         /////////////////////////DISP USER ID //////////////////////////////////////////
         hallbookingbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,42 +149,43 @@ public class FormHallBooking extends AppCompatActivity {
 //                    Toast.makeText(FormHallBooking.this, "Please Enter Subject", Toast.LENGTH_SHORT).show();
 //                } else
 //                    {
-                       StringRequest hall_booking_re=new StringRequest(Request.Method.POST, Config.ADD_tbl_hall_booking, new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                if(response.equals("successfully"))
-                                {
-                                    Toast.makeText(FormHallBooking.this, "Hall_Booking Inserted Successfully", Toast.LENGTH_SHORT).show();
-                                }
-                                else
-                                {
-                                    Toast.makeText(FormHallBooking.this, "error", Toast.LENGTH_SHORT).show();
-                                }
+                StringRequest hall_booking_re=new StringRequest(Request.Method.POST, Config.ADD_tbl_hall_booking, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if(response.equals("successfully"))
+                        {
+                            Toast.makeText(FormHallBooking.this, "Hall_Booking Inserted Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(FormHallBooking.this, "error", Toast.LENGTH_SHORT).show();
+                        }
 
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(FormHallBooking.this, "Server"+ error.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }){
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-                                Map<String,String> hall_booking_params=new HashMap<>();
-                                hall_booking_params.put("hallbookingamt",hallObject.getHallrent());
-                                hall_booking_params.put("hallbookingsubject",hallbookingsubject.getText().toString());
-                                
-                                String hallid=hallObject.getHall_id();
-                                hall_booking_params.put("hallid",hallid);
-                                String usreid=sessionManager.getId();
-                                hall_booking_params.put("usreid",usreid);
-
-                                return hall_booking_params;
-                            }
-                        };
-                        RequestQueue hall_booking_queue= Volley.newRequestQueue(FormHallBooking.this);
-                        hall_booking_queue.add(hall_booking_re);
                     }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(FormHallBooking.this, "Server"+ error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> hall_booking_params=new HashMap<>();
+                        hall_booking_params.put("hallbookingamt",hallObject.getHallrent());
+                        hall_booking_params.put("hallbookingsubject",hallbookingsubject.getText().toString());
+                        hall_booking_params.put("bdate",hallbookinggdate.getText().toString());
+                        hall_booking_params.put("btime",hallbookingtime.getText().toString());
+                        String hallid=hallObject.getHall_id();
+                        hall_booking_params.put("hallid",hallid);
+                        String usreid=sessionManager.getId();
+                        hall_booking_params.put("usreid",usreid);
+
+                        return hall_booking_params;
+                    }
+                };
+                RequestQueue hall_booking_queue= Volley.newRequestQueue(FormHallBooking.this);
+                hall_booking_queue.add(hall_booking_re);
+            }
         });
     }
 

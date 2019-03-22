@@ -78,7 +78,7 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         buildinglistview.setLayoutManager(mLayoutManager);
         buildinglistview.setItemAnimator(new DefaultItemAnimator());
-        adapter=new BuildingAdapterRecycle(buildingList);
+        adapter=new BuildingAdapterRecycle(buildingList,AdminViewBuildingActivity.this);
         buildinglistview.setAdapter(adapter);
 
 
@@ -99,7 +99,7 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
 
                         item.setBuildingId(obj.getString("BuildingId"));
                         item.setBuildingName(obj.getString("BuildingName"));
-
+                        item.setBuildingImage(obj.getString("BuildingImage"));
                         buildingList.add(item);
                     }
                 } catch (JSONException e) {
@@ -129,10 +129,10 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position)
             {
-               Building item = buildingList.get(position);
-               Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
-               intent.putExtra("objectBuilding", item);
-               startActivity(intent);
+                Building item = buildingList.get(position);
+                Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
+                intent.putExtra("objectBuilding", item);
+                startActivity(intent);
             }
             @Override
             public void onLongClick(View view, int position) {

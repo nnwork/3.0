@@ -64,8 +64,8 @@ public class AdminComplainActivity extends AppCompatActivity {
         {
             //complainobj= (User) getIntent().getSerializableExtra("complainobj");
 
-            //Toast.makeText(this, ""+complainobj.getUsre_id(), Toast.LENGTH_SHORT).show();
             complcain_hcat_id=getIntent().getStringExtra("helpercatid");
+            Toast.makeText(this, ""+complcain_hcat_id, Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -87,7 +87,7 @@ public class AdminComplainActivity extends AppCompatActivity {
             }
         });
 
-        StringRequest request=new StringRequest(Request.Method.POST, Config.list_tbl_admin_complain, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.POST, Config.list_tbl_admin_tbl_complain, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {

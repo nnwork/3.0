@@ -5,7 +5,15 @@ import java.io.Serializable;
 public class Visitor implements Serializable {
 
     String  visitors_id,visitors_name,visitors_contect,visitors_flat_id,visitors_photo,visitors_watchman_id,visitors_v_date,visitors_v_time,visitors_flat_approve;
-    String 	visitors_app_date_time,visitors_exit_date_time,BuildingName,BuildingId,FlatNumber,FlatId,user_name;
+    String 	visitors_app_date_time,visitors_exit_date_time,BuildingName,BuildingId,FlatNumber,FlatId,user_name,watchmen_name;
+
+    public String getWatchmen_name() {
+        return watchmen_name;
+    }
+
+    public void setWatchmen_name(String watchmen_name) {
+        this.watchmen_name = watchmen_name;
+    }
 
     public String getUser_name() {
         return user_name;

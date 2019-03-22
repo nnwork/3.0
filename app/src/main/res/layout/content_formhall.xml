@@ -56,18 +56,18 @@
                 />
 
 
-            <Button
+            <ImageView
                 android:id="@+id/hallimg1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="left"
                 android:hint="hall img1"
-                android:textColor="@color/textcolorwhite"
+               android:background="@drawable/ic_menu_camera"
                 android:padding="7dp"
                 />
 
-            <Button
+            <ImageView
                 android:id="@+id/hallimg2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

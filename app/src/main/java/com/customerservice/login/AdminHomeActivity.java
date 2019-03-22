@@ -15,7 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.customerservice.login.Admin.AccountActivity;
 import com.customerservice.login.Admin.AccountReport;
+import com.customerservice.login.Admin.AdminAddUserActivity;
 import com.customerservice.login.Admin.AdminComplainActivity;
 import com.customerservice.login.Admin.AdminComplainStatusActivity;
 import com.customerservice.login.Admin.AdminViewBuildingActivity;
@@ -34,6 +36,7 @@ import com.customerservice.login.Admin.OwnerListActivity;
 import com.customerservice.login.Admin.SuggestionViewActivity;
 import com.customerservice.login.Admin.FlatViewActivity;
 import com.customerservice.login.Admin.AdminWatchmanActivity;
+import com.customerservice.login.FlatOwner.AccountsActivity;
 import com.customerservice.login.Utility.SessionManager;
 
 public class AdminHomeActivity extends AppCompatActivity
@@ -113,6 +116,11 @@ public class AdminHomeActivity extends AppCompatActivity
             Intent intent = new Intent(AdminHomeActivity.this, FlatViewActivity.class);
             startActivity(intent);
         }
+        else if(id==R.id.nav_user)
+        {
+            Intent intent = new Intent(AdminHomeActivity.this, AdminAddUserActivity.class);
+            startActivity(intent);
+        }
         else if(id==R.id.nav_owner)
         {
             Intent intent = new Intent(AdminHomeActivity.this, OwnerListActivity.class);
@@ -170,7 +178,7 @@ public class AdminHomeActivity extends AppCompatActivity
         }
         else if(id==R.id.nav_income)
         {
-            Intent intent = new Intent(AdminHomeActivity.this, IncomeActivity.class);
+            Intent intent = new Intent(AdminHomeActivity.this, AccountActivity.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_expences)

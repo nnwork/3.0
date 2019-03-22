@@ -9,6 +9,16 @@ public class Building implements Serializable
 
     String BuildingName;
 
+    public String getBuildingImage() {
+        return BuildingImage;
+    }
+
+    public void setBuildingImage(String buildingImage) {
+        BuildingImage = buildingImage;
+    }
+
+    String BuildingImage;
+
     public String getBuildingId() {
         return BuildingId;
     }

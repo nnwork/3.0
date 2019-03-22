@@ -104,7 +104,7 @@ public class AdminHelperDetailsActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AdminHelperDetailsActivity.this, ""+helperUserobj.getHcat_id(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(AdminHelperDetailsActivity.this, ""+helperUserobj.getHcat_id(), Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(AdminHelperDetailsActivity.this,AdminComplainActivity.class);
 
                 //intent.putExtra("helperid",helperUserobj.getUsre_id());
@@ -113,5 +113,7 @@ public class AdminHelperDetailsActivity extends AppCompatActivity {
             }
         });
 
+        Toast.makeText(this, ""+helperUserobj.getHcat_id()
+                , Toast.LENGTH_SHORT).show();
     }
 }

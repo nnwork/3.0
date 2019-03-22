@@ -80,7 +80,7 @@ public class AdminVisitorActivity extends AppCompatActivity {
             }
         });
 
-        StringRequest request=new StringRequest(Request.Method.POST, Config.list_tbl_visitor, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.POST, Config.list_tbl_admin_visitor, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //Toast.makeText(AdminVisitorActivity.this, "abc"+response, Toast.LENGTH_LONG).show();
@@ -96,7 +96,9 @@ public class AdminVisitorActivity extends AppCompatActivity {
                         classfile.setVisitors_name(object.getString("visitors_name"));
                         classfile.setVisitors_contect(object.getString("visitors_contect"));
                         classfile.setVisitors_flat_id(object.getString("visitors_flat_id"));
-
+                        classfile.setBuildingName(object.getString("BuildingName"));
+                        classfile.setBuildingId(object.getString("BuildingId"));
+                        classfile.setWatchmen_name(object.getString("watchmen_name"));
                         classfile.setVisitors_photo(object.getString("visitors_photo"));
                         classfile.setVisitors_watchman_id(object.getString("visitors_watchman_id"));
                         classfile.setVisitors_v_date(object.getString("visitors_v_date"));

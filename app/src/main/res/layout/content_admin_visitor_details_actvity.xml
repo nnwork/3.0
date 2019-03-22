@@ -22,12 +22,6 @@
             android:gravity="center"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/owner_visitors_id"
-                android:layout_marginTop="@dimen/textmargintop"
-                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,9 +38,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/admin_visitors_flat_id"
+                android:id="@+id/admin_visitors_flat_number"
                 />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/owner_visitors_building_name"
+                android:layout_marginTop="@dimen/textmargintop"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,7 +55,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/admin_visitors_watchman_id"
+                android:id="@+id/admin_visitors_watchman_name"
                 />
 
             <TextView

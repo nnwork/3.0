@@ -27,8 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AdminVisitorDetailsActvity extends AppCompatActivity {
-    TextView owner_visitors_id,admin_visiters_name,admin_visiters_contect,admin_visitors_flat_id,admin_visitors_photo;
-    TextView admin_visitors_watchman_id,admin_visitors_v_date,admin_visitors_v_time,admin_visitors_flat_approve,admin_visitors_app_date_time;
+    TextView admin_visiters_name,admin_visiters_contect,admin_visitors_flat_number,admin_visitors_photo,owner_visitors_building_name;
+    TextView admin_visitors_watchman_name,admin_visitors_v_date,admin_visitors_v_time,admin_visitors_flat_approve,admin_visitors_app_date_time;
     TextView admin_visitors_exit_date_time;
     Visitor visitorobj;
 
@@ -48,11 +48,16 @@ public class AdminVisitorDetailsActvity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        admin_visiters_name=(TextView)findViewById(R.id.admin_visiters_name);
         admin_visiters_contect=(TextView)findViewById(R.id.admin_visiters_contect);
-        admin_visitors_flat_id=(TextView)findViewById(R.id.admin_visitors_flat_id);
+        admin_visitors_flat_number=(TextView)findViewById(R.id.admin_visitors_flat_number);
+        owner_visitors_building_name=(TextView)findViewById(R.id.owner_visitors_building_name);
         admin_visitors_photo=(TextView)findViewById(R.id.admin_visitors_photo);
-        admin_visitors_watchman_id=(TextView)findViewById(R.id.admin_visitors_watchman_id);
+        admin_visitors_v_date=(TextView)findViewById(R.id.admin_visitors_v_date);
+        admin_visitors_v_time=(TextView)findViewById(R.id.admin_visitors_v_time);
+        admin_visitors_flat_approve=(TextView)findViewById(R.id.admin_visitors_flat_approve);
+        admin_visitors_flat_approve=(TextView)findViewById(R.id.admin_visitors_flat_approve);
+        admin_visitors_watchman_name=(TextView)findViewById(R.id.admin_visitors_watchman_name);
         admin_visitors_app_date_time=(TextView)findViewById(R.id.admin_visitors_app_date_time);
         admin_visitors_exit_date_time=(TextView)findViewById(R.id.admin_visitors_exit_date_time);
 
@@ -92,9 +97,14 @@ public class AdminVisitorDetailsActvity extends AppCompatActivity {
 //        RequestQueue queue= Volley.newRequestQueue(this);
 //        queue.add(request);
 
+        admin_visiters_name.setText(visitorobj.getVisitors_name());
         admin_visiters_contect.setText(visitorobj.getVisitors_contect());
         admin_visitors_photo.setText(visitorobj.getVisitors_photo());
         admin_visitors_app_date_time.setText(visitorobj.getVisitors_app_date_time());
         admin_visitors_exit_date_time.setText(visitorobj.getVisitors_exit_date_time());
+        admin_visitors_flat_number.setText(visitorobj.getFlatNumber());
+        admin_visitors_flat_approve.setText(visitorobj.getVisitors_flat_approve());
+        admin_visitors_watchman_name.setText(visitorobj.getWatchmen_name());
+        owner_visitors_building_name.setText(visitorobj.getBuildingName());
     }
 }

@@ -160,4 +160,13 @@
     <string name="title_activity_admin_visitor">Admin Visitor</string>
     <string name="title_activity_admin_visitor_details_actvity">Admin Visitor Details</string>
     <string name="title_activity_admin_watchmen_details">Admin Watchmen Details</string>
+    <string name="title_activity_hall_detail">Hall Detail</string>
+    <string name="title_activity_hall_booking_detail">Bookings Detail</string>
+    <string name="title_activity_helper_complain_details">Helper Complain Details</string>
+    <string name="title_activity_helper_detail">Helper Detail</string>
+    <string name="title_activity_account">AccountActivity</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

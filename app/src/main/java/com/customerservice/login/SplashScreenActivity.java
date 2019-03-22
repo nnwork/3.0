@@ -13,10 +13,10 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.customerservice.login.Notification.NotificationUtils;
+
 import com.customerservice.login.Utility.Config;
 import com.customerservice.login.Utility.SessionManager;
-import com.google.firebase.messaging.FirebaseMessaging;
+
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 if (intent.getAction().equals(Config.REGISTRATION_COMPLETE)) {
                     // gcm successfully registered
                     // now subscribe to `global` topic to receive app wide notifications
-                    FirebaseMessaging.getInstance().subscribeToTopic(Config.TOPIC_GLOBAL);
+                    //FirebaseMessaging.getInstance().subscribeToTopic(Config.TOPIC_GLOBAL);
 
                     displayFirebaseRegId();
 
@@ -129,7 +129,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 new IntentFilter(Config.PUSH_NOTIFICATION));
 
         // clear the notification area when the app is opened
-        NotificationUtils.clearNotifications(getApplicationContext());
+        //NotificationUtils.clearNotifications(getApplicationContext());
     }
 
     @Override

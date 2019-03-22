@@ -32,34 +32,72 @@
                 android:background="@drawable/roundtextview"
                 android:drawablePadding="10dp"
                 />
-
-            <EditText
-                android:id="@+id/hallbookingbookingdate"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="B DATE"
-                android:textColor="#000000"
-                android:padding="7dp"
-                android:inputType="date"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
-
-            <EditText
-                android:id="@+id/hallbookingtime"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <EditText
+                    android:id="@+id/txtdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:textColor="#000000"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    android:background="@drawable/roundtextview"
+                    android:drawablePadding="10dp"
+                    />
+                <Button
+                    android:id="@+id/hallbookinggdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:value="B DATE"
+                    android:textColor="#000000"
+                    android:padding="7dp"
+                    android:drawablePadding="10dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="B TIME"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="datetime"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <EditText
+                    android:id="@+id/hallbookingtime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="left"
+                    android:layout_weight="1"
+                    android:hint="B TIME"
+                    android:textColor="@color/textcolorwhite"
+                    android:padding="7dp"
+                    android:inputType="datetime"
+                    android:background="@drawable/roundtextview"
+                    android:drawablePadding="10dp"
+                    />
+
+                <Button
+                    android:id="@+id/btnhallbookinggtime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:value="B DATE"
+                    android:textColor="#000000"
+                    android:padding="7dp"
+                    android:drawablePadding="10dp"
+                    />
+            </LinearLayout>
             <TextView
                 android:id="@+id/hallbookingamt"
                 android:layout_width="match_parent"

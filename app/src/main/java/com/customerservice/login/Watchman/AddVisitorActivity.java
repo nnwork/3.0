@@ -97,7 +97,7 @@ public class AddVisitorActivity extends AppCompatActivity {
         RequestQueue q = Volley.newRequestQueue(AddVisitorActivity.this);
         q.add(s);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Flat, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_Watchmen_Flat, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -140,7 +140,7 @@ public class AddVisitorActivity extends AppCompatActivity {
                 StringRequest request = new StringRequest(Request.Method.POST, Config.ADD_tbl_Visitors, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                       // Toast.makeText(AddVisitorActivity.this, "Insert Successfull" + response, Toast.LENGTH_SHORT).show();
+
                         if (response.equals("successfully")) {
                             Toast.makeText(AddVisitorActivity.this, "Insert Successfull", Toast.LENGTH_SHORT).show();
                         } else {

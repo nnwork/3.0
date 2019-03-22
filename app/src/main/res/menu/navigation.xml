@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/title_activity_account" />
+
+    <item
+        android:id="@+id/navigation_gifts"
+        android:icon="@drawable/ic_buildings"
+        android:title="@string/title_activity_admin_add_building" />
+
+    <item
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/title_activity_account" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_plus"
+        android:title="@string/title_activity_add_event" />
+
+</menu>

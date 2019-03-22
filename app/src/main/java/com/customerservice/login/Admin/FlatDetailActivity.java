@@ -63,11 +63,11 @@ public class FlatDetailActivity extends AppCompatActivity {
 
 
 
-        final String FlatId = getIntent().getStringExtra("FlatId");
-        final String FlatNumber = getIntent().getStringExtra("FlatNumber");
+
+
 
         objectFlat= (Flat)getIntent().getSerializableExtra("objectFlat");
-
+        Toast.makeText(this, ""+objectFlat.getFlatId(), Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_FlatUserDetail, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -86,7 +86,7 @@ public class FlatDetailActivity extends AppCompatActivity {
                         String user_is_block= jsonObject.getString("user_is_block");
                         String user_is_rent= jsonObject.getString("user_is_rent");
 
-                        txtFlatNumber.setText(FlatNumber);
+                        txtFlatNumber.setText(objectFlat.getFlatNumber());
                         txtusername.setText(user_name);
                         txtusercontact.setText(user_contact);
                         txtuseremail.setText(user_email);
@@ -111,7 +111,7 @@ public class FlatDetailActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String>params = new HashMap<>();
-                params.put("FlatId",FlatId);
+                params.put("FlatId",objectFlat.getFlatId());
                 params.put("BuildingId",objectFlat.getBuildingId());
                 return  params;
             }
