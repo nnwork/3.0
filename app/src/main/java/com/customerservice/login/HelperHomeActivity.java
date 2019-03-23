@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.customerservice.login.FlatOwner.Formcomplain;
+import com.customerservice.login.Helper.HelperBottomActivity;
 import com.customerservice.login.Helper.HelperComplainActivity;
 import com.customerservice.login.Helper.HelperContactActivity;
 import com.customerservice.login.Helper.HelperDashboardActivity;
@@ -89,7 +90,7 @@ public class HelperHomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_helper_complain) {
-            Intent intent_compalain=new Intent(HelperHomeActivity.this, HelperComplainActivity.class);
+            Intent intent_compalain=new Intent(HelperHomeActivity.this, HelperBottomActivity.class);
             startActivity(intent_compalain);
             // Handle the camera action
         } else if (id == R.id.nav_helper_contact) {

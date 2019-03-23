@@ -74,7 +74,8 @@ public class ComplainFragment extends Fragment {
                         ComplainClassFile ClassFile = new ComplainClassFile();
 
                         ClassFile.setComplain_id(object.getString("complain_id"));
-
+                        ClassFile.setUser_name(object.getString("user_name"));
+                        ClassFile.setUser_contact(object.getString("user_contact"));
                         ClassFile.setComplain_user_id(object.getString("complain_user_id"));
                         ClassFile.setComplain_hcat_id(object.getString("complain_hcat_id"));
                         ClassFile.setComplain_problem(object.getString("complain_problem"));

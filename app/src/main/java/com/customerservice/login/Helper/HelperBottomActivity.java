@@ -29,21 +29,21 @@ public class HelperBottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigation_shop:
-                    toolbar.setTitle("SmartSoc");
+                case R.id.navigation_home:
+                    toolbar.setTitle("Home");
+                    fragment = new HelperDashboardFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_complain:
+                    toolbar.setTitle("Complain");
                     fragment = new ComplainFragment();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_gifts:
+                case R.id.navigation_myprofile:
                     toolbar.setTitle("My Profile");
                     fragment = new HelperProfileFragment();
                     loadFragment(fragment);
                     return true;
-//                case R.id.navigation_cart:
-//                    toolbar.setTitle("Cart");
-//                    fragment = new CartFragment();
-//                    loadFragment(fragment);
-//                    return true;
 //                case R.id.navigation_profile:
 //                    toolbar.setTitle("Profile");
 //                    fragment = new ProfileFragment();
