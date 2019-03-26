@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.customerservice.login">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Helper.HelperBottomActivity"></activity>
+        <activity
+            android:name=".Admin.AccountActivity"
+            android:label="@string/title_activity_account"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminComplainStatusDetailsActivity"
+            android:label="@string/title_activity_admin_complain_status_details"
+            android:parentActivityName=".Admin.AdminComplainStatusActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminComplainStatusActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerHallDetailActivity"
+            android:label="@string/title_activity_owner_hall_detail"
+            android:parentActivityName=".FlatOwner.OwnerHallActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerHallActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallBookingDetailActivity"
+            android:label="@string/title_activity_hall_booking_detail"
+            android:parentActivityName=".Admin.HallBookingViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.HallBookingViewActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminComplainStatusActivity"
+            android:label="@string/title_activity_admin_complain_status"
+            android:parentActivityName=".Admin.AdminComaplainDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminComaplainDetailsActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminHelperActivity"
+            android:label="@string/title_activity_helper_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminVisitorDetailsActvity"
+            android:label="@string/title_activity_admin_visitor_details_actvity"
+            android:parentActivityName=".Admin.AdminVisitorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminVisitorActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminWatchmanActivity"
+            android:label="@string/title_activity_watchman"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminWatchmenDetailsActivity"
+            android:label="@string/title_activity_admin_watchmen_details"
+            android:parentActivityName=".Admin.AdminWatchmanActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminWatchmanActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminVisitorActivity"
+            android:label="@string/title_activity_admin_visitor"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallBookingViewActivity"
+            android:label="@string/title_activity_hall_booking_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminComaplainDetailsActivity"
+            android:label="@string/title_activity_admin_comaplain_details"
+            android:parentActivityName=".Admin.AdminComplainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminComplainActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminComplainActivity"
+            android:label="@string/title_activity_admin_complain"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerProfileActivity"
+            android:label="@string/title_activity_owner_profile"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.OwnerDetailsActivity"
+            android:label="@string/title_activity_owner_details"
+            android:parentActivityName=".Admin.OwnerListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.OwnerListActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.OwnerListActivity"
+            android:label="@string/title_activity_owner_list"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerVisitorActivity"
+            android:label="@string/title_activity_send_otp"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerVisitorDetailsActivity"
+            android:label="@string/title_activity_owner_visitor_details"
+            android:parentActivityName=".FlatOwner.OwnerVisitorActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerVisitorActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerMaintenanceWidgetActivity"
+            android:label="@string/title_activity_owner_maintenance_widget"
+            android:parentActivityName=".FlatOwner.OwnerMaintenanceActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerMaintenanceActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerComplainDetailsActivity"
+            android:label="@string/title_activity_owner_complain_details"
+            android:parentActivityName=".FlatOwner.OwnerComplainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerComplainActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerMaintenanceDetailsActivity"
+            android:label="@string/title_activity_owner_maintenance_design"
+            android:parentActivityName=".FlatOwner.OwnerMaintenanceActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerMaintenanceActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerEventDetailsActivity"
+            android:label="@string/title_activity_owner_event_display"
+            android:parentActivityName=".FlatOwner.OwnerEventActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerEventActivity" />
+        </activity> <!-- <activity -->
+        <!-- android:name=".FlatOwner.HallBookingActivity" -->
+        <!-- android:label="@string/title_activity_hall_booking" -->
+        <!-- android:parentActivityName=".FlatOwner.OwnerHallDetailActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="com.customerservice.login.FlatOwner.OwnerHallDetailActivity" /> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".FlatOwner.AccountsActivity"
+            android:label="@string/title_activity_accounts"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerFundDetail"
+            android:label="@string/title_activity_owner_fund_detail"
+            android:parentActivityName=".FlatOwner.OwnerFundActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.FlatOwner.OwnerFundActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.FlatDetailActivity"
+            android:label="@string/title_activity_flat_detail"
+            android:parentActivityName=".Admin.FlatViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.FlatViewActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminMaintenanceDetailsActivity"
+            android:label="@string/title_activity_account_report"
+            android:parentActivityName=".Admin.MaintenanceViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallDetailActivity"
+            android:label="@string/title_activity_hall_detail"
+            android:parentActivityName=".Admin.HallViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.HallViewActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminEventDetailsActivity"
+            android:label="@string/title_activity_admin_event_details"
+            android:parentActivityName=".Admin.EventsViewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.EventsViewActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperComplainActivity"
+            android:label="@string/title_activity_helper_complain"
+            android:parentActivityName=".HelperHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperMyProfileActivity"
+            android:label="@string/title_activity_helper_my_profile"
+            android:parentActivityName=".HelperHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperDashboardActivity"
+            android:label="@string/title_activity_helper_dashboard"
+            android:parentActivityName=".HelperHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperComplainDetailsActivity"
+            android:label="@string/title_activity_helper_complain_details"
+            android:parentActivityName=".Helper.HelperComplainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Helper.HelperComplainActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperContactActivity"
+            android:label="@string/title_activity_helper_contact"
+            android:parentActivityName=".HelperHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerFundActivity"
+            android:label="@string/title_activity_owner_fund"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerMaintenanceActivity"
+            android:label="@string/title_activity_owner_maintenance"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerComplainActivity"
+            android:label="@string/title_activity_owner_complain"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerHallActivity"
+            android:label="@string/title_activity_admin_hall"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerEventActivity"
+            android:label="@string/title_activity_owner_event"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.WatchmanContactActivity"
+            android:label="@string/title_activity_watchman_contact"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity> <!-- <activity -->
+        <!-- android:name=".Watchman.WatchmanSuggestion" -->
+        <!-- android:label="@string/title_activity_watchman_suggestion" -->
+        <!-- android:parentActivityName=".WatchMenHomeActivity" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" -->
+        <!-- tools:ignore="InnerclassSeparator"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.PARENT_ACTIVITY" -->
+        <!-- android:value="com.customerservice.login.WatchMenHomeActivity" /> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".Watchman.WatchmanEmergencyActivity"
+            android:label="@string/title_activity_watchman_emergency"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.WatchmanVisitorReportActivity"
+            android:label="@string/title_activity_watchman_visitor_report"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.WatchmanVisitorActivity"
+            android:label="@string/title_activity_watchman_visitor"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.SuggestionViewActivity"
+            android:label="@string/title_activity_suggestion_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminHelperDetailsActivity"
+            android:label="@string/title_activity_helper_detail"
+            android:parentActivityName=".Admin.AdminHelperActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AccountReport"
+            android:label="@string/title_activity_account_report"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.ExpencesActivity"
+            android:label="@string/title_activity_expences"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.IncomeActivity"
+            android:label="@string/title_activity_income"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.FundsReportActivity"
+            android:label="@string/title_activity_funds_report"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.HallViewActivity"
+            android:label="@string/title_activity_halll_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.FundsViewActivity"
+            android:label="@string/title_activity_funds_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.VisitorActivity"
+            android:label="@string/title_activity_visitor"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.MaintenanceViewActivity"
+            android:label="@string/title_activity_maintenance"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.MonthlyAmountActivity"
+            android:label="@string/title_activity_monthly_amount"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.EventsViewActivity"
+            android:label="@string/title_activity_events_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.FlatViewActivity"
+            android:label="@string/title_activity_flat_view"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminViewBuildingActivity"
+            android:label="@string/title_activity_admin_view_building"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.AdminHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerSuggestion"
+            android:label="@string/title_activity_form_suggestion"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.FormHallBooking"
+            android:label="@string/title_activity_form_hall_booking"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.Formhall"
+            android:label="@string/title_activity_formhall"
+            android:parentActivityName=".AdminHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.Formexpence"
+            android:label="@string/title_activity_formexpence"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.FormFund"
+            android:label="@string/title_activity_form_fund"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.Formcomplain"
+            android:label="@string/title_activity_formcomplain"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Helper.HelperChangePasswordActivity"
+            android:label="@string/title_activity_helper_change_password"
+            android:parentActivityName=".HelperHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+        <activity
+            android:name=".FlatOwner.OwnerChangePasswordActivity"
+            android:label="@string/title_activity_owner_change_password"
+            android:parentActivityName=".OwnerHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OwnerHomeActivity" />
+        </activity>
+        <activity
+            android:name=".HelperHomeActivity"
+            android:label="@string/title_activity_helper_home"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".WatchMenHomeActivity"
+            android:label="@string/title_activity_watch_men_home"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.AddVisitorActivity"
+            android:label="@string/title_activity_send_otp"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.NewVisitorActivity"
+            android:label="@string/title_activity_send_otp"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".Watchman.WatchmenSuggestion"
+            android:label="@string/title_activity_watchman_suggestion"
+            android:parentActivityName=".WatchMenHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.WatchMenHomeActivity" />
+        </activity>
+        <activity
+            android:name=".AdminHomeActivity"
+            android:label="@string/title_activity_admin_home"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".OwnerHomeActivity"
+            android:label="@string/title_activity_owner_home"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddHelperCategoryActivity"
+            android:label="@string/title_activity_add_helper_category"
+            android:parentActivityName=".Admin.AdminDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddMaintenanceActivity"
+            android:label="@string/title_activity_add_maintenance"
+            android:parentActivityName=".Admin.AdminDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddMonthActivity"
+            android:label="@string/title_activity_add_month"
+            android:parentActivityName=".Admin.AdminDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddCategoryActivity"
+            android:label="@string/title_activity_add_category"
+            android:parentActivityName=".Admin.AdminDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddEventActivity"
+            android:label="@string/title_activity_add_event"
+            android:parentActivityName=".Admin.AdminDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddFlatActivity"
+            android:label="@string/title_activity_admin_add_flat"
+            android:parentActivityName=".Admin.AdminAddBuildingActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminAddBuildingActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddUserActivity"
+            android:label="@string/title_activity_admin_add_user"
+            android:parentActivityName=".Admin.AdminDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity
+            android:name=".Admin.AdminAddBuildingActivity"
+            android:label="@string/title_activity_admin_add_building"
+            android:parentActivityName=".Admin.AdminViewBuildingActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.Admin.AdminDashboardActivity" />
+        </activity>
+        <activity android:name=".Admin.AdminDashboardActivity" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:label="@string/title_activity_change_password"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PwdChange"
+            android:label="@string/title_activity_pwd_change"
+            android:parentActivityName=".OTP"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.OTP" />
+        </activity>
+        <activity
+            android:name=".OTP"
+            android:label="@string/title_activity_otp"
+            android:parentActivityName=".SendOTP"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.SendOTP" />
+        </activity>
+        <activity
+            android:name=".SendOTP"
+            android:label="@string/title_activity_send_otp"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.MainActivity" />
+        </activity>
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

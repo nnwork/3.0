@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_owner_visitor_request"
+            android:icon="@drawable/ic_request"
+            android:title="Vistor Request"
+            />
+
+
+
+        <item android:id="@+id/nav_owner_maintenance"
+            android:icon="@drawable/ic_tools"
+            android:title="Maintenance" />
+
+        <item
+            android:id="@+id/nav_owner_events"
+            android:icon="@drawable/ic_calendar"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/nav_owner_complain"
+            android:icon="@drawable/ic_danger"
+            android:title="Complain" />
+
+        <item
+            android:id="@+id/nav_owner_fund"
+            android:icon="@drawable/ic_fund"
+            android:title="Fund" />
+
+        <item
+            android:id="@+id/nav_owner_accounts"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Accounts" />
+
+        <item
+            android:id="@+id/nav_owner_hall"
+            android:icon="@drawable/ic_hall"
+            android:title="Hall" />
+
+        <item
+            android:id="@+id/nav_owner_notification"
+            android:icon="@drawable/ic_notification"
+            android:title="Notification" />
+
+        <item
+            android:id="@+id/nav_owner_yourSuggestion"
+            android:icon="@drawable/ic_suggestion"
+            android:title="Suggestion" />
+    </group>
+
+
+    <item android:title="Account Setting">
+        <menu>
+            <item
+                android:id="@+id/nav_owner_my_profile"
+                android:icon="@drawable/ic_menu_share"
+                android:title="My Profile" />
+            <item
+                android:id="@+id/nav_owner_change_password"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_owner_logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
+</menu>

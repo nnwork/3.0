@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Watchman.AddVisitorActivity"
+    tools:showIn="@layout/activity_add_visitor">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="60dp">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinBuildingID"
+            android:layout_marginTop="20dp"
+            android:padding="10dp">
+        </Spinner>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinFlatid"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/textpadding">
+        </Spinner>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:src="@drawable/profile"
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/textpadding"/>
+
+        <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:padding="@dimen/textpadding"-->
+            <!--android:id="@+id/visitorname"/>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_visitorname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/visitorname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="Visitor Name" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:padding="@dimen/textpadding"-->
+            <!--android:id="@+id/visitorcontact"/>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_visitorcontact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/visitorcontact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:singleLine="true"
+                android:hint="Contact Number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Add"-->
+            <!--android:textSize="20sp"-->
+            <!--android:id="@+id/addvisitor"-->
+            <!--/>-->
+
+        <Button android:id="@+id/addvisitor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="40dp"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
