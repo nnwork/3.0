@@ -4,7 +4,25 @@ import java.io.Serializable;
 
 public class ComplainClassFile implements Serializable {
 
+    String user_name,user_contact;
+
     String complain_id,complain_user_id,complain_hcat_id,complain_problem,complain_img_uri,complain_date,complain_status,complain_v_date,complain_v_time,complain_date_time;
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public String getUser_contact() {
+        return user_contact;
+    }
+
+    public void setUser_contact(String user_contact) {
+        this.user_contact = user_contact;
+    }
 
     public String getComplain_problem() {
         return complain_problem;

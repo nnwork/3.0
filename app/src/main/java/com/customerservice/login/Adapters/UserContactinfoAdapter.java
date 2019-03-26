@@ -42,7 +42,7 @@ public class UserContactinfoAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = activity.getLayoutInflater();
-        View view = layoutInflater.inflate(R.layout.singleusercontactinfodesign,null);
+        View view = layoutInflater.inflate(R.layout.singlehelperusercontactdesign,null);
 
         TextView txtusername = view.findViewById(R.id.txtusername);
         TextView txtcontact = view.findViewById(R.id.txtcontact);

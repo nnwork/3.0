@@ -1,11 +1,15 @@
 package com.customerservice.login.Helper;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.customerservice.login.ClassFiles.ComplainClassFile;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
@@ -28,10 +33,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HelperComplainDetailsActivity extends AppCompatActivity {
-    TextView helper_complain_display_id,helper_complain_display_user_id,helper_complain_display_hcat_id,helper_complain_display_problems;
-    TextView helper_complain_display_img_uri,helper_complain_display_date,helper_complain_display_status,helper_complain_display_v_date;
-    TextView helper_complain_display_v_time,helper_complain_display_date_time;
-    ComplainClassFile classFileobj;
+    TextView helper_complain_display_user_name,helper_complain_display_problems,helper_complain_display_user_contact;
+    TextView helper_complain_display_date,helper_complain_display_status,helper_complain_display_date_time,helper_complain_building_name,helper_complain_flatnumber;
+    ImageView helper_complain_display_img_uri;
+    Button accept,reject;
+    ComplainClassFile complainObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +45,26 @@ public class HelperComplainDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_helper_complain_details);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        accept = findViewById(R.id.accept);
+        reject = findViewById(R.id.reject);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        helper_complain_display_user_id=(TextView)findViewById(R.id.helper_complain_display_user_id);
+        helper_complain_display_user_name=(TextView)findViewById(R.id.helper_complain_display_user_name);
+        helper_complain_display_user_contact=(TextView)findViewById(R.id.helper_complain_display_user_contact);
+        //helper_complain_display_problems=(TextView)findViewById(R.id.helper_complain_display_problems);
+        helper_complain_display_img_uri=(ImageView)findViewById(R.id.helper_complain_display_img_uri);
+        helper_complain_display_date_time=(TextView)findViewById(R.id.helper_complain_display_date_time);
+       helper_complain_display_status=(TextView)findViewById(R.id.helper_complain_display_status);
         helper_complain_display_problems=(TextView)findViewById(R.id.helper_complain_display_problems);
-        helper_complain_display_img_uri=(TextView)findViewById(R.id.helper_complain_display_img_uri);
-        helper_complain_display_v_date=(TextView)findViewById(R.id.helper_complain_display_v_date);
-        helper_complain_display_v_time=(TextView)findViewById(R.id.helper_complain_display_v_time);
-        helper_complain_display_date=(TextView)findViewById(R.id.helper_complain_display_date);
+        helper_complain_flatnumber=(TextView)findViewById(R.id.helper_complain_flatnumber);
+        helper_complain_building_name=(TextView)findViewById(R.id.helper_complain_building_name);
 
-        classFileobj=(ComplainClassFile) getIntent().getSerializableExtra("complainObject");
+        complainObject=(ComplainClassFile) getIntent().getSerializableExtra("complainObject");
 
         StringRequest request=new StringRequest(Request.Method.POST, Config.READ_HelperUserComplain, new Response.Listener<String>() {
             @Override
@@ -70,13 +77,8 @@ public class HelperComplainDetailsActivity extends AppCompatActivity {
                     {
                         JSONObject object=array.getJSONObject(i);
                         ComplainClassFile classFile=new ComplainClassFile();
-
-                        String user_name=object.getString("user_name");
-                        helper_complain_display_user_id.setText(user_name);
-
-                        classFile.setComplain_problem(object.getString("complain_problem"));
-                        classFile.setComplain_date(object.getString("complain_date"));
-                        classFile.setComplain_problem(object.getString("complainObject"));
+                        helper_complain_flatnumber.setText(object.getString("FlatNumber"));
+                        helper_complain_building_name.setText(object.getString("BuildingId"));
 
                     }
                 } catch (JSONException e) {
@@ -94,15 +96,19 @@ public class HelperComplainDetailsActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params=new HashMap<>();
-                params.put("complain_id",classFileobj.getComplain_id());
+                params.put("complain_id",complainObject.getComplain_id());
                 return params;
             }
         };
         RequestQueue queue= Volley.newRequestQueue(this);
         queue.add(request);
 
-        helper_complain_display_problems.setText(classFileobj.getComplain_problem());
-        helper_complain_display_date.setText(classFileobj.getComplain_date());
+        Glide.with(HelperComplainDetailsActivity.this).load(Config.BASE_URL+"complain/"+complainObject.getComplain_img_uri()).into(helper_complain_display_img_uri);
+         helper_complain_display_user_name.setText(complainObject.getUser_name());
+         helper_complain_display_user_contact.setText(complainObject.getUser_contact());
+         helper_complain_display_date_time.setText(complainObject.getComplain_date_time());
+         helper_complain_display_status.setText(complainObject.getComplain_status());
+        helper_complain_display_problems.setText(complainObject.getComplain_problem());
 
     }
 }

@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.customerservice.login.ClassFiles.Building;
 import com.customerservice.login.R;
+import com.customerservice.login.Utility.Config;
 
 import java.util.List;
 
@@ -49,11 +52,12 @@ public class BuildingAdapter extends BaseAdapter
         View rowView=inflater.inflate(R.layout.singlebuildingdesign,null);
 
         TextView txtbuildingname= rowView.findViewById(R.id.txtbuildingname);
+       // ImageView txtbuldingimage = rowView.findViewById(R.id.txtbuldingimage);
 
         Building item=buildingList.get(position);
 
         txtbuildingname.setText(item.getBuildingName());
-
+       // Glide.with(activity).load(Config.BASE_URL+"building/"+item.getBuildingImage()).into(txtbuldingimage);
 
         return rowView;
     }

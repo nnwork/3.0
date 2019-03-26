@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -42,10 +44,10 @@ import java.util.List;
 public class AdminViewBuildingActivity extends AppCompatActivity {
 
 
-    RecyclerView buildinglistview;
-    BuildingAdapterRecycle adapter;
+//    RecyclerView buildinglistview;
+    GridView buildinggridview;
+    BuildingAdapter  adapter;
     List<Building> buildingList=new ArrayList<>();
-
     ProgressDialog dialog;
 
 
@@ -74,12 +76,13 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         dialog.setMessage("Please Wait...");
         dialog.setCancelable(false);
 
-        buildinglistview=(RecyclerView)findViewById(R.id.buildinglistview);
+        buildinggridview=(GridView)findViewById(R.id.buildinggridview);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        buildinglistview.setLayoutManager(mLayoutManager);
-        buildinglistview.setItemAnimator(new DefaultItemAnimator());
-        adapter=new BuildingAdapterRecycle(buildingList,AdminViewBuildingActivity.this);
-        buildinglistview.setAdapter(adapter);
+//        buildinglistview.setLayoutManager(mLayoutManager);
+//        buildinglistview.setItemAnimator(new DefaultItemAnimator());
+//        buildinglistview.setLayoutManager(new GridLayoutManager(this, 2));
+        adapter=new BuildingAdapter(AdminViewBuildingActivity.this,buildingList);
+        buildinggridview.setAdapter(adapter);
 
 
 
@@ -125,35 +128,35 @@ public class AdminViewBuildingActivity extends AppCompatActivity {
         //Flatview
 
 
-        buildinglistview.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), buildinglistview, new RecyclerTouchListener.ClickListener() {
-            @Override
-            public void onClick(View view, int position)
-            {
-                Building item = buildingList.get(position);
-                Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
-                intent.putExtra("objectBuilding", item);
-                startActivity(intent);
-            }
-            @Override
-            public void onLongClick(View view, int position) {
-
-            }
-        }));
-
-
-
-//
-//        buildinglistview.setOn(new AdapterView.OnItemClickListener() {
+//        buildinglistview.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), buildinglistview, new RecyclerTouchListener.ClickListener() {
 //            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//            public void onClick(View view, int position)
+//            {
 //                Building item = buildingList.get(position);
-//               Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
-//               intent.putExtra("objectBuilding", item);
-//               startActivity(intent);
+//                Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
+//                intent.putExtra("objectBuilding", item);
+//                startActivity(intent);
 //            }
-//        });
+//            @Override
+//            public void onLongClick(View view, int position) {
+//
+//            }
+//        }));
 
-        //
+
+
+
+        buildinggridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Building item = buildingList.get(position);
+               Intent intent = new Intent(AdminViewBuildingActivity.this,FlatViewActivity.class);
+               intent.putExtra("objectBuilding", item);
+               startActivity(intent);
+            }
+        });
+
+
     }
 
 }

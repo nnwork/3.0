@@ -20,6 +20,7 @@
                 android:layout_width="50dp"
                 android:src="@drawable/ic_building"
                 android:layout_gravity="left"
+                android:id="@+id/usercontact"
                 android:padding="5dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"

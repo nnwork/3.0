@@ -23,7 +23,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/sendotp"
+                android:id="@+id/user_contact"
                 android:layout_margin="@dimen/layout_margin"
                 android:hint="@string/mobile_number_hint"
                 android:inputType="phone"

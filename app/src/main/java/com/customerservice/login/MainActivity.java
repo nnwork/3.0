@@ -19,20 +19,6 @@ import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Admin.AdminDashboardActivity;
 import com.customerservice.login.Utility.Config;
 import com.customerservice.login.Utility.SessionManager;
-import com.google.firebase.iid.FirebaseInstanceId;
-
-import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,10 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    Toolbar toolbar;
-    EditText Mobile_Number, Password;
-    TextInputLayout Layout_mobilenumber,Layout_Password;
-   // EditText Mobile_Number,Password;
+    EditText Mobile_Number,Password;
     Button btnLogin;
     TextView forgot_pwd,change_pwd;
 
@@ -56,23 +39,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Mobile_Number=(EditText)findViewById(R.id.Mobile_Number);
-       // Password=(EditText)findViewById(R.id.Password);
-
-        //Layout_mobilenumber = (TextInputLayout) findViewById(R.id.Layout_Mobile_Number);
-        //Layout_Password = (TextInputLayout) findViewById(R.id.Layout_Password);
-        Mobile_Number = (EditText) findViewById(R.id.Mobile_Number);
-        Password = (EditText) findViewById(R.id.Password);
-
+        Mobile_Number=(EditText)findViewById(R.id.Mobile_Number);
+        Password=(EditText)findViewById(R.id.Password);
         btnLogin=(Button)findViewById(R.id.btnLogin);
         forgot_pwd=(TextView)findViewById(R.id.forgot_pwd);
-        //change_pwd=(TextView)findViewById(R.id.ChangePassword);
+        change_pwd=(TextView)findViewById(R.id.ChangePassword);
 
         session=new SessionManager(this);
 
-//        Toast.makeText(this, ""+ FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+session.getToken(), Toast.LENGTH_SHORT).show();
 
-        session.setToken(FirebaseInstanceId.getInstance().getToken());
         if(session.isLoggedIn())
         {
 
@@ -196,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
                             params.put("MobileNumber",MobileNumber);
                             params.put("password",password);
-                            params.put("token",FirebaseInstanceId.getInstance().getToken());
+                            params.put("token",session.getToken());
                             return  params;
                         }
                     };
@@ -217,12 +193,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        change_pwd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        change_pwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

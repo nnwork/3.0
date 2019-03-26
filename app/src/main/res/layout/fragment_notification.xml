@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Helper.ComplainFragment">
+    tools:context=".Helper.NotificationFragment">
 
     <ListView
-        android:id="@+id/list_view"
+        android:id="@+id/notification_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent"
+        android:divider="@null"
+        ></ListView>
 
 </FrameLayout>
