@@ -1,12 +1,12 @@
 package com.customerservice.login.Helper;
 
+
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ListView;
 
@@ -28,26 +28,26 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HelperNotificationActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class NotificationFragment extends Fragment {
     ListView listView;
     HelperNotificationAdapter adapter;
     List<Notification> notificationList=new ArrayList<>();
 
+    public NotificationFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_helper_notification);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        listView=(ListView)findViewById(R.id.notification_list_view);
-        adapter=new HelperNotificationAdapter(HelperNotificationActivity.this,notificationList);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+        listView=(ListView)view.findViewById(R.id.notification_list_view);
+        adapter=new HelperNotificationAdapter(getActivity(),notificationList);
         listView.setAdapter(adapter);
 
         StringRequest request=new StringRequest(Request.Method.POST, Config.list_tbl_notification, new Response.Listener<String>() {
@@ -61,7 +61,7 @@ public class HelperNotificationActivity extends AppCompatActivity {
 
                         Notification classfie=new Notification();
                         classfie.setNotification_id(object.getString("notification_id"));
-
+                        classfie.setUser_name(object.getString("user_name"));
                         classfie.setUser_id(object.getString("user_id"));
                         classfie.setNotification_title(object.getString("title"));
                         classfie.setNotification_description(object.getString("description"));
@@ -84,8 +84,9 @@ public class HelperNotificationActivity extends AppCompatActivity {
 
             }
         });
-        RequestQueue queue= Volley.newRequestQueue(this);
+        RequestQueue queue= Volley.newRequestQueue(getActivity());
         queue.add(request);
+        return view;
     }
 
 }

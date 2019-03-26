@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.customerservice.login"
-        minSdkVersion 19
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -35,11 +35,12 @@ dependencies {
     implementation 'net.gotev:uploadservice:2.1'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
-   implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
-
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+   implementation 'com.google.firebase:firebase-messaging:11.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 
 }
 apply plugin: 'com.google.gms.google-services'

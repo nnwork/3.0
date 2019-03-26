@@ -12,44 +12,83 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.customerservice.login.Admin.AdminAddEventActivity;
+import com.customerservice.login.Utility.Config;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class SendOTP extends AppCompatActivity {
     Button btnSendOtp;
-    EditText sendotp;
+    EditText user_contact;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_otp);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnSendOtp=(Button)findViewById(R.id.btnSendOtp);
-        sendotp=(EditText)findViewById(R.id.sendotp);
+        user_contact=(EditText)findViewById(R.id.user_contact);
         btnSendOtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Sendotp=sendotp.getText().toString();
+                final String usercontact=user_contact.getText().toString();
 
-                if(Sendotp.length()==0)
-                {
-                    Toast.makeText(getApplicationContext(), "Please Enter OTP", Toast.LENGTH_SHORT).show();
-                }
-                else if(Sendotp.length()!=10)
+                if(usercontact.length()!=10)
                 {
                     Toast.makeText(getApplicationContext(), "Please Enter Valid Mobile Number", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
 
-                    String MobileNumber="8460467288";
+                   btnSendOtp.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.forgotpassword, new Response.Listener<String>() {
+                               @Override
+                               public void onResponse(String response) {
+                                   if(response.equals("success"))
+                                   {
+                                       Toast.makeText(SendOTP.this, "Your Password send to your mobile number", Toast.LENGTH_SHORT).show();
+                                   }
+                                   else
+                                   {
+                                       Toast.makeText(SendOTP.this, "Error", Toast.LENGTH_SHORT).show();
+                                   }
 
-                    if(MobileNumber.equals(Sendotp))
-                    {
-                        Intent intent = new Intent(getApplicationContext(),OTP.class);
-                        startActivity(intent);
-                    }
+
+                               }
+                           }, new Response.ErrorListener() {
+                               @Override
+                               public void onErrorResponse(VolleyError error) {
+
+                               }
+                           }){
+                               @Override
+                               protected Map<String, String> getParams() throws AuthFailureError {
+                                   Map<String,String> params=new HashMap<>();
+
+                                   params.put("user_contact",usercontact);
+                                   // params.put("EventDateTime",EventDateTime);
+                                   return params;
+                               }
+                           };
+                           RequestQueue queue = Volley.newRequestQueue(SendOTP.this);
+                           queue.add(stringRequest);
+                       }
+                   });
                 }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
         });
+
     }
 }

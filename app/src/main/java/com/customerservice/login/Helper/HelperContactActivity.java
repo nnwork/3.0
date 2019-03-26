@@ -1,12 +1,17 @@
 package com.customerservice.login.Helper;
 
 import android.content.Intent;
+import android.drm.DrmStore;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -33,16 +38,35 @@ public class HelperContactActivity extends AppCompatActivity {
     ListView user_contactview;
     List<UserContactinfo> userContactinfoList=new ArrayList<>();
     HelperContactInfo adapter;
+    UserContactinfo userContactinfo = new UserContactinfo();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_helper_contact);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         user_contactview = (ListView)findViewById(R.id.user_contactview);
         adapter=new HelperContactInfo(HelperContactActivity.this,userContactinfoList) ;
         user_contactview.setAdapter(adapter);
+
+
+        adapter.setCustomButtonCall(new HelperContactInfo.customCallButton() {
+            @Override
+            public void onButtonClickListner(int position, String contact) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+contact));
+                startActivity(intent);
+            }
+        });
+
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.READ_GetUserContactinfo, new Response.Listener<String>() {
             @Override
@@ -54,7 +78,7 @@ public class HelperContactActivity extends AppCompatActivity {
                     {
                         JSONObject jsonObject = array.getJSONObject(i);
 
-                        UserContactinfo userContactinfo = new UserContactinfo();
+
 
                         userContactinfo.setUser_name(jsonObject.getString("user_name"));
                         userContactinfo.setUsre_id(jsonObject.getString("usre_id"));
@@ -81,6 +105,10 @@ public class HelperContactActivity extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(HelperContactActivity.this);
         queue.add(stringRequest);
+
+
+
     }
+
 
 }

@@ -58,7 +58,7 @@ public class BuildingAdapterRecycle extends RecyclerView.Adapter<BuildingAdapter
         public MyViewHolder(View view) {
             super(view);
             txtbuildingname = (TextView) view.findViewById(R.id.txtbuildingname);
-            txtbuldingimage = (ImageView) view.findViewById(R.id.txtbuldingimage);
+           // txtbuldingimage = (ImageView) view.findViewById(R.id.txtbuldingimage);
         }
     }
 

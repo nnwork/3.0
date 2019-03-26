@@ -233,12 +233,14 @@
            <Button
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:text="Accecept"
+               android:id="@+id/accept"
+               android:text="Accept"
                android:layout_weight="1"
                />
            <Button
                android:layout_width="match_parent"
                android:layout_height="match_parent"
+               android:id="@+id/reject"
                android:text="Reject"
                android:layout_weight="1"
                />

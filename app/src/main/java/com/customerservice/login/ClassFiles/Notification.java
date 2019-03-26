@@ -4,7 +4,16 @@ import java.io.Serializable;
 
 public class Notification implements Serializable {
 
-    String notification_id,user_id,notification_title,notification_description,description_date_time;
+    String notification_id,user_id,notification_title,notification_description,description_date_time,user_name;
+
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
 
     public String getNotification_id() {
         return notification_id;

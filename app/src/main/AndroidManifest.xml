@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -305,6 +306,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.customerservice.login.HelperHomeActivity" />
         </activity>
+        <activity
+            android:name=".Helper.HelperNotificationActivity"
+            android:label="@string/title_activity_helper_my_profile"
+            android:parentActivityName=".HelperHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.customerservice.login.HelperHomeActivity" />
+        </activity>
+
         <activity
             android:name=".Helper.HelperDashboardActivity"
             android:label="@string/title_activity_helper_dashboard"
@@ -800,6 +811,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <!--FireBase Notification-->
+        <service android:name=".Notification.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Notification.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

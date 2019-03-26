@@ -45,6 +45,7 @@ import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -77,7 +78,18 @@ public class AdminAddBuildingActivity extends AppCompatActivity {
         btnUserSubmit=(Button)findViewById(R.id.btnUserSubmit);
 
 
+        requestCameraPermission();
         requestStoragePermission();
+
+        cameraid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                startActivityForResult(intent, 7);
+            }
+        });
+
 
         galleryid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,6 +212,22 @@ public class AdminAddBuildingActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        if (requestCode == 7 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            filePath = data.getData();
+
+            try {
+
+                // Adding captured image in bitmap.
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+
+                // adding captured image in imageview.
+                showimageid.setImageBitmap(bitmap);
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -217,6 +245,19 @@ public class AdminAddBuildingActivity extends AppCompatActivity {
         //And finally ask for the permission
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
+    //Requesting permission
+    private void requestCameraPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
+            return;
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+            //If the user has denied the permission previously your code will come to this block
+            //Here you can explain why you need this permission
+            //Explain here why you need this permission
+        }
+        //And finally ask for the permission
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 7);
+    }
 
 
     //This method will be called when the user will tap on allow or deny
@@ -225,6 +266,17 @@ public class AdminAddBuildingActivity extends AppCompatActivity {
 
         //Checking the request code of our request
         if (requestCode == STORAGE_PERMISSION_CODE) {
+
+            //If permission is granted
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                //Displaying a toast
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+            } else {
+                //Displaying another toast if permission is not granted
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
+            }
+        }
+        if (requestCode == 7) {
 
             //If permission is granted
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

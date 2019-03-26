@@ -19,6 +19,8 @@ import com.android.volley.toolbox.Volley;
 import com.customerservice.login.Admin.AdminDashboardActivity;
 import com.customerservice.login.Utility.Config;
 import com.customerservice.login.Utility.SessionManager;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         session=new SessionManager(this);
 
-        Toast.makeText(this, ""+session.getToken(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+ FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
 
         if(session.isLoggedIn())
         {
