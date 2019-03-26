@@ -21,15 +21,29 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
-
 public class FormFund extends AppCompatActivity {
 
-    EditText fundtitle,fundamt,funddate;
+    Toolbar toolbar;
+    EditText fundid,fundtitle,fundamt,funddate;
+    TextInputLayout input_layout_fundid_fundid,input_layout_fundid_fundtitle,input_layout_fundid_fundamt,input_layout_fundid_funddate;
+
+
     Button fundbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +64,15 @@ public class FormFund extends AppCompatActivity {
 
         fundbtn=(Button)findViewById(R.id.fundbtn);
 
-
+        fundid=(EditText)findViewById(R.id.fundid);
         fundtitle=(EditText)findViewById(R.id.fundtitle);
         fundamt=(EditText)findViewById(R.id.fundamt);
         funddate=(EditText)findViewById(R.id.funddate);
 
+        input_layout_fundid_fundid=(TextInputLayout)findViewById(R.id.input_layout_fundid);
+        input_layout_fundid_fundtitle=(TextInputLayout)findViewById(R.id.input_layout_fundtitle);
+        input_layout_fundid_fundamt=(TextInputLayout)findViewById(R.id.input_layout_fundamt);
+        input_layout_fundid_funddate=(TextInputLayout)findViewById(R.id.input_layout_funddate);
 
         fundbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,10 +81,7 @@ public class FormFund extends AppCompatActivity {
 
                 String fundtitlestr = fundtitle.getText().toString();
                 String fundamtstr = fundamt.getText().toString();
-
                 String funddatestr = funddate.getText().toString();
-
-
 
                 if (fundtitlestr.length() == 0) {
                     Toast.makeText(FormFund.this, "Please Enter Fund Title", Toast.LENGTH_SHORT).show();

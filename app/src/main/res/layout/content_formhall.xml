@@ -17,55 +17,106 @@
             android:layout_height="match_parent"
             android:padding="30dp"
             android:layout_margin="@dimen/layout_margin"
-            android:layout_gravity="center"
-            >
+            android:layout_gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
-            android:orientation="vertical"
-            android:background="#ffffff">
+            <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/halltitle"
+            <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="hall TITLE"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="text"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <EditText
-                android:id="@+id/hallcapacity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="hall CAPACITY"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="number"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            </android.support.design.widget.AppBarLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginTop="25dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:background="#ffffff">-->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="60dp">
+
+            <!--<EditText-->
+                <!--android:id="@+id/halltitle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="hall TITLE"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:padding="7dp"-->
+                <!--android:inputType="text"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:drawablePadding="10dp"/>-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_halltitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/halltitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:hint="Hall Title" />
+                </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/hallcapacity"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="hall CAPACITY"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:padding="7dp"-->
+                <!--android:inputType="number"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:drawablePadding="10dp"/>-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_hallcapacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/hallcapacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:hint="@string/hint_name" />
+                </android.support.design.widget.TextInputLayout>
 
 
-            <ImageView
-                android:id="@+id/hallimg1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="hall img1"
-               android:background="@drawable/ic_menu_camera"
-                android:padding="7dp"
-                />
+                <ImageView
+                    android:id="@+id/hallimg1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ic_menu_camera"
+                    android:gravity="left"
+                    android:hint="hall img1"
+                    android:padding="7dp" />
 
             <ImageView
                 android:id="@+id/hallimg2"
@@ -75,22 +126,28 @@
                 android:gravity="left"
                 android:hint="hall img2"
                 android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                />
+                android:padding="7dp"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/hallbtn"
-                android:text="submit"
-                android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:textSize="25dp"
-                android:background="@drawable/roundbutton"
-                />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/hallbtn"-->
+                <!--android:text="submit"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:padding="10dp"-->
+                <!--android:textSize="25dp"-->
+                <!--android:background="@drawable/roundbutton"/>-->
+
+                <Button android:id="@+id/hallbtn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Submit"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="40dp"
+                    android:textColor="@android:color/white"/>
 
         </LinearLayout>
+            </android.support.design.widget.CoordinatorLayout>
         </android.support.v7.widget.CardView>
     </ScrollView>
-
 </RelativeLayout>

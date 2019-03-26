@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreenActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -16,21 +15,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="283dp"
+            android:layout_height="189dp"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher"
-            android:layout_height="150dp" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/iconbluesplash" />
 
     </LinearLayout>
-
 
 </RelativeLayout>

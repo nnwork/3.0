@@ -12,12 +12,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:gravity="center">-->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical"
-            android:gravity="center"
-            >
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="60dp">
 
             <Spinner
                 android:layout_width="match_parent"
@@ -28,148 +55,279 @@
                 android:textColor="@color/textcolorwhite"
                 ></Spinner>
 
-            <EditText
-                android:id="@+id/AddEventTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/EventTitle"
-                android:background="@drawable/roundtextview"
-                android:layout_margin="@dimen/layout_margin"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventTitle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="@string/EventTitle"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
 
-            <EditText
-                android:id="@+id/AddEventDesc"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventTitle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventDesc"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/AddEventVenue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventVenue"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+                <EditText
+                    android:id="@+id/AddEventTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/EventTitle" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/AddEventAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventAddress"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventDesc"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventDesc"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
 
-            <EditText
-                android:id="@+id/AddEventLandmark"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventDesc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/Landmark"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/AddPincode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/Pincode"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+                <EditText
+                    android:id="@+id/AddEventDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/EventDesc" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/AddEventDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventVenue"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventVenue"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventVenue"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
 
-            <EditText
-                android:id="@+id/AddEventTime"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventVenue"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventVenue"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/AddEventSpeciality"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventSpeciality"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                />
+                <EditText
+                    android:id="@+id/AddEventVenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/EventVenue" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/AddedDateTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:background="@drawable/roundtextview"
-                android:hint="@string/EventVenue"
-                android:inputType="text"
-                android:padding="@dimen/edittextsize"
-                android:drawableLeft="@drawable/ic_vintage_cellphone"
-                android:drawablePadding="10dp"
-                />
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventAddress"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventAddress"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
 
-            <Button
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventAddress"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/AddEventAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/EventAddress" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventLandmark"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/Landmark"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventLandmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/AddEventLandmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/Landmark" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/AddPincode"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/Pincode"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/AddPincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:hint="@string/Pincode" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventDate"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventVenue"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/AddEventDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="date"
+                    android:hint="Event Date" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/AddEventTime"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventVenue"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddEventTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/AddEventTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    android:singleLine="true"
+                    android:hint="Event Time" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/event_specific_purpose"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventSpeciality"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawablePadding="10dp"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_event_specific_purpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/event_specific_purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="Event Specific Purpose"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/AddedDateTime"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:hint="@string/EventVenue"-->
+                <!--android:inputType="text"-->
+                <!--android:padding="@dimen/edittextsize"-->
+                <!--android:drawableLeft="@drawable/ic_vintage_cellphone"-->
+                <!--android:drawablePadding="10dp"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_AddedDateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/AddedDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:inputType="datetime"
+                    android:hint="Event Addad Date And Time" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:id="@+id/btnUserSubmit"-->
+                <!--android:background="@drawable/roundbutton"-->
+                <!--android:text="@string/submitbutton"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:textSize="@dimen/buttontextsize"/>-->
+
+            <Button android:id="@+id/btnUserSubmit"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:id="@+id/btnUserSubmit"
-                android:background="@drawable/roundbutton"
-                android:text="@string/submitbutton"
-                android:textColor="@color/textcolorwhite"
-                android:textSize="@dimen/buttontextsize" />
+                android:text="@string/btn_sign_up"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="55dp"
+                android:textColor="@android:color/white"/>
+
         </LinearLayout>
-
-
-    </ScrollView>
-
+        </android.support.design.widget.CoordinatorLayout>
+    </ScrollView>]
 </RelativeLayout>

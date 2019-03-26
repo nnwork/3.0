@@ -31,12 +31,25 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class AdminAddFlatActivity extends AppCompatActivity {
-        EditText AddFlatNumberID;
+        Toolbar toolbar;
+        EditText AddFlatNumberID, inputEmail, inputPassword;
+        TextInputLayout input_layout_AddFlatNumberID;
         Spinner spinBuildingID;
         Button btnAddFlatSubmit;
-
 
         ArrayList<String> buildingNameList=new ArrayList<>();
         ArrayList<String> buildingIdList=new ArrayList<>();

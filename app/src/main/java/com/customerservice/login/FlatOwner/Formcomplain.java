@@ -49,12 +49,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Formcomplain extends AppCompatActivity {
 
-    Button complainbtn;
+    Toolbar toolbar;
     EditText complainproblem;
+    TextInputLayout input_layout_complainproblem;
+    Button complainbtn;
     ImageView complainimg;
     Spinner complainfcatid;
     private static final int STORAGE_PERMISSION_CODE = 123;
@@ -80,6 +94,7 @@ public class Formcomplain extends AppCompatActivity {
         }
         complainbtn = (Button) findViewById(R.id.complainbtn);
         complainproblem = (EditText) findViewById(R.id.complainproblem);
+        input_layout_complainproblem = (TextInputLayout) findViewById(R.id.input_layout_complainproblem);
         complainimg=(ImageView) findViewById(R.id.complainimg);
 
         sessionManager = new SessionManager(this);

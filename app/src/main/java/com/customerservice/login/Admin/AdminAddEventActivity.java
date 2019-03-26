@@ -30,11 +30,27 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class AdminAddEventActivity extends AppCompatActivity {
-    Spinner SpinAddCatID;
+    Toolbar toolbar;
     EditText AddEventTitle,AddEventDesc,AddEventVenue,AddedDateTime;
-    EditText AddEventAddress,AddEventLandmark,AddPincode,AddEvenDate,AddEventTime,AddEventSpeciality;
+    EditText AddEventAddress,AddEventLandmark,AddPincode,AddEvenDate,AddEventTime,event_specific_purpose;
+    TextInputLayout input_layout_AddEventTitle,input_layout_AddEventDesc,input_layout_AddEventVenue,input_layout_specific_purpose,input_layout_AddedDateTime;
+    TextInputLayout input_layout_AddEventAddress,input_layout_AddEventLandmark,input_layout_AddPincode,input_layout_AddEventDate,input_layout_AddEventTime;
+
+    Spinner SpinAddCatID;
     Button btnUserSubmit;
 
     ArrayList<String> cat_id_list=new ArrayList<>();
@@ -60,8 +76,21 @@ public class AdminAddEventActivity extends AppCompatActivity {
         AddPincode=(EditText)findViewById(R.id.AddPincode);
         AddEvenDate=(EditText)findViewById(R.id.AddEventDate);
         AddEventTime=(EditText)findViewById(R.id.AddEventTime);
-        AddEventSpeciality=(EditText)findViewById(R.id.AddEventSpeciality);
+        event_specific_purpose=(EditText)findViewById(R.id.event_specific_purpose);
         AddedDateTime=(EditText)findViewById(R.id.AddedDateTime);
+
+        input_layout_AddEventTitle=(TextInputLayout)findViewById(R.id.input_layout_AddEventTitle);
+        input_layout_AddEventDesc=(TextInputLayout)findViewById(R.id.input_layout_AddEventDesc);
+        input_layout_AddEventVenue=(TextInputLayout)findViewById(R.id.input_layout_AddEventVenue);
+
+        input_layout_specific_purpose=(TextInputLayout)findViewById(R.id.input_layout_event_specific_purpose);
+        input_layout_AddEventAddress=(TextInputLayout)findViewById(R.id.input_layout_AddEventAddress);
+        input_layout_AddEventLandmark=(TextInputLayout)findViewById(R.id.input_layout_AddEventLandmark);
+
+        input_layout_AddPincode=(TextInputLayout)findViewById(R.id.input_layout_AddPincode);
+        input_layout_AddedDateTime=(TextInputLayout)findViewById(R.id.input_layout_AddedDateTime);
+        input_layout_AddEventDate=(TextInputLayout)findViewById(R.id.input_layout_AddEventDate);
+        input_layout_AddEventTime=(TextInputLayout)findViewById(R.id.input_layout_AddEventTime);
         //End
 
         //ButtonSubmit
@@ -122,7 +151,7 @@ public class AdminAddEventActivity extends AppCompatActivity {
            final     String EventPincode = AddPincode.getText().toString();
            final     String EventDate = AddEvenDate.getText().toString();
            final     String EventTime = AddEventTime.getText().toString();
-           final     String EventSpeciality = AddEventSpeciality.getText().toString();
+           final     String EventSpeciality = event_specific_purpose.getText().toString();
            final     String EventDateTime=AddedDateTime.getText().toString();
 
                 //End

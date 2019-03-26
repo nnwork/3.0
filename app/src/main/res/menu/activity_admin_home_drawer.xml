@@ -36,7 +36,7 @@
         <menu>
         <item
             android:id="@+id/nav_events"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_calendar"
             android:title="Events" />
         </menu>
         </item>
@@ -45,7 +45,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_suggestion"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_suggestion"
                     android:title="Suggestion" />
             </menu>
         </item>
@@ -55,7 +55,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_new_complain"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_danger"
                     android:title="New Complain" />
 
                 <item
@@ -74,7 +74,7 @@
         <menu>
         <item
             android:id="@+id/nav_monthly_amount"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_tools"
             android:title="Monthly Amount" />
 
             <item
@@ -102,7 +102,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_fund"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_fund"
                     android:title="funds" />
 
                 <item
@@ -135,7 +135,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_hall"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_hall"
                     android:title="Hall" />
 
                 <item

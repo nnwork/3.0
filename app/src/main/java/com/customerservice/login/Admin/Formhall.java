@@ -39,14 +39,29 @@ import net.gotev.uploadservice.UploadNotificationConfig;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import spencerstudios.com.fab_toast.FabToast;
 
 
 public class Formhall extends AppCompatActivity {
 
-    Button hallbtn;
+    Toolbar toolbar;
     EditText halltitle,hallcapacity;
+    TextInputLayout input_layout_halltitle,input_layout_hallcapacity;
+
+    Button hallbtn;
     private static final int STORAGE_PERMISSION_CODE = 123;
     Uri filePath;
     int PICK_IMAGE_REQUEST = 111;
@@ -77,6 +92,9 @@ public class Formhall extends AppCompatActivity {
 
         hallimg1=(ImageView)findViewById(R.id.hallimg1);
         hallimg2=(ImageView)findViewById(R.id.hallimg2);
+
+        input_layout_halltitle=(TextInputLayout) findViewById(R.id.input_layout_halltitle);
+        input_layout_hallcapacity=(TextInputLayout) findViewById(R.id.input_layout_hallcapacity);
         requestStoragePermission();
 
         hallimg1.setOnClickListener(new View.OnClickListener() {

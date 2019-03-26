@@ -22,17 +22,29 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
 public class Formexpence extends AppCompatActivity {
+    Toolbar toolbar;
+    EditText expencetitle,expenceamt,expencedate;
+    TextInputLayout input_layout_expencetitle,input_layout_expenceamt,input_layout_expencedate;
 
     Button expencebtn;
-    EditText expencetitle,expenceamt,expencedate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +68,10 @@ public class Formexpence extends AppCompatActivity {
         expencetitle=(EditText) findViewById(R.id.expencetitle);
         expenceamt=(EditText) findViewById(R.id.expenceamt);
         expencedate=(EditText) findViewById(R.id.expencedate);
+
+        input_layout_expencetitle=(TextInputLayout) findViewById(R.id.input_layout_expencetitle);
+        input_layout_expenceamt=(TextInputLayout) findViewById(R.id.input_layout_expenceamt);
+        input_layout_expencedate=(TextInputLayout) findViewById(R.id.input_layout_expencedate);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

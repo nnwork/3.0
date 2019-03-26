@@ -17,13 +17,28 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class AdminAddMonthActivity extends AppCompatActivity {
-        EditText AddMonthID,AddAmountID;
-        Button  btnUserSubmit;
+    Toolbar toolbar;
+    EditText AddMonthID,AddAmountID;
+    TextInputLayout input_layout_AddMonthID,input_layout_AddAmountID;
+    Button  btnUserSubmit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +48,9 @@ public class AdminAddMonthActivity extends AppCompatActivity {
 
         AddMonthID=(EditText)findViewById(R.id.AddMonthID);
         AddAmountID=(EditText)findViewById(R.id.AddAmountID);
+
+        input_layout_AddMonthID=(TextInputLayout)findViewById(R.id.input_layout_AddMonthID);
+        input_layout_AddAmountID=(TextInputLayout)findViewById(R.id.input_layout_AddAmountID);
 
         btnUserSubmit=(Button) findViewById(R.id.btnUserSubmit);
 

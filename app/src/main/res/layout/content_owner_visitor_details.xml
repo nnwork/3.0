@@ -107,27 +107,47 @@
                 android:layout_marginTop="600dp"
                 android:weightSum="2">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_margin"
-                    android:id="@+id/accept"
-                    android:background="#ad1457"
-                    android:layout_weight="1"
-                    android:text="Accept"
-                    android:textColor="@color/textcolorwhite"
-                    android:textSize="@dimen/buttontextsize" />
+                <!--<Button-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/layout_margin"-->
+                    <!--android:id="@+id/accept"-->
+                    <!--android:background="#ad1457"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="Accept"-->
+                    <!--android:textColor="@color/textcolorwhite"-->
+                    <!--android:textSize="@dimen/buttontextsize" />-->
 
-                <Button
-                    android:layout_width="match_parent"
+                <Button android:id="@+id/accept"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_margin"
-                    android:id="@+id/reject"
-                    android:background="#ad1457"
+                    android:text="Accept"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="40dp"
+                    android:textColor="@android:color/white"/>
+
+                <!--<Button-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/layout_margin"-->
+                    <!--android:id="@+id/reject"-->
+                    <!--android:background="#ad1457"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="Reject"-->
+                    <!--android:textColor="@color/textcolorwhite"-->
+                    <!--android:textSize="@dimen/buttontextsize" />-->
+
+                <Button android:id="@+id/reject"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Reject"
-                    android:textColor="@color/textcolorwhite"
-                    android:textSize="@dimen/buttontextsize" />
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="40dp"
+                    android:textColor="@android:color/white"/>
             </LinearLayout>
 
 

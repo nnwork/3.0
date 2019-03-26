@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -43,10 +44,13 @@ import java.util.Map;
 
 
 public class FormHallBooking extends AppCompatActivity {
-
-    Button hallbookingbtn,hallbookinggdate,btnhallbookinggtime;
+    Toolbar toolbar;
     EditText hallbookingsubject,txtdate,hallbookingtime;
     TextView hallbookingamt,halltitle;
+    TextInputLayout input_layout_halltitle,input_layout_hallbookingamt,input_layout_hallbookingsubject;
+
+    Button hallbookingbtn,hallbookinggdate,btnhallbookinggtime;
+
     Hall hallObject;
     SessionManager sessionManager;
 
@@ -66,10 +70,11 @@ public class FormHallBooking extends AppCompatActivity {
         hallbookinggdate= (Button) findViewById(R.id.hallbookinggdate);
         hallbookingamt=(TextView) findViewById(R.id.hallbookingamt);
         halltitle=(TextView) findViewById(R.id.halltitle);
-        txtdate=(EditText)findViewById(R.id.txtdate);
-        hallbookingtime=(EditText)findViewById(R.id.hallbookingtime);
         hallbookingsubject=(EditText)findViewById(R.id.hallbookingsubject);
 
+        input_layout_halltitle=(TextInputLayout) findViewById(R.id.input_layout_halltitle);
+        input_layout_hallbookingamt=(TextInputLayout) findViewById(R.id.input_layout_hallbookingamt);
+        input_layout_hallbookingsubject=(TextInputLayout) findViewById(R.id.input_layout_hallbookingsubject);
 
         hallObject  =(Hall)getIntent().getSerializableExtra("hallObject");
 

@@ -13,92 +13,165 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginTop="25dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:background="#ffffff">-->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical"
-            android:background="#ffffff">
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="60dp">
 
-            <EditText
+
+            <!--<EditText-->
+                <!--android:id="@+id/fundid"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="FundID"-->
+                <!--android:textColor="@color/textviewcolor"-->
+                <!--android:inputType="number"-->
+                <!--android:padding="7dp"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:drawablePadding="10dp"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_fundid"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Fund"
-                android:gravity="center"
-                android:layout_margin="25dp"
-                android:layout_marginTop="10dp"
-                android:textSize="25dp"
-                android:textColor="#000000"
-                />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/fundid"
+                <EditText
+                    android:id="@+id/fundid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="FundID" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/fundtitle"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="fundTITLE"-->
+                <!--android:textColor="@color/textviewcolor"-->
+                <!--android:padding="7dp"-->
+                <!--android:inputType="text"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:drawablePadding="10dp"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_fundtitle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="FundID"
-                android:textColor="@color/textviewcolor"
-                android:inputType="number"
-                android:padding="7dp"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/fundtitle"
+                <EditText
+                    android:id="@+id/fundtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="Fund Title" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/fundamt"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="fundAMOUNT"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:padding="7dp"-->
+                <!--android:inputType="number"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:drawablePadding="10dp"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_fundamt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="fundTITLE"
-                android:textColor="@color/textviewcolor"
-                android:padding="7dp"
-                android:inputType="text"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/fundamt"
+                <EditText
+                    android:id="@+id/fundamt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="Fund Amount" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--<EditText-->
+                <!--android:id="@+id/funddate"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:gravity="left"-->
+                <!--android:hint="fundDate"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:padding="10dp"-->
+                <!--android:background="@drawable/roundtextview"-->
+                <!--android:inputType="datetime"/>-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_funddate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="fundAMOUNT"
-                android:textColor="@color/textcolorwhite"
-                android:padding="7dp"
-                android:inputType="number"
-                android:background="@drawable/roundtextview"
-                android:drawablePadding="10dp"
-                />
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/funddate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:hint="Fund Date" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/funddate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="left"
-                android:hint="fundDate"
-                android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:background="@drawable/roundtextview"
-                android:inputType="datetime"
-                />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/fundbtn"-->
+                <!--android:text="submit"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:padding="10dp"-->
+                <!--android:textSize="25dp"-->
+                <!--android:background="@drawable/roundbutton"/>-->
 
-            <Button
-                android:layout_width="match_parent"
+            <Button android:id="@+id/fundbtn"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/fundbtn"
-                android:text="submit"
-                android:textColor="@color/textcolorwhite"
-                android:padding="10dp"
-                android:textSize="25dp"
-                android:background="@drawable/roundbutton"
-                />
+                android:text="Submit"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/white"/>
 
         </LinearLayout>
+        </android.support.design.widget.CoordinatorLayout>
     </ScrollView>
 </RelativeLayout>

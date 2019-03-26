@@ -14,6 +14,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -48,11 +51,26 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import spencerstudios.com.fab_toast.FabToast;
 
 
 public class AdminAddBuildingActivity extends AppCompatActivity {
+    Toolbar toolbar;
+    EditText inputName;
+    TextInputLayout input_layout_edtBuildingName;
     EditText edtBuildingName;
     Button btnUserSubmit;
     ImageView cameraid,galleryid,showimageid;
@@ -69,7 +87,7 @@ public class AdminAddBuildingActivity extends AppCompatActivity {
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        edtBuildingName=(EditText) findViewById(R.id.edtBuildingName);
+        edtBuildingName=(EditText)findViewById(R.id.edtBuildingName);
 
         cameraid=(ImageView) findViewById(R.id.cameraid);
         galleryid=(ImageView) findViewById(R.id.galleryid);

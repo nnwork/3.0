@@ -36,11 +36,26 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddVisitorActivity extends AppCompatActivity {
+        Toolbar toolbar;
+        EditText visitorname,visitorcontact;
+        TextInputLayout input_layout_visitorname,input_layout_visitorcontact;
 
         Spinner spinBuildingID,spinFlatid;
-        EditText visitorname,visitorcontact;
+
         Button addvisitor;
         ArrayList<String> buildingNameList=new ArrayList<>();
         ArrayList<String> buildingIdList=new ArrayList<>();
@@ -61,12 +76,19 @@ public class AddVisitorActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        visitorname = (EditText) findViewById(R.id.visitorname);
+        visitorcontact = (EditText) findViewById(R.id.visitorcontact);
+
+        input_layout_visitorname = (TextInputLayout) findViewById(R.id.input_layout_visitorname);
+        input_layout_visitorcontact = (TextInputLayout) findViewById(R.id.input_layout_visitorcontact);
+
         spinBuildingID = (Spinner) findViewById(R.id.spinBuildingID);
         spinFlatid = (Spinner) findViewById(R.id.spinFlatid);
-        visitorname = (EditText) findViewById(R.id.visitorname);
-        visitorcontact = (EditText) findViewById(R.id.visitorname);
+//        visitorname = (EditText) findViewById(R.id.visitorname);
+//        visitorcontact = (EditText) findViewById(R.id.visitorname);
         addvisitor = (Button) findViewById(R.id.addvisitor);
         sessionManager = new SessionManager(this);
+
         StringRequest s = new StringRequest(Request.Method.POST, Config.READ_BUILDINGS, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

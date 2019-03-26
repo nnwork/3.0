@@ -33,9 +33,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class AdminAddUserActivity extends AppCompatActivity {
+
+    Toolbar toolbar;
     EditText UserName,MobileNumber,UserEmail,UserPassword,AadharNumber,TotalFlatMember;
+    TextInputLayout input_layout_UserName,input_layout_MobileNumber,input_layout_UserEmail,input_layout_UserPassword,input_layout_AadharNumber,input_layout_TotalFlatMember;
+
     Spinner UserFlat,UserType,HcategoryName;
     RadioButton BlockYes,BlockNo,RentYes,RentNo,YesUserisAvailable, NoUserisAvailable;
     Button btnUserSubmit;
@@ -66,6 +82,14 @@ public class AdminAddUserActivity extends AppCompatActivity {
         UserPassword = (EditText)findViewById(R.id.UserPassword);
         AadharNumber = (EditText)findViewById(R.id.AadharNumber);
         TotalFlatMember = (EditText)findViewById(R.id.TotalFlatMember);
+
+        input_layout_UserName=(TextInputLayout)findViewById(R.id.input_layout_UserName);
+        input_layout_MobileNumber=(TextInputLayout)findViewById(R.id.input_layout_MobileNumber);
+        input_layout_UserEmail=(TextInputLayout)findViewById(R.id.input_layout_UserEmail);
+
+        input_layout_UserPassword=(TextInputLayout)findViewById(R.id.input_layout_UserPassword);
+        input_layout_AadharNumber=(TextInputLayout)findViewById(R.id.input_layout_AadharNumber);
+        input_layout_TotalFlatMember=(TextInputLayout)findViewById(R.id.input_layout_TotalFlatMember);
         //EditTextBoxEnd
 
         //BindSpinnerStart

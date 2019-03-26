@@ -20,16 +20,23 @@
             android:padding="20dp"
             >
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:id="@+id/btnpay"
-                android:background="#ad1457"
-                android:text="Pay"
-                android:textColor="@color/textcolorwhite"
-                android:textSize="@dimen/buttontextsize" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/layout_margin"-->
+                <!--android:id="@+id/btnpay"-->
+                <!--android:background="#ad1457"-->
+                <!--android:text="Pay"-->
+                <!--android:textColor="@color/textcolorwhite"-->
+                <!--android:textSize="@dimen/buttontextsize" />-->
 
+            <Button android:id="@+id/btnpay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/white"/>
         </LinearLayout>
 
     </ScrollView>

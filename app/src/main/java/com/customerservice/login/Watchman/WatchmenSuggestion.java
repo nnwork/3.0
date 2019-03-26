@@ -21,14 +21,28 @@ import com.customerservice.login.FlatOwner.OwnerSuggestion;
 import com.customerservice.login.R;
 import com.customerservice.login.Utility.Config;
 import com.customerservice.login.Utility.SessionManager;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class WatchmenSuggestion extends AppCompatActivity {
-
-    Button suggetionbtn;
+    Toolbar toolbar;
     EditText suggestiontext;
+    TextInputLayout input_layout_suggestiontext;
+    Button suggetionbtn;
+
 
     SessionManager sessionManager;
 
@@ -43,13 +57,12 @@ public class WatchmenSuggestion extends AppCompatActivity {
         suggetionbtn = (Button) findViewById(R.id.suggetionbtn);
         suggestiontext = (EditText) findViewById(R.id.suggestiontext);
 
+        input_layout_suggestiontext=(TextInputLayout)findViewById(R.id.input_layout_suggestiontext);
         suggetionbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
                 String suggestionfield_str = suggestiontext.getText().toString();
-
 
                 if (suggestionfield_str.length() == 0) {
                     Toast.makeText(WatchmenSuggestion.this, "Please Enter suggestionFiled", Toast.LENGTH_SHORT).show();
@@ -86,5 +99,4 @@ public class WatchmenSuggestion extends AppCompatActivity {
         });
     }
 }
-
 
